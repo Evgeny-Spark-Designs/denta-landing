@@ -15,6 +15,7 @@
       --oryzo-muted:#6c5f51;
       --oryzo-orange:#dc5000;
       --pure-black:#000;
+      --catalog-hero-height:max(100svh,660px);
       --display:"halyard-display-variable","Helvetica Neue",Arial,sans-serif;
       --text:"halyard-text-variable","Helvetica Neue",Arial,sans-serif;
     }
@@ -24,8 +25,8 @@
     a{color:inherit;text-decoration:none}
     button{font:inherit}
 
-    .intro-scroll{position:relative;height:125vh;background:var(--oryzo-brown)}
-    .catalog-hero{position:sticky;top:0;height:100vh;min-height:660px;overflow:hidden;background:var(--oryzo-orange);isolation:isolate}
+    .intro-scroll{position:relative;height:calc(100svh + var(--catalog-hero-height));background:var(--oryzo-brown)}
+    .catalog-hero{position:sticky;top:0;height:var(--catalog-hero-height);overflow:hidden;background:var(--oryzo-orange);isolation:isolate}
     .catalog-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(255,237,215,.22),transparent 35%),linear-gradient(115deg,var(--oryzo-orange) 0%,#bd3e00 64%,var(--oryzo-brown) 125%);z-index:-3}
     .catalog-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18vh;background:var(--oryzo-brown);z-index:-1}
     .topbar{position:relative;z-index:5;height:84px;padding:0 clamp(24px,3.2vw,62px);display:flex;align-items:center;justify-content:space-between;color:var(--oryzo-cream)}
@@ -37,12 +38,13 @@
     .hero-kicker{position:absolute;left:clamp(24px,3.2vw,62px);top:104px;margin:0;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.02em}
     .hero-title{position:absolute;z-index:2;top:13vh;left:50%;width:min(96vw,1600px);transform:translateX(-50%);margin:0;text-align:center;font-size:clamp(76px,11.2vw,206px);font-weight:500;line-height:.78;letter-spacing:-.065em;text-transform:none;white-space:nowrap}
     .hero-title span{display:block;font-size:.25em;line-height:1;margin-bottom:.7em;letter-spacing:.01em;text-transform:uppercase}
+    .hero-title b{display:block;font:inherit;letter-spacing:inherit;background:linear-gradient(90deg,#fff6e9 4%,#ffddcb 48%,#f79a7a 96%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 12px 26px rgba(56,16,4,.1))}
     .hero-deck{position:absolute;z-index:-2;left:0;right:0;bottom:18vh;height:28vh;background:var(--oryzo-cream)}
-    .hero-products{position:absolute;z-index:3;left:50%;bottom:15.3vh;width:min(86vw,1460px);height:auto;transform:translateX(-50%);filter:drop-shadow(0 20px 26px rgba(16,9,4,.25));pointer-events:none}
+    .hero-products{position:absolute;z-index:3;left:50%;bottom:15.3vh;width:min(72vw,1200px);height:auto;transform:translateX(-50%);filter:drop-shadow(0 20px 26px rgba(16,9,4,.25));pointer-events:none}
     .hero-meta{position:absolute;z-index:4;left:clamp(24px,4vw,78px);right:clamp(24px,4vw,78px);bottom:19.6vh;display:flex;justify-content:space-between;color:var(--oryzo-black);font-family:var(--text);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.02em}
     .scroll-cue{position:absolute;right:clamp(24px,3.2vw,62px);bottom:7vh;color:var(--oryzo-cream);font-size:11px;text-transform:uppercase;display:flex;align-items:center;gap:11px}.scroll-cue i{width:42px;height:1px;background:currentColor;display:block}
 
-    .catalog-surface{position:relative;z-index:3;margin-top:-25vh;border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;background:var(--oryzo-black);padding:clamp(70px,8vw,144px) clamp(20px,4vw,76px) clamp(90px,10vw,170px);box-shadow:0 -25px 70px rgba(0,0,0,.18)}
+    .catalog-surface{position:relative;z-index:3;margin-top:calc(0px - var(--catalog-hero-height));border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;background:var(--oryzo-black);padding:clamp(70px,8vw,144px) clamp(20px,4vw,76px) clamp(90px,10vw,170px);box-shadow:0 -25px 70px rgba(0,0,0,.18)}
     .catalog-inner{max-width:1760px;margin:0 auto}
     .catalog-head{text-align:center;margin-bottom:clamp(50px,7vw,110px)}
     .catalog-head p{margin:0 0 14px;font-size:clamp(13px,1.2vw,18px);font-weight:500;text-transform:uppercase}
@@ -59,23 +61,24 @@
     .product-copy{margin-top:auto;padding:0 clamp(22px,2.2vw,38px) clamp(25px,2.4vw,42px)}
     .status{display:block;margin:0 0 10px;color:var(--oryzo-orange);font-size:13px;font-weight:600}
     .category{margin:0 0 9px;color:rgba(255,237,215,.5);font-family:var(--text);font-size:12px;font-weight:400}
-    .product h2{margin:0;max-width:15ch;font-size:clamp(25px,2.1vw,38px);font-weight:500;line-height:.98;letter-spacing:-.035em}
+    .product h2{min-height:1.96em;margin:0;max-width:15ch;font-size:clamp(25px,2.1vw,38px);font-weight:500;line-height:.98;letter-spacing:-.035em}
     .product-bottom{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-top:28px}.product-bottom b{font-size:18px;font-weight:500}
     .arrow{position:relative;display:grid;place-items:center;flex:0 0 auto;width:48px;height:48px;border:2px solid transparent;border-radius:50%;background:var(--oryzo-brown);color:var(--oryzo-cream);font-size:0;cursor:pointer;transition:border-color .25s,background .25s,transform .25s}
     .arrow:hover{border-color:var(--oryzo-orange);transform:scale(1.06)}.arrow:active{transform:scale(.94)}
-    .arrow::before{content:"";width:19px;height:19px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L22 7H5.12'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L22 7H5.12'/%3E%3C/svg%3E") center/contain no-repeat}.arrow.added::before{display:none}.arrow.added::after{content:"✓";font-size:18px;font-weight:600}
+    .arrow::before{content:"";position:absolute;left:50%;top:50%;width:19px;height:19px;transform:translate(-50%,-50%);background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L22 7H5.12'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L22 7H5.12'/%3E%3C/svg%3E") center/contain no-repeat}.arrow.added::before{display:none}.arrow.added::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;font-weight:600}
     .detail-card{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;min-height:clamp(430px,42vw,650px);margin-top:clamp(30px,5vw,86px);overflow:hidden;border-radius:clamp(28px,4vw,64px);background:rgba(255,237,215,.035)}
-    .detail-card img{width:100%;height:100%;max-height:650px;object-fit:contain;padding:clamp(30px,5vw,80px);filter:drop-shadow(0 24px 28px rgba(0,0,0,.35))}
+    .detail-card img{width:100%;height:100%;max-height:650px;object-fit:contain;padding:clamp(0px,.5vw,10px);transform:scale(1.12);filter:drop-shadow(0 24px 28px rgba(0,0,0,.35))}
     .detail-copy{padding:clamp(34px,5vw,86px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.detail-copy p{margin:0 0 15px;color:var(--oryzo-orange);font-weight:600}.detail-copy h2{margin:0;max-width:12ch;font-size:clamp(46px,5.5vw,96px);font-weight:500;line-height:.86;letter-spacing:-.055em}.detail-copy a{margin-top:34px;border-radius:3em;background:var(--oryzo-brown);padding:1.35em 2.2em;font-size:13px;font-weight:500;text-transform:uppercase;border:2px solid transparent;transition:border-color .25s}.detail-copy a:hover{border-color:var(--oryzo-orange)}
 
     .catalog-end{height:clamp(80px,9vw,150px);margin:0 clamp(16px,2vw,34px);border-radius:0 0 clamp(28px,4vw,64px) clamp(28px,4vw,64px);background:var(--oryzo-black)}
-    footer{min-height:330px;background:var(--pure-black);padding:clamp(70px,7vw,118px) clamp(24px,4vw,76px) 38px;color:var(--oryzo-cream)}
-    .footer-inner{max-width:1760px;margin:auto;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:40px}.footer-brand{font-size:28px;font-weight:600}.footer-col{font-family:var(--text);font-size:14px;line-height:1.8}.footer-col b{display:block;margin-bottom:10px;color:rgba(255,237,215,.45);font-family:var(--display);font-size:11px;font-weight:500;text-transform:uppercase}.footer-col a{display:block}.footer-bottom{max-width:1760px;margin:70px auto 0;padding-top:20px;border-top:1px solid rgba(255,237,215,.14);display:flex;justify-content:space-between;color:rgba(255,237,215,.45);font-size:12px}
+    footer{position:relative;min-height:clamp(500px,42vw,650px);overflow:hidden;isolation:isolate;background:var(--pure-black);padding:clamp(58px,5vw,86px) clamp(24px,4vw,76px) 0;color:var(--oryzo-cream)}
+    #catalogHalftoneCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+    .footer-inner{position:relative;z-index:2;max-width:1760px;margin:auto;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:40px}.footer-brand{font-size:28px;font-weight:600}.footer-col{font-family:var(--text);font-size:14px;line-height:1.8}.footer-col b{display:block;margin-bottom:10px;color:rgba(255,237,215,.45);font-family:var(--display);font-size:11px;font-weight:500;text-transform:uppercase}.footer-col a{display:block}.footer-bottom{position:absolute;z-index:2;left:clamp(24px,4vw,76px);right:clamp(24px,4vw,76px);top:clamp(178px,14vw,220px);margin:0;padding-top:18px;border-top:1px solid rgba(255,237,215,.14);display:flex;justify-content:space-between;color:rgba(255,237,215,.45);font-size:12px;pointer-events:none}
 
     @media(max-width:1280px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.product{min-height:540px}}
-    @media(max-width:960px){.hero-title{font-size:clamp(70px,12vw,132px)}.hero-products{width:94vw}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product{min-height:560px}.footer-inner{grid-template-columns:1.2fr repeat(3,1fr)}}
-    @media(max-width:620px){.intro-scroll{height:112vh}.catalog-hero{min-height:620px}.topbar{height:70px}.topbar nav{display:none}.topbar .menu{display:block;margin-left:auto}.hero-kicker{top:86px}.hero-title{top:16vh;width:90vw;font-size:clamp(48px,13vw,78px);line-height:.86;white-space:normal}.hero-title span{font-size:.24em}.hero-deck{height:31vh}.hero-products{bottom:16.5vh;width:108vw;max-width:none}.hero-meta{display:none}.catalog-surface{margin-top:-12vh;padding-inline:16px;border-radius:30px 30px 0 0}.catalog-head h1{font-size:clamp(64px,18vw,104px)}.filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}.filters button{flex:0 0 auto}.products{grid-template-columns:1fr}.product{min-height:540px}.detail-card{grid-template-columns:1fr}.detail-card img{height:360px}.detail-copy{padding-top:12px}.footer-inner{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:8px}}
-    @media(max-width:460px){.hero-products{width:98vw;left:50%}.scroll-cue{display:none}.product{min-height:500px}.footer-inner{grid-template-columns:1fr}.footer-brand{grid-column:auto}}
+    @media(max-width:960px){.hero-title{font-size:clamp(70px,12vw,132px)}.hero-products{width:82vw}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product{min-height:560px}.footer-inner{grid-template-columns:1.2fr repeat(3,1fr)}}
+    @media(max-width:620px){:root{--catalog-hero-height:max(100svh,620px)}.topbar{height:70px}.topbar nav{display:none}.topbar .menu{display:block;margin-left:auto}.hero-kicker{top:86px}.hero-title{top:16vh;width:90vw;font-size:clamp(48px,13vw,78px);line-height:.86;white-space:normal}.hero-title span{font-size:.24em}.hero-deck{height:31vh}.hero-products{bottom:16.5vh;width:96vw;max-width:none}.hero-meta{display:none}.catalog-surface{padding-inline:16px;border-radius:30px 30px 0 0}.catalog-head h1{font-size:clamp(64px,18vw,104px)}.filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}.filters button{flex:0 0 auto}.products{grid-template-columns:1fr}.product{min-height:540px}.detail-card{grid-template-columns:1fr}.detail-card img{height:360px}.detail-copy{padding-top:12px}.footer-inner{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}footer{min-height:640px}.footer-bottom{top:310px;flex-direction:column;gap:8px}}
+    @media(max-width:460px){.hero-products{width:92vw;left:50%}.scroll-cue{display:none}.product{min-height:500px}.footer-inner{grid-template-columns:1fr}.footer-brand{grid-column:auto}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.product,.product-visual img,.filters button,.arrow{transition:none}}
   </style>
 </head>
@@ -88,9 +91,9 @@
         <a class="menu" href="#catalog">Catalog</a>
       </header>
       <p class="hero-kicker">Professional dental equipment</p>
-      <h1 class="hero-title" id="catalog-hero-title"><span>Precision in every detail</span>Full catalog</h1>
+      <h1 class="hero-title" id="catalog-hero-title"><span>Precision in every detail</span><b>Full catalog</b></h1>
       <div class="hero-deck" aria-hidden="true"></div>
-      <img class="hero-products" src="./denta-hero-assets/catalog-hero-group-v1.png" alt="A curated group of Denta dental instruments">
+      <img class="hero-products" src="./denta-hero-assets/catalog-hero-group-v2.png" alt="A curated group of Denta dental instruments">
       <div class="hero-meta" aria-hidden="true"><span>Restorative · Diagnostics</span><span>Implantology · Endodontics</span></div>
       <div class="scroll-cue" aria-hidden="true"><i></i>Scroll to explore</div>
     </section>
@@ -111,12 +114,13 @@
         <a class="product" href="product-e390-endo-motor.html?product=fast"><div class="product-visual"><img src="./denta-hero-assets/product-fast-glass-v1.png" alt="1-Second Curing Light"></div><div class="product-copy"><span class="status">New</span><p class="category">Restorative &amp; curing</p><h2>1-Second Curing Light</h2><div class="product-bottom"><b>€329.95</b><span class="arrow" data-cart="1-Second Curing Light" role="button" tabindex="0" aria-label="Add 1-Second Curing Light to cart">Add to cart</span></div></div></a>
         <a class="product" href="product-e390-endo-motor.html?product=torque"><div class="product-visual"><img src="./denta-hero-assets/product-torque-glass-v1.png" alt="Electric Implant Torque Wrench"></div><div class="product-copy"><span class="status">New</span><p class="category">Implantology</p><h2>Electric Implant Torque Wrench</h2><div class="product-bottom"><b>€339.95</b><span class="arrow" data-cart="Electric Implant Torque Wrench" role="button" tabindex="0" aria-label="Add Electric Implant Torque Wrench to cart">Add to cart</span></div></div></a>
         <a class="product" href="product-implant-driver.html"><div class="product-visual"><img src="./denta-hero-assets/product-driver-glass-v1.png" alt="Electric Implant Driver Set"></div><div class="product-copy"><span class="status">New</span><p class="category">Implantology</p><h2>Electric Implant Driver Set</h2><div class="product-bottom"><b>€429.95</b><span class="arrow" data-cart="Electric Implant Driver Set" role="button" tabindex="0" aria-label="Add Electric Implant Driver Set to cart">Add to cart</span></div></div></a>
-        <article class="detail-card"><img src="./denta-hero-assets/product-endo-glass-v1.png" alt="E390 Endo Motor with locator"><div class="detail-copy"><p>Featured endodontics</p><h2>E390 Endo Motor with Locator.</h2><a href="product-e390-endo-motor.html">View product details&nbsp; ↗</a></div></article>
+        <article class="detail-card"><img src="./denta-hero-assets/product-endo-glass-v1.png" alt="E390 Endo Motor with locator"><div class="detail-copy"><p>Featured endodontics</p><h2>E390 Endo Motor with Locator.</h2><a href="product-e390-endo-motor.html">View product details</a></div></article>
       </section>
     </div>
   </main>
   <div class="catalog-end" aria-hidden="true"></div>
   <footer id="contacts">
+    <canvas id="catalogHalftoneCanvas" aria-hidden="true"></canvas>
     <div class="footer-inner">
       <a class="footer-brand" href="index.html">Denta</a>
       <div class="footer-col"><b>Shop</b><a href="catalog.html">Full catalog</a><a href="index.html#categories">Categories</a><a href="index.html#bestsellers">Best sellers</a></div>
@@ -140,6 +144,33 @@
       document.querySelectorAll('.filters button').forEach(item=>item.classList.remove('is-active'));
       button.classList.add('is-active');
     }));
+    (()=>{
+      const canvas=document.getElementById('catalogHalftoneCanvas'),footer=canvas?.closest('footer');
+      if(!canvas||!footer)return;
+      const ctx=canvas.getContext('2d'),pointer={x:-1e4,y:-1e4};let dots=[],w=0,h=0,dpr=1;
+      const draw=()=>{
+        ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+        for(const [x,y,r] of dots){
+          const dx=x-pointer.x,dy=y-pointer.y,dist=Math.hypot(dx,dy),push=Math.max(0,1-dist/96),nx=dist?x+(dx/dist)*push*16:x,ny=dist?y+(dy/dist)*push*16:y;
+          ctx.fillStyle=push>.02?`rgb(${244+Math.round(push*11)},${220-Math.round(push*105)},${199-Math.round(push*155)})`:'#f4dcc7';
+          ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fill();
+        }
+      };
+      const layout=()=>{
+        const box=footer.getBoundingClientRect();w=Math.max(1,Math.round(box.width));h=Math.max(1,Math.round(box.height));dpr=Math.min(devicePixelRatio||1,2);
+        canvas.width=w*dpr;canvas.height=h*dpr;
+        const mask=document.createElement('canvas');mask.width=w;mask.height=h;const m=mask.getContext('2d',{willReadFrequently:true});if(!m)return;
+        const word='Denta',weight=800,probe=100;m.font=`${weight} ${probe}px Arial, Helvetica, sans-serif`;
+        const fit=(w*.94)/m.measureText(word).width*probe;m.font=`${weight} ${fit}px Arial, Helvetica, sans-serif`;m.textBaseline='alphabetic';
+        const measure=m.measureText(word),cap=measure.actualBoundingBoxAscent||fit*.72;m.fillStyle='#fff';m.fillText(word,(w-measure.width)/2,h+cap*.22);
+        const data=m.getImageData(0,0,w,h).data,gap=Math.max(5,Math.round(w/270));dots=[];
+        for(let y=gap/2;y<h;y+=gap)for(let x=gap/2;x<w;x+=gap){let alpha=0;for(let sy=-1;sy<=1;sy++)for(let sx=-1;sx<=1;sx++){const px=Math.max(0,Math.min(w-1,Math.round(x+sx*gap/3))),py=Math.max(0,Math.min(h-1,Math.round(y+sy*gap/3)));alpha+=data[(py*w+px)*4+3]}alpha/=2295;if(alpha>.05)dots.push([x,y,Math.sqrt(alpha)*gap*.52])}
+        draw();
+      };
+      footer.addEventListener('pointermove',event=>{const box=canvas.getBoundingClientRect();pointer.x=event.clientX-box.left;pointer.y=event.clientY-box.top;draw()});
+      footer.addEventListener('pointerleave',()=>{pointer.x=-1e4;pointer.y=-1e4;draw()});
+      new ResizeObserver(layout).observe(footer);layout();
+    })();
   </script>
 </body>
 </html>
