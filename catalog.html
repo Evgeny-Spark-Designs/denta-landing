@@ -3,67 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Denta professional dental equipment catalog">
   <title>Catalog — Denta</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="stylesheet" href="https://use.typekit.net/pmn6ngx.css">
   <style>
-    :root{--cream:#fff7ed;--muted:rgba(255,247,237,.68);--orange:#c53a08;--dark:#090807;--line:rgba(255,240,225,.15)}
-    *{box-sizing:border-box} html{background:#8c250d} body{margin:0;background:radial-gradient(ellipse 72vw 80vh at 42% 12%,rgba(246,93,19,.38),transparent 58%),linear-gradient(112deg,#bc3505,#a42c0b 60%,#721b11);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--cream);overflow-x:hidden} a{color:inherit;text-decoration:none}
-    .topbar{height:86px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,78px);border-bottom:1px solid var(--line)}
-    .brand{font-size:clamp(20px,1.6vw,26px);font-weight:700;letter-spacing:-.05em;display:flex;align-items:center;gap:10px}.mark{width:22px;height:22px;display:grid;grid-template-columns:1fr 1fr;gap:3px}.mark i{display:block;background:currentColor}.mark i:nth-child(1){border-radius:1px 5px 1px 5px}.mark i:nth-child(2){border-radius:5px 1px 5px 1px}.mark i:nth-child(3){border-radius:5px 1px 5px 1px}.mark i:nth-child(4){border-radius:1px 5px 1px 5px}
-    nav{display:flex;align-items:center;gap:clamp(20px,3vw,52px);font-size:13px}nav a{opacity:.76}nav a:hover,nav a[aria-current="page"]{opacity:1}.menu{display:none;border:1px solid var(--line);padding:8px 11px;border-radius:99px}
-    main{max-width:1760px;margin:auto;padding:clamp(48px,6vw,110px) clamp(20px,4vw,78px) clamp(70px,7vw,128px)}.eyebrow{margin:0 0 13px;color:rgba(255,236,218,.72);font-size:13px;font-weight:600}.heading-row{display:flex;align-items:end;justify-content:space-between;gap:30px;border-bottom:1px solid var(--line);padding-bottom:32px}.heading-row h1{margin:0;font-size:clamp(52px,7.5vw,132px);font-weight:300;line-height:.83;letter-spacing:-.075em}.heading-row p{max-width:31ch;margin:0;color:var(--muted);line-height:1.35;font-size:clamp(15px,1.1vw,20px)}
-    .filters{display:flex;gap:9px;flex-wrap:wrap;padding:26px 0 32px}.filters button{border:1px solid var(--line);border-radius:999px;background:rgba(36,9,5,.14);color:var(--cream);padding:10px 15px;font:inherit;font-size:13px;cursor:pointer}.filters button:first-child{background:var(--cream);color:#471208;border-color:var(--cream)}
-    .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.1vw,35px)}.product{position:relative;min-height:clamp(440px,38vw,640px);overflow:hidden;border:1px solid rgba(255,245,235,.16);border-radius:22px;background:#050505;display:flex;flex-direction:column;isolation:isolate;transition:transform .25s ease,border-color .25s ease}.product:hover{transform:translateY(-5px);border-color:rgba(255,245,235,.46)}.product-visual{height:68%;min-height:280px;background:#040404;overflow:hidden}.product-visual img{width:100%;height:100%;object-fit:cover;display:block}.product-copy{position:relative;z-index:2;margin-top:auto;padding:22px 23px 24px;background:linear-gradient(180deg,rgba(6,6,6,.88),#090909)}.product-copy p{margin:0 0 8px;color:rgba(255,241,231,.67);font-size:13px;font-weight:600}.product-copy h2{margin:0;max-width:16ch;font-size:clamp(22px,2vw,33px);line-height:1.02;letter-spacing:-.05em}.product-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:18px;color:rgba(255,240,230,.75);font-size:14px}.product-bottom b{font-size:17px;color:var(--cream);font-weight:500}.arrow{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--cream);color:#28120a;font-size:0}.arrow::before{content:"";width:19px;height:19px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L22 7H5.12'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L22 7H5.12'/%3E%3C/svg%3E") center/contain no-repeat}.arrow.added::before{display:none}.arrow.added::after{content:"✓";font-size:18px;font-weight:700}.detail-card{grid-column:span 3;display:grid;grid-template-columns:1.1fr .9fr;min-height:350px;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:linear-gradient(110deg,#1b0905,#080707 62%)}.detail-card img{width:100%;height:100%;max-height:440px;object-fit:cover;object-position:center;background:#060606}.detail-copy{padding:clamp(28px,4vw,66px);display:flex;flex-direction:column;align-items:start;justify-content:center}.detail-copy p{margin:0 0 12px;color:var(--muted)}.detail-copy h2{margin:0;max-width:12ch;font-size:clamp(32px,4.1vw,67px);line-height:.9;font-weight:300;letter-spacing:-.065em}.detail-copy a{margin-top:28px;border:1px solid rgba(255,245,235,.64);padding:12px 18px;font-size:14px}
-    footer{border-top:1px solid var(--line);padding:26px clamp(20px,4vw,78px) 35px;display:flex;justify-content:space-between;gap:20px;font-size:13px;color:rgba(255,241,231,.72)}
-    @media(max-width:900px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-card{grid-column:span 2}.heading-row{align-items:start;flex-direction:column}.heading-row p{max-width:45ch}.product{min-height:470px}}
-    @media(max-width:620px){.topbar{height:72px}.topbar nav{display:none}.menu{display:block}.products{grid-template-columns:1fr}.product{min-height:510px}.detail-card{grid-column:span 1;grid-template-columns:1fr}.detail-card img{height:320px}.heading-row{padding-bottom:25px}.heading-row h1{font-size:clamp(54px,18vw,90px)}.filters{padding:21px 0 25px}.product-copy{padding:20px}.detail-copy{padding:28px 22px 32px}footer{flex-direction:column}}
-  </style>
-  <style>
-    /* Dark liquid-glass action: a translucent lens with a bright rim, not an opaque grey disc. */
-    .arrow{position:relative;display:block;cursor:pointer;background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.075) 28%,rgba(20,14,13,.34) 62%,rgba(255,255,255,.08) 100%),rgba(13,12,13,.45);border:1px solid rgba(255,255,255,.48);box-shadow:0 7px 18px rgba(0,0,0,.34),inset 0 1px 1px rgba(255,255,255,.72),inset 0 -1px 1px rgba(0,0,0,.52),inset 0 0 12px rgba(255,255,255,.08);backdrop-filter:blur(16px) saturate(145%);-webkit-backdrop-filter:blur(16px) saturate(145%);transition:transform .25s cubic-bezier(.1,.4,.2,1),filter .25s ease,box-shadow .25s ease}.arrow:hover{background:linear-gradient(180deg,rgba(255,255,255,.31) 0%,rgba(255,255,255,.1) 28%,rgba(29,18,16,.34) 62%,rgba(255,255,255,.12) 100%),rgba(13,12,13,.54);transform:scale(1.06);filter:brightness(1.12);box-shadow:0 9px 22px rgba(0,0,0,.42),inset 0 1px 1px rgba(255,255,255,.85),inset 0 -1px 1px rgba(0,0,0,.55),inset 0 0 14px rgba(255,255,255,.12)}.arrow:active{transform:scale(.94)}.arrow::before{position:absolute;left:50%;top:50%;width:18px;height:18px;transform:translate(-50%,-50%)}
-  </style>
-  <style>
-    .products{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.55vw,26px)}.product{min-height:clamp(370px,30vw,510px);border-radius:20px}.product-visual{height:64%;min-height:230px}.product-copy{padding:18px 19px 19px}.product-copy p{margin-bottom:7px;font-size:12px}.product-copy h2{max-width:15ch;font-size:clamp(19px,1.58vw,27px)}.product-bottom{margin-top:15px}.product-bottom b{font-size:16px}.detail-card{grid-column:span 4}.arrow{color:#fff9f3}@media(max-width:1100px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.detail-card{grid-column:span 3}}@media(max-width:760px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-card{grid-column:span 2}.product{min-height:430px}}@media(max-width:620px){.detail-card{grid-column:span 1}}
-  </style>
-  <style>
-    /* Catalogue glass system: current orange gradient remains the backdrop. */
-    .topbar{position:relative;z-index:5;max-width:calc(100% - clamp(20px,3vw,46px));margin:clamp(10px,1.6vw,24px) auto 0;height:68px;padding-inline:clamp(18px,2.3vw,42px);border:1px solid rgba(255,244,235,.42);border-radius:22px;background:linear-gradient(115deg,rgba(28,12,10,.53),rgba(28,12,10,.19));box-shadow:inset 0 1px 0 rgba(255,255,255,.44),inset 0 -1px 0 rgba(34,8,4,.25),0 16px 38px rgba(54,11,4,.18);backdrop-filter:blur(22px) saturate(138%);-webkit-backdrop-filter:blur(22px) saturate(138%)}.topbar nav a{opacity:.82}.topbar nav a[aria-current="page"]{padding:9px 13px;border-radius:999px;background:#fff7ed;color:#461508;opacity:1}.heading-row{padding:clamp(28px,3vw,48px);border:1px solid rgba(255,244,235,.34);border-radius:30px;background:linear-gradient(135deg,rgba(26,11,9,.44),rgba(255,255,255,.09));box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(25,7,4,.16),0 22px 50px rgba(73,12,3,.18);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%)}.heading-row h1{font-weight:300}.heading-row p{color:rgba(255,247,237,.79)}.filters{margin-top:18px;padding:12px;border:1px solid rgba(255,244,235,.28);border-radius:22px;background:rgba(25,11,9,.24);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 16px 32px rgba(71,12,4,.14);backdrop-filter:blur(20px) saturate(138%);-webkit-backdrop-filter:blur(20px) saturate(138%)}.filters button{border-color:transparent;background:transparent;color:rgba(255,247,237,.82);padding:10px 14px}.filters button:first-child{background:#fff7ed;color:#421409;box-shadow:0 5px 14px rgba(38,7,2,.24)}.products{margin-top:6px}.product{min-height:clamp(380px,30vw,510px);border:1px solid rgba(255,247,237,.34);border-radius:26px;background:linear-gradient(150deg,rgba(22,11,11,.48),rgba(14,8,9,.22));box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 -1px 0 rgba(24,6,4,.24),0 22px 44px rgba(65,10,4,.23);backdrop-filter:blur(22px) saturate(135%);-webkit-backdrop-filter:blur(22px) saturate(135%)}.product:hover{border-color:rgba(255,249,243,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.58),0 26px 54px rgba(65,10,4,.3)}.product-visual{height:64%;min-height:236px;background:radial-gradient(ellipse at 50% 95%,rgba(255,239,225,.12),transparent 58%),transparent;overflow:visible}.product-visual img{object-fit:contain;padding:clamp(16px,2vw,32px);filter:drop-shadow(0 16px 20px rgba(0,0,0,.26));mix-blend-mode:screen}.product-copy{border-top:1px solid rgba(255,248,239,.18);background:linear-gradient(165deg,rgba(17,10,10,.58),rgba(15,8,9,.27));box-shadow:inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.product-copy p{color:rgba(255,247,237,.68)}.product-copy h2{color:#fff9f2}.product-bottom b{color:#fff9f2}.arrow{width:44px;height:44px;border-color:rgba(255,255,255,.72);background:linear-gradient(150deg,rgba(255,255,255,.38),rgba(255,255,255,.09)),rgba(23,13,12,.35);box-shadow:inset 0 1px 1px rgba(255,255,255,.73),inset 0 -1px 1px rgba(0,0,0,.42),0 7px 16px rgba(0,0,0,.25);color:#fff}.arrow:hover{background:#fff7ed;color:#381109;box-shadow:0 8px 20px rgba(0,0,0,.25)}.detail-card{border-color:rgba(255,247,237,.34);border-radius:30px;background:linear-gradient(135deg,rgba(22,11,11,.54),rgba(15,8,9,.23));box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(25,7,4,.2),0 22px 44px rgba(65,10,4,.23);backdrop-filter:blur(22px) saturate(135%);-webkit-backdrop-filter:blur(22px) saturate(135%)}.detail-card img{background:transparent;mix-blend-mode:screen}.detail-copy a{border-radius:999px;background:#fff7ed;color:#3a1008;border-color:#fff7ed;box-shadow:0 7px 16px rgba(0,0,0,.22)}footer{max-width:calc(100% - clamp(20px,3vw,46px));margin:0 auto clamp(10px,1.6vw,24px);border:1px solid rgba(255,244,235,.26);border-radius:20px;background:rgba(25,11,9,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.26);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}@media(max-width:760px){.topbar{max-width:calc(100% - 20px);height:62px}.heading-row{padding:26px 22px;border-radius:24px}.filters{gap:5px}.filters button{font-size:12px;padding:9px 11px}.product{border-radius:22px}.product-visual{min-height:220px}.detail-card{border-radius:24px}footer{max-width:calc(100% - 20px)}}
-  </style>
-  <style>
-    /* Keep the catalogue heading simple; the product surfaces carry the glass language. */
-    body{font-family:"Outfit","Helvetica Neue",Helvetica,Arial,sans-serif}
-    .heading-row{padding:0 0 32px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
-    .heading-row h1{font-weight:400;letter-spacing:-.07em}.heading-row p{font-weight:400}
-    .eyebrow,.product-copy p,.detail-copy p{font-weight:500;letter-spacing:-.01em}
-    .product{background:linear-gradient(145deg,rgba(255,245,238,.19),rgba(45,11,8,.11) 48%,rgba(255,240,228,.1));box-shadow:inset 0 1px 0 rgba(255,255,255,.58),inset 0 -1px 0 rgba(84,15,8,.16),0 22px 44px rgba(65,10,4,.19);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%)}
-    .product-visual{background:transparent}.product-copy{background:transparent;border-top:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}.product-copy h2{font-weight:600;letter-spacing:-.055em}.product-bottom b{font-weight:500}
-    .arrow{display:grid;place-items:center;color:#fff7ed;background:linear-gradient(145deg,rgba(255,255,255,.32),rgba(255,255,255,.08) 45%,rgba(28,10,8,.15));border-color:rgba(255,255,255,.7);box-shadow:inset 0 1px 1px rgba(255,255,255,.78),inset 0 -1px 1px rgba(89,22,13,.25),0 7px 18px rgba(42,7,2,.18);backdrop-filter:blur(18px) saturate(130%);-webkit-backdrop-filter:blur(18px) saturate(130%)}
-    .arrow:hover{background:rgba(255,247,237,.92);color:#481609}.detail-card{background:linear-gradient(145deg,rgba(255,245,238,.18),rgba(42,11,8,.1));box-shadow:inset 0 1px 0 rgba(255,255,255,.52),inset 0 -1px 0 rgba(84,15,8,.14),0 22px 44px rgba(65,10,4,.18)}.detail-copy{background:transparent}.detail-copy h2{font-weight:400}
-    footer{max-width:none;margin:0;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+    :root{
+      --oryzo-cream:#ffedd7;
+      --oryzo-black:#100904;
+      --oryzo-brown:#382416;
+      --oryzo-muted:#6c5f51;
+      --oryzo-orange:#dc5000;
+      --pure-black:#000;
+      --display:"halyard-display-variable","Helvetica Neue",Arial,sans-serif;
+      --text:"halyard-text-variable","Helvetica Neue",Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--pure-black);scroll-behavior:smooth}
+    body{margin:0;background:var(--pure-black);color:var(--oryzo-cream);font-family:var(--display);overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    .intro-scroll{position:relative;height:125vh;background:var(--oryzo-brown)}
+    .catalog-hero{position:sticky;top:0;height:100vh;min-height:660px;overflow:hidden;background:var(--oryzo-orange);isolation:isolate}
+    .catalog-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(255,237,215,.22),transparent 35%),linear-gradient(115deg,var(--oryzo-orange) 0%,#bd3e00 64%,var(--oryzo-brown) 125%);z-index:-3}
+    .catalog-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18vh;background:var(--oryzo-brown);z-index:-1}
+    .topbar{position:relative;z-index:5;height:84px;padding:0 clamp(24px,3.2vw,62px);display:flex;align-items:center;justify-content:space-between;color:var(--oryzo-cream)}
+    .brand{display:flex;align-items:center;gap:10px;font-size:clamp(22px,1.7vw,29px);font-weight:600;letter-spacing:-.04em}
+    .mark{width:22px;height:22px;display:grid;grid-template-columns:1fr 1fr;gap:3px}.mark i{display:block;background:currentColor}.mark i:nth-child(1),.mark i:nth-child(4){border-radius:1px 5px 1px 5px}.mark i:nth-child(2),.mark i:nth-child(3){border-radius:5px 1px 5px 1px}
+    nav{display:flex;align-items:center;gap:clamp(23px,2.8vw,50px);font-size:13px;font-weight:500;text-transform:uppercase}
+    nav a{position:relative;opacity:.84}nav a::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .28s ease}nav a:hover::after,nav a[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
+    .menu{display:none;text-transform:uppercase;font-size:12px}
+    .hero-kicker{position:absolute;left:clamp(24px,3.2vw,62px);top:104px;margin:0;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.02em}
+    .hero-title{position:absolute;z-index:2;top:13vh;left:50%;width:min(96vw,1600px);transform:translateX(-50%);margin:0;text-align:center;font-size:clamp(76px,11.2vw,206px);font-weight:500;line-height:.78;letter-spacing:-.065em;text-transform:none;white-space:nowrap}
+    .hero-title span{display:block;font-size:.25em;line-height:1;margin-bottom:.7em;letter-spacing:.01em;text-transform:uppercase}
+    .hero-deck{position:absolute;z-index:-2;left:0;right:0;bottom:18vh;height:28vh;background:var(--oryzo-cream)}
+    .hero-products{position:absolute;z-index:3;left:50%;bottom:15.3vh;width:min(86vw,1460px);height:auto;transform:translateX(-50%);filter:drop-shadow(0 20px 26px rgba(16,9,4,.25));pointer-events:none}
+    .hero-meta{position:absolute;z-index:4;left:clamp(24px,4vw,78px);right:clamp(24px,4vw,78px);bottom:19.6vh;display:flex;justify-content:space-between;color:var(--oryzo-black);font-family:var(--text);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.02em}
+    .scroll-cue{position:absolute;right:clamp(24px,3.2vw,62px);bottom:7vh;color:var(--oryzo-cream);font-size:11px;text-transform:uppercase;display:flex;align-items:center;gap:11px}.scroll-cue i{width:42px;height:1px;background:currentColor;display:block}
+
+    .catalog-surface{position:relative;z-index:3;margin-top:-25vh;border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;background:var(--oryzo-black);padding:clamp(70px,8vw,144px) clamp(20px,4vw,76px) clamp(90px,10vw,170px);box-shadow:0 -25px 70px rgba(0,0,0,.18)}
+    .catalog-inner{max-width:1760px;margin:0 auto}
+    .catalog-head{text-align:center;margin-bottom:clamp(50px,7vw,110px)}
+    .catalog-head p{margin:0 0 14px;font-size:clamp(13px,1.2vw,18px);font-weight:500;text-transform:uppercase}
+    .catalog-head h1{margin:0;font-size:clamp(74px,10vw,176px);font-weight:500;line-height:.82;letter-spacing:-.06em}
+    .catalog-head .lede{max-width:52ch;margin:28px auto 0;color:rgba(255,237,215,.5);font-family:var(--text);font-size:clamp(15px,1.2vw,20px);font-weight:400;line-height:1.45;text-transform:none}
+    .filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:clamp(34px,4vw,68px)}
+    .filters button{border:2px solid transparent;border-radius:3em;background:var(--oryzo-brown);color:var(--oryzo-cream);padding:1.25em 2em;font-size:12px;font-weight:500;line-height:1;text-transform:uppercase;cursor:pointer;transition:border-color .25s,background .25s,transform .25s}
+    .filters button:hover{border-color:rgba(220,80,0,.7);transform:translateY(-2px)}.filters button.is-active{border-color:var(--oryzo-orange);box-shadow:0 0 25px rgba(220,80,0,.22)}
+    .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.6vw,28px)}
+    .product{position:relative;min-height:clamp(470px,31vw,610px);overflow:hidden;border-radius:clamp(24px,2.4vw,42px);background:rgba(255,237,215,.025);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),background .35s}
+    .product:hover{transform:translateY(-7px);background:rgba(255,237,215,.055)}
+    .product-visual{height:68%;min-height:315px;display:grid;place-items:center;padding:clamp(22px,2.4vw,42px)}
+    .product-visual img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 20px 22px rgba(0,0,0,.3));transition:transform .5s cubic-bezier(.2,.7,.2,1)}.product:hover .product-visual img{transform:scale(1.035)}
+    .product-copy{margin-top:auto;padding:0 clamp(22px,2.2vw,38px) clamp(25px,2.4vw,42px)}
+    .status{display:block;margin:0 0 10px;color:var(--oryzo-orange);font-size:13px;font-weight:600}
+    .category{margin:0 0 9px;color:rgba(255,237,215,.5);font-family:var(--text);font-size:12px;font-weight:400}
+    .product h2{margin:0;max-width:15ch;font-size:clamp(25px,2.1vw,38px);font-weight:500;line-height:.98;letter-spacing:-.035em}
+    .product-bottom{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-top:28px}.product-bottom b{font-size:18px;font-weight:500}
+    .arrow{position:relative;display:grid;place-items:center;flex:0 0 auto;width:48px;height:48px;border:2px solid transparent;border-radius:50%;background:var(--oryzo-brown);color:var(--oryzo-cream);font-size:0;cursor:pointer;transition:border-color .25s,background .25s,transform .25s}
+    .arrow:hover{border-color:var(--oryzo-orange);transform:scale(1.06)}.arrow:active{transform:scale(.94)}
+    .arrow::before{content:"";width:19px;height:19px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L22 7H5.12'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L22 7H5.12'/%3E%3C/svg%3E") center/contain no-repeat}.arrow.added::before{display:none}.arrow.added::after{content:"✓";font-size:18px;font-weight:600}
+    .detail-card{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;min-height:clamp(430px,42vw,650px);margin-top:clamp(30px,5vw,86px);overflow:hidden;border-radius:clamp(28px,4vw,64px);background:rgba(255,237,215,.035)}
+    .detail-card img{width:100%;height:100%;max-height:650px;object-fit:contain;padding:clamp(30px,5vw,80px);filter:drop-shadow(0 24px 28px rgba(0,0,0,.35))}
+    .detail-copy{padding:clamp(34px,5vw,86px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.detail-copy p{margin:0 0 15px;color:var(--oryzo-orange);font-weight:600}.detail-copy h2{margin:0;max-width:12ch;font-size:clamp(46px,5.5vw,96px);font-weight:500;line-height:.86;letter-spacing:-.055em}.detail-copy a{margin-top:34px;border-radius:3em;background:var(--oryzo-brown);padding:1.35em 2.2em;font-size:13px;font-weight:500;text-transform:uppercase;border:2px solid transparent;transition:border-color .25s}.detail-copy a:hover{border-color:var(--oryzo-orange)}
+
+    .catalog-end{height:clamp(80px,9vw,150px);margin:0 clamp(16px,2vw,34px);border-radius:0 0 clamp(28px,4vw,64px) clamp(28px,4vw,64px);background:var(--oryzo-black)}
+    footer{min-height:330px;background:var(--pure-black);padding:clamp(70px,7vw,118px) clamp(24px,4vw,76px) 38px;color:var(--oryzo-cream)}
+    .footer-inner{max-width:1760px;margin:auto;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:40px}.footer-brand{font-size:28px;font-weight:600}.footer-col{font-family:var(--text);font-size:14px;line-height:1.8}.footer-col b{display:block;margin-bottom:10px;color:rgba(255,237,215,.45);font-family:var(--display);font-size:11px;font-weight:500;text-transform:uppercase}.footer-col a{display:block}.footer-bottom{max-width:1760px;margin:70px auto 0;padding-top:20px;border-top:1px solid rgba(255,237,215,.14);display:flex;justify-content:space-between;color:rgba(255,237,215,.45);font-size:12px}
+
+    @media(max-width:1280px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.product{min-height:540px}}
+    @media(max-width:960px){.hero-title{font-size:clamp(70px,12vw,132px)}.hero-products{width:94vw}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product{min-height:560px}.footer-inner{grid-template-columns:1.2fr repeat(3,1fr)}}
+    @media(max-width:620px){.intro-scroll{height:112vh}.catalog-hero{min-height:620px}.topbar{height:70px}.topbar nav{display:none}.topbar .menu{display:block;margin-left:auto}.hero-kicker{top:86px}.hero-title{top:16vh;width:90vw;font-size:clamp(48px,13vw,78px);line-height:.86;white-space:normal}.hero-title span{font-size:.24em}.hero-deck{height:31vh}.hero-products{bottom:16.5vh;width:108vw;max-width:none}.hero-meta{display:none}.catalog-surface{margin-top:-12vh;padding-inline:16px;border-radius:30px 30px 0 0}.catalog-head h1{font-size:clamp(64px,18vw,104px)}.filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}.filters button{flex:0 0 auto}.products{grid-template-columns:1fr}.product{min-height:540px}.detail-card{grid-template-columns:1fr}.detail-card img{height:360px}.detail-copy{padding-top:12px}.footer-inner{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:8px}}
+    @media(max-width:460px){.hero-products{width:98vw;left:50%}.scroll-cue{display:none}.product{min-height:500px}.footer-inner{grid-template-columns:1fr}.footer-brand{grid-column:auto}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.product,.product-visual img,.filters button,.arrow{transition:none}}
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Denta</a>
-    <nav aria-label="Primary"><a href="index.html">Home</a><a href="catalog.html" aria-current="page">Full catalog</a><a href="index.html#categories">Categories</a><a href="contact.html">Contacts</a></nav>
-    <a class="menu" href="index.html">Home</a>
-  </header>
-  <main>
-    <p class="eyebrow">Professional dental equipment</p>
-    <div class="heading-row"><h1>Full<br>catalog.</h1><p>Selected instruments for precise restorative, diagnostic and implant workflows — built for daily clinical use.</p></div>
-    <div class="filters" aria-label="Product filters"><button>All products</button><button>Shade matching</button><button>Restorative &amp; curing</button><button>Diagnostics</button><button>Implantology</button></div>
-    <section class="products" aria-label="Denta products">
-      <a class="product" href="product-e390-endo-motor.html?product=shade"><div class="product-visual"><img src="./denta-hero-assets/product-shade-glass-v1.png" alt="E220 Digital Shade Guide"></div><div class="product-copy"><p>Shade matching</p><h2>E220 Digital Shade Guide</h2><div class="product-bottom"><b>€357.95</b><span class="arrow" data-cart="E220 Digital Shade Guide" role="button" tabindex="0" aria-label="Add E220 Digital Shade Guide to cart">🛒</span></div></div></a>
-      <a class="product" href="product-e390-endo-motor.html?product=ilight"><div class="product-visual"><img src="./denta-hero-assets/product-ilight-glass-v1.png" alt="i-Light Pro Curing Light"></div><div class="product-copy"><p>Restorative &amp; curing</p><h2>i-Light Pro Curing Light</h2><div class="product-bottom"><b>€329.95</b><span class="arrow" data-cart="i-Light Pro Curing Light" role="button" tabindex="0" aria-label="Add i-Light Pro Curing Light to cart">🛒</span></div></div></a>
-      <a class="product" href="product-e390-endo-motor.html?product=caries"><div class="product-visual"><img src="./denta-hero-assets/product-caries-glass-v1.png" alt="LED Curing Light with Caries Detection"></div><div class="product-copy"><p>Diagnostics</p><h2>LED Curing Light</h2><div class="product-bottom"><b>€279.95</b><span class="arrow" data-cart="LED Curing Light" role="button" tabindex="0" aria-label="Add LED Curing Light to cart">🛒</span></div></div></a>
-      <a class="product" href="product-e390-endo-motor.html?product=fast"><div class="product-visual"><img src="./denta-hero-assets/product-fast-glass-v1.png" alt="1-Second Curing Light"></div><div class="product-copy"><p>Restorative &amp; curing</p><h2>1-Second Curing Light</h2><div class="product-bottom"><b>€329.95</b><span class="arrow" data-cart="1-Second Curing Light" role="button" tabindex="0" aria-label="Add 1-Second Curing Light to cart">🛒</span></div></div></a>
-      <a class="product" href="product-e390-endo-motor.html?product=torque"><div class="product-visual"><img src="./denta-hero-assets/product-torque-glass-v1.png" alt="Electric Implant Torque Wrench"></div><div class="product-copy"><p>Implantology</p><h2>Electric Implant Torque Wrench</h2><div class="product-bottom"><b>€339.95</b><span class="arrow" data-cart="Electric Implant Torque Wrench" role="button" tabindex="0" aria-label="Add Electric Implant Torque Wrench to cart">🛒</span></div></div></a>
-      <a class="product" href="product-implant-driver.html"><div class="product-visual"><img src="./denta-hero-assets/product-driver-glass-v1.png" alt="Electric Implant Driver Set"></div><div class="product-copy"><p>Implantology</p><h2>Electric Implant Driver Set</h2><div class="product-bottom"><b>€429.95</b><span class="arrow" data-cart="Electric Implant Driver Set" role="button" tabindex="0" aria-label="Add Electric Implant Driver Set to cart">🛒</span></div></div></a>
-      <article class="detail-card"><img src="./denta-hero-assets/product-endo-glass-v1.png" alt="E390 Endo Motor with locator"><div class="detail-copy"><p>Featured endodontics</p><h2>E390 Endo Motor with Locator.</h2><a href="product-e390-endo-motor.html">View product details&nbsp; ↗</a></div></article>
+  <div class="intro-scroll">
+    <section class="catalog-hero" aria-labelledby="catalog-hero-title">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Denta</a>
+        <nav aria-label="Primary"><a href="index.html">Home</a><a href="catalog.html" aria-current="page">Catalog</a><a href="index.html#categories">Categories</a><a href="about.html">About us</a><a href="contact.html">Contacts</a></nav>
+        <a class="menu" href="#catalog">Catalog</a>
+      </header>
+      <p class="hero-kicker">Professional dental equipment</p>
+      <h1 class="hero-title" id="catalog-hero-title"><span>Precision in every detail</span>Full catalog</h1>
+      <div class="hero-deck" aria-hidden="true"></div>
+      <img class="hero-products" src="./denta-hero-assets/catalog-hero-group-v1.png" alt="A curated group of Denta dental instruments">
+      <div class="hero-meta" aria-hidden="true"><span>Restorative · Diagnostics</span><span>Implantology · Endodontics</span></div>
+      <div class="scroll-cue" aria-hidden="true"><i></i>Scroll to explore</div>
     </section>
+  </div>
+
+  <main class="catalog-surface" id="catalog">
+    <div class="catalog-inner">
+      <header class="catalog-head">
+        <p>Choose your instrument</p>
+        <h1>Denta.</h1>
+        <p class="lede">Selected instruments for precise restorative, diagnostic and implant workflows — built for daily clinical use.</p>
+      </header>
+      <div class="filters" aria-label="Product filters"><button class="is-active">All products</button><button>Shade matching</button><button>Restorative &amp; curing</button><button>Diagnostics</button><button>Implantology</button></div>
+      <section class="products" aria-label="Denta products">
+        <a class="product" href="product-e390-endo-motor.html?product=shade"><div class="product-visual"><img src="./denta-hero-assets/product-shade-glass-v1.png" alt="E220 Digital Shade Guide"></div><div class="product-copy"><span class="status">New</span><p class="category">Shade matching</p><h2>E220 Digital Shade Guide</h2><div class="product-bottom"><b>€357.95</b><span class="arrow" data-cart="E220 Digital Shade Guide" role="button" tabindex="0" aria-label="Add E220 Digital Shade Guide to cart">Add to cart</span></div></div></a>
+        <a class="product" href="product-e390-endo-motor.html?product=ilight"><div class="product-visual"><img src="./denta-hero-assets/product-ilight-glass-v1.png" alt="i-Light Pro Curing Light"></div><div class="product-copy"><span class="status">New</span><p class="category">Restorative &amp; curing</p><h2>i-Light Pro Curing Light</h2><div class="product-bottom"><b>€329.95</b><span class="arrow" data-cart="i-Light Pro Curing Light" role="button" tabindex="0" aria-label="Add i-Light Pro Curing Light to cart">Add to cart</span></div></div></a>
+        <a class="product" href="product-e390-endo-motor.html?product=caries"><div class="product-visual"><img src="./denta-hero-assets/product-caries-glass-v1.png" alt="LED Curing Light with Caries Detection"></div><div class="product-copy"><span class="status">New</span><p class="category">Diagnostics</p><h2>LED Curing Light</h2><div class="product-bottom"><b>€279.95</b><span class="arrow" data-cart="LED Curing Light" role="button" tabindex="0" aria-label="Add LED Curing Light to cart">Add to cart</span></div></div></a>
+        <a class="product" href="product-e390-endo-motor.html?product=fast"><div class="product-visual"><img src="./denta-hero-assets/product-fast-glass-v1.png" alt="1-Second Curing Light"></div><div class="product-copy"><span class="status">New</span><p class="category">Restorative &amp; curing</p><h2>1-Second Curing Light</h2><div class="product-bottom"><b>€329.95</b><span class="arrow" data-cart="1-Second Curing Light" role="button" tabindex="0" aria-label="Add 1-Second Curing Light to cart">Add to cart</span></div></div></a>
+        <a class="product" href="product-e390-endo-motor.html?product=torque"><div class="product-visual"><img src="./denta-hero-assets/product-torque-glass-v1.png" alt="Electric Implant Torque Wrench"></div><div class="product-copy"><span class="status">New</span><p class="category">Implantology</p><h2>Electric Implant Torque Wrench</h2><div class="product-bottom"><b>€339.95</b><span class="arrow" data-cart="Electric Implant Torque Wrench" role="button" tabindex="0" aria-label="Add Electric Implant Torque Wrench to cart">Add to cart</span></div></div></a>
+        <a class="product" href="product-implant-driver.html"><div class="product-visual"><img src="./denta-hero-assets/product-driver-glass-v1.png" alt="Electric Implant Driver Set"></div><div class="product-copy"><span class="status">New</span><p class="category">Implantology</p><h2>Electric Implant Driver Set</h2><div class="product-bottom"><b>€429.95</b><span class="arrow" data-cart="Electric Implant Driver Set" role="button" tabindex="0" aria-label="Add Electric Implant Driver Set to cart">Add to cart</span></div></div></a>
+        <article class="detail-card"><img src="./denta-hero-assets/product-endo-glass-v1.png" alt="E390 Endo Motor with locator"><div class="detail-copy"><p>Featured endodontics</p><h2>E390 Endo Motor with Locator.</h2><a href="product-e390-endo-motor.html">View product details&nbsp; ↗</a></div></article>
+      </section>
+    </div>
   </main>
-  <footer><span>© 2026 · Denta</span><span>Dental equipment &amp; accessories</span></footer><script>document.querySelectorAll('[data-cart]').forEach(b=>{const add=e=>{e?.preventDefault();e?.stopPropagation();const c=JSON.parse(localStorage.getItem('denta-cart')||'[]');c.push(b.dataset.cart);localStorage.setItem('denta-cart',JSON.stringify(c));b.classList.add('added');setTimeout(()=>b.classList.remove('added'),1200)};b.addEventListener('click',add);b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){add(e)}})});</script>
+  <div class="catalog-end" aria-hidden="true"></div>
+  <footer id="contacts">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">Denta</a>
+      <div class="footer-col"><b>Shop</b><a href="catalog.html">Full catalog</a><a href="index.html#categories">Categories</a><a href="index.html#bestsellers">Best sellers</a></div>
+      <div class="footer-col"><b>Company</b><a href="about.html">About us</a><a href="contact.html">Contacts</a><a href="shipping.html">Shipping</a></div>
+      <div class="footer-col"><b>Contact</b><a href="mailto:hello@dentiphoto.com">hello@dentiphoto.com</a><a href="https://dentiphoto.com">dentiphoto.com</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 · Denta</span><span>Dental equipment &amp; accessories</span></div>
+  </footer>
+  <script>
+    document.querySelectorAll('[data-cart]').forEach(button=>{
+      const add=event=>{
+        event?.preventDefault();event?.stopPropagation();
+        const cart=JSON.parse(localStorage.getItem('denta-cart')||'[]');
+        cart.push(button.dataset.cart);localStorage.setItem('denta-cart',JSON.stringify(cart));
+        button.classList.add('added');setTimeout(()=>button.classList.remove('added'),1200);
+      };
+      button.addEventListener('click',add);
+      button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' ')add(event)});
+    });
+    document.querySelectorAll('.filters button').forEach(button=>button.addEventListener('click',()=>{
+      document.querySelectorAll('.filters button').forEach(item=>item.classList.remove('is-active'));
+      button.classList.add('is-active');
+    }));
+  </script>
 </body>
 </html>
