@@ -44,7 +44,7 @@
     .hero-meta{position:absolute;z-index:4;left:clamp(24px,4vw,78px);right:clamp(24px,4vw,78px);bottom:19.6vh;display:flex;justify-content:space-between;color:var(--oryzo-black);font-family:var(--text);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.02em}
     .scroll-cue{position:absolute;right:clamp(24px,3.2vw,62px);bottom:7vh;color:var(--oryzo-cream);font-size:11px;text-transform:uppercase;display:flex;align-items:center;gap:11px}.scroll-cue i{width:42px;height:1px;background:currentColor;display:block}
 
-    .catalog-surface{position:relative;z-index:3;margin-top:calc(0px - var(--catalog-hero-height));border-radius:clamp(28px,4vw,64px);background:#3a3330;padding:clamp(34px,3.5vw,64px) clamp(18px,3vw,58px) clamp(90px,9vw,154px);box-shadow:0 -25px 70px rgba(0,0,0,.18);color:#f2f2f2}
+    .catalog-surface{position:relative;z-index:3;margin-top:calc(0px - var(--catalog-hero-height));border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;background:#3a3330;padding:clamp(34px,3.5vw,64px) clamp(18px,3vw,58px) clamp(90px,9vw,154px);box-shadow:0 -25px 70px rgba(0,0,0,.18);color:#f2f2f2}
     .catalog-inner{max-width:1660px;margin:0 auto}
     .catalog-bar{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:clamp(26px,3vw,48px);padding:0 2px}
     .catalog-bar h1{margin:0;font-size:clamp(28px,2.4vw,42px);font-weight:400;line-height:1;letter-spacing:-.035em}
@@ -67,14 +67,16 @@
     .product h2{margin:0;color:#f2f2f2;font-family:var(--display);font-size:clamp(18px,1.2vw,22px);font-weight:400;line-height:1.24;letter-spacing:-.015em}
     .product-bottom{display:flex;align-items:baseline;gap:10px;margin-top:7px;font-size:clamp(16px,1vw,20px);line-height:1.2}.product-bottom b{font-weight:400}.status{color:#f36d24;font-size:.82em;font-weight:500}
 
-    .catalog-end{display:none}
-    footer{position:relative;min-height:clamp(500px,42vw,650px);overflow:hidden;isolation:isolate;border-top:1px solid #4e4845;background:#3a3330;padding:clamp(58px,5vw,86px) clamp(24px,4vw,76px) 0;color:var(--oryzo-cream)}
+    .catalog-end{height:clamp(86px,7.6vw,118px);display:flex;align-items:center;justify-content:center;gap:16px;border-bottom:1px solid #4e4845;background:#292523;color:#f2f2f2;font-family:var(--text);font-size:clamp(12px,.9vw,15px);font-weight:500;letter-spacing:.035em;text-transform:uppercase}
+    .catalog-end::before{content:"Denta"}.catalog-end::after{content:"Full catalog";color:#817975}
+    .catalog-end span{width:7px;height:7px;border-top:1px solid #817975;border-right:1px solid #817975;transform:rotate(45deg)}
+    footer{position:relative;min-height:clamp(500px,42vw,650px);overflow:hidden;isolation:isolate;background:#3a3330;padding:clamp(58px,5vw,86px) clamp(24px,4vw,76px) 0;color:var(--oryzo-cream)}
     #catalogHalftoneCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
     .footer-inner{position:relative;z-index:2;max-width:1760px;margin:auto;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:40px}.footer-brand{font-size:28px;font-weight:600}.footer-col{font-family:var(--text);font-size:14px;line-height:1.8}.footer-col b{display:block;margin-bottom:10px;color:rgba(255,237,215,.45);font-family:var(--display);font-size:11px;font-weight:500;text-transform:uppercase}.footer-col a{display:block}.footer-bottom{position:absolute;z-index:2;left:clamp(24px,4vw,76px);right:clamp(24px,4vw,76px);top:clamp(178px,14vw,220px);margin:0;padding-top:18px;border-top:1px solid rgba(255,237,215,.14);display:flex;justify-content:space-between;color:rgba(255,237,215,.45);font-size:12px;pointer-events:none}
 
     @media(max-width:1280px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:960px){.hero-title{font-size:clamp(70px,12vw,132px)}.hero-products{width:82vw}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-inner{grid-template-columns:1.2fr repeat(3,1fr)}}
-    @media(max-width:620px){:root{--catalog-hero-height:max(100svh,620px)}.topbar{height:70px}.topbar nav{display:none}.topbar .menu{display:block;margin-left:auto}.hero-kicker{top:86px}.hero-title{top:16vh;width:90vw;font-size:clamp(48px,13vw,78px);line-height:.86;white-space:normal}.hero-title span{font-size:.24em}.hero-deck{height:31vh}.hero-products{bottom:16.5vh;width:96vw;max-width:none}.hero-meta{display:none}.catalog-surface{padding-inline:16px;border-radius:30px}.catalog-bar{align-items:flex-start;flex-direction:column}.catalog-bar p{text-align:left}.products{grid-template-columns:1fr;row-gap:48px}.product-visual{aspect-ratio:1.08}.product-visual img{width:84%;height:84%}.product h2{min-height:0}.footer-inner{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}footer{min-height:640px}.footer-bottom{top:310px;flex-direction:column;gap:8px}}
+    @media(max-width:620px){:root{--catalog-hero-height:max(100svh,620px)}.topbar{height:70px}.topbar nav{display:none}.topbar .menu{display:block;margin-left:auto}.hero-kicker{top:86px}.hero-title{top:16vh;width:90vw;font-size:clamp(48px,13vw,78px);line-height:.86;white-space:normal}.hero-title span{font-size:.24em}.hero-deck{height:31vh}.hero-products{bottom:16.5vh;width:96vw;max-width:none}.hero-meta{display:none}.catalog-surface{padding-inline:16px;border-radius:30px 30px 0 0}.catalog-bar{align-items:flex-start;flex-direction:column}.catalog-bar p{text-align:left}.products{grid-template-columns:1fr;row-gap:48px}.product-visual{aspect-ratio:1.08}.product-visual img{width:84%;height:84%}.product h2{min-height:0}.footer-inner{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}footer{min-height:640px}.footer-bottom{top:310px;flex-direction:column;gap:8px}}
     @media(max-width:460px){.hero-products{width:92vw;left:50%}.scroll-cue{display:none}.footer-inner{grid-template-columns:1fr}.footer-brand{grid-column:auto}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.product-visual img,.product-add{transition:none}}
   </style>
@@ -113,7 +115,7 @@
       </section>
     </div>
   </main>
-  <div class="catalog-end" aria-hidden="true"></div>
+  <div class="catalog-end" aria-hidden="true"><span></span></div>
   <footer id="contacts">
     <canvas id="catalogHalftoneCanvas" aria-hidden="true"></canvas>
     <div class="footer-inner">
