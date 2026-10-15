@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Denta product</title>
+  <script>
+    const legacyProducts={oled:'oled',torque:'electricTorque',curing:'curing7',heater:'heater',mirror:'mirror'};
+    const legacyKey=new URLSearchParams(location.search).get('product');
+    location.replace(`product-e390-new.html?product=${legacyProducts[legacyKey]||'oled'}`);
+  </script>
+</head>
+<body><a href="product-e390-new.html?product=oled">Open product</a></body>
+</html>
