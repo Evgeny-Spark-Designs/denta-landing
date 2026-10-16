@@ -10,6 +10,7 @@
     header[data-site-navigation] > .brand{grid-column:1;justify-self:start}
     header[data-site-navigation] > nav{grid-column:2;justify-self:center;display:flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap}
     .site-nav-actions{grid-column:3;justify-self:end;display:flex;align-items:center;gap:7px;min-width:84px;justify-content:flex-end}
+    header[data-site-navigation][data-header-layout="catalog"] .site-nav-actions{margin-right:clamp(24px,1.65vw,32px)}
     .site-nav-button{width:38px;height:38px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:transparent;color:inherit;cursor:pointer;transition:background .2s ease,color .2s ease}.site-nav-button:hover{background:rgba(255,255,255,.09);color:var(--orange,#f36d24)}
     .site-nav-button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.site-cart{position:relative}.site-cart-count{position:absolute;right:-2px;top:-1px;min-width:14px;height:14px;padding:0 3px;display:grid;place-items:center;border-radius:20px;background:var(--orange,#f36d24);color:#21130d;font:700 8px/1 Arial,sans-serif}
     .site-search{grid-column:2;display:none;align-items:center;width:min(620px,45vw);height:42px;padding:0 8px 0 17px;border:1px solid color-mix(in srgb,currentColor 28%,transparent);border-radius:999px;background:rgba(20,17,15,.28);color:inherit}.site-search svg{width:16px;height:16px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.5}.site-search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:inherit;font:500 13px var(--text,Arial,sans-serif)}.site-search input::placeholder{color:currentColor;opacity:.55}.site-search button{width:28px;height:28px;padding:0;border:0;border-radius:50%;background:transparent;color:inherit;font-size:20px;line-height:1;cursor:pointer}.site-search button:hover{background:rgba(255,255,255,.1)}
@@ -22,10 +23,16 @@
     const header = document.querySelector('header.topbar, header.top');
     if (!header || header.dataset.siteNavigation) return;
     header.dataset.siteNavigation = 'true';
+    if (header.closest('.catalog-hero')) header.dataset.headerLayout = 'catalog';
     const nav = header.querySelector(':scope > nav');
     if (!nav) return;
 
     const links = [...nav.querySelectorAll('a')];
+    const storeLink = links.find(link => /^(?:index\.html(?:#store)?|#store)$/i.test(link.getAttribute('href') || ''));
+    if (storeLink) {
+      storeLink.href = 'index.html';
+      storeLink.textContent = 'Home';
+    }
     if (!links.some(link => /bundles\.html(?:$|[?#])/.test(link.getAttribute('href') || ''))) {
       const bundles = document.createElement('a');
       bundles.href = 'bundles.html';
