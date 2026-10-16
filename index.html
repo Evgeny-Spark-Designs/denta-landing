@@ -5,7 +5,26 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Denta — Modern dental care</title>
   <link rel="preconnect" href="https://use.typekit.net">
-  <link rel="stylesheet" href="https://use.typekit.net/pmn6ngx.css">
+  <link rel="preload" href="https://use.typekit.net/pmn6ngx.css" as="style">
+  <link id="typekit-fonts" rel="stylesheet" href="https://use.typekit.net/pmn6ngx.css">
+  <style>html.fonts-pending body{visibility:hidden}</style>
+  <script>
+    document.documentElement.classList.add('fonts-pending');
+    (() => {
+      const reveal = () => document.documentElement.classList.remove('fonts-pending');
+      if (!document.fonts) { addEventListener('load', reveal, { once: true }); return; }
+      const stylesheet = document.getElementById('typekit-fonts');
+      const stylesheetReady = stylesheet?.sheet ? Promise.resolve() : new Promise((resolve, reject) => {
+        stylesheet?.addEventListener('load', resolve, { once: true });
+        stylesheet?.addEventListener('error', reject, { once: true });
+      });
+      const ready = stylesheetReady.then(() => Promise.all([
+        document.fonts.load('400 1em "halyard-display-variable"'),
+        document.fonts.load('400 1em "halyard-text-variable"')
+      ]));
+      ready.then(reveal, reveal);
+    })();
+  </script>
   <style>
     :root{
       --ink:#fff7ed;
@@ -13,10 +32,11 @@
       --orange:#bb3207;
       --orange-deep:#8d210c;
       --ease:cubic-bezier(.2,.75,.25,1);
+      --display:"halyard-display-variable","Helvetica Neue",Helvetica,Arial,sans-serif;
       --text:"halyard-text-variable","Helvetica Neue",Helvetica,Arial,sans-serif;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+    html,body{margin:0;min-height:100%;color:var(--ink);font-family:var(--display)}
     html{background:#711d11}
     body{
       overflow-x:hidden;
@@ -161,15 +181,16 @@
       transition:.28s var(--ease);
     }
     .category-card:hover .category-arrow{opacity:1;transform:none}
-    .showcase{padding:0 clamp(28px,3.15vw,64px) 44px;color:var(--ink)}
+    .showcase{padding:0 clamp(28px,3.15vw,64px) clamp(54px,6vw,104px);color:var(--ink)}
     .showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,clamp(155px,16vw,288px));gap:clamp(18px,1.55vw,30px);max-width:1800px;margin:0 auto}
-    .showcase-card{position:relative;display:block;overflow:hidden;border-radius:20px;min-height:0;color:#fff;background:#141414;isolation:isolate}
-    .showcase-card img{position:absolute;inset:0;width:82%;height:82%;margin:auto;object-fit:contain;display:block;transition:transform .5s var(--ease)}
-    .showcase-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 38%,rgba(0,0,0,.46) 100%);pointer-events:none}
-    .showcase-card span{position:absolute;z-index:2;left:clamp(22px,2vw,62px);right:24px;bottom:clamp(22px,2vw,48px);font-size:clamp(21px,2.1vw,38px);line-height:1.08;font-weight:700;letter-spacing:-.04em;max-width:72%}
-    .showcase-card.light{color:#080808}.showcase-card.light::after{background:linear-gradient(180deg,transparent 32%,rgba(255,255,255,.44) 100%)}
+    .showcase-card{position:relative;display:block;overflow:hidden;border:1px solid rgba(255,242,230,.11);border-radius:20px;min-height:0;color:#fff;background:#141414;isolation:isolate;transition:border-color .35s var(--ease),transform .35s var(--ease)}
+    .showcase-card::before{content:"";position:absolute;z-index:1;inset:14px;border:1px solid rgba(255,242,230,.12);border-radius:11px;pointer-events:none;transition:inset .35s var(--ease),border-color .35s var(--ease)}
+    .showcase-card img{position:absolute;inset:0;width:82%;height:82%;margin:auto;object-fit:contain;display:block;filter:drop-shadow(0 18px 18px rgba(0,0,0,.24));transition:transform .55s var(--ease),filter .55s var(--ease)}
+    .showcase-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 34%,rgba(0,0,0,.72) 100%);pointer-events:none}
+    .showcase-card-meta{position:absolute;z-index:2;left:clamp(22px,2vw,62px);right:clamp(22px,2vw,62px);bottom:clamp(20px,2vw,42px);display:flex;align-items:end;justify-content:space-between;gap:20px}.showcase-card-meta small{display:block;margin-bottom:9px;color:#e5854e;font:600 10px var(--text);letter-spacing:.1em;text-transform:uppercase}.showcase-card-meta strong{display:block;max-width:13ch;font-size:clamp(21px,2.1vw,38px);font-weight:500;line-height:1.02;letter-spacing:-.05em}.showcase-card-meta em{display:block;max-width:16ch;color:rgba(255,245,235,.72);font:500 11px/1.25 var(--text);font-style:normal;text-align:right}.showcase-card-arrow{display:grid;place-items:center;position:absolute;z-index:3;right:28px;top:28px;width:34px;height:34px;border:1px solid rgba(255,242,230,.38);border-radius:50%;color:#fff;font:400 18px/1 var(--display);opacity:0;transform:translate(-5px,5px);transition:opacity .3s var(--ease),transform .3s var(--ease),background .3s var(--ease),color .3s var(--ease)}
+    .showcase-card:nth-child(1) img{transform:translate(-10%,-6%) scale(1.05)}.showcase-card:nth-child(2) img{transform:translate(8%,-3%) scale(1.08)}.showcase-card:nth-child(3) img{transform:translate(-7%,4%) scale(1.1)}.showcase-card:nth-child(4) img{transform:translate(11%,4%) scale(1.08)}
+    .showcase-card:hover{border-color:rgba(243,109,36,.72);transform:translateY(-3px)}.showcase-card:hover::before{inset:10px;border-color:rgba(243,109,36,.5)}.showcase-card:hover img{filter:drop-shadow(0 24px 26px rgba(0,0,0,.34))}.showcase-card:nth-child(1):hover img{transform:translate(-10%,-6%) scale(1.1)}.showcase-card:nth-child(2):hover img{transform:translate(8%,-3%) scale(1.13)}.showcase-card:nth-child(3):hover img{transform:translate(-7%,4%) scale(1.15)}.showcase-card:nth-child(4):hover img{transform:translate(11%,4%) scale(1.13)}.showcase-card:hover .showcase-card-arrow{opacity:1;transform:none;background:#f36d24;color:#22150f}
     .showcase-card:nth-child(1){grid-column:1;grid-row:1}.showcase-card:nth-child(2){grid-column:2;grid-row:1 / span 2}.showcase-card:nth-child(3){grid-column:1;grid-row:2 / span 2}.showcase-card:nth-child(4){grid-column:2;grid-row:3}
-    .showcase-card:hover img{transform:scale(1.025)}
 .bestsellers{position:sticky;top:0;z-index:1;padding:34px 0 80px;background:transparent;color:var(--ink);overflow:hidden}
     .best-head{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(28px,4vw,78px) 24px}
     .best-head h2{margin:0;font-size:clamp(38px,4vw,76px);letter-spacing:-.06em;font-weight:500}
@@ -205,7 +226,7 @@
     @media(max-width:600px){
       .shell{grid-template-rows:11svh 1fr 12svh}.brand{padding-left:20px}.cta-wrap{padding-right:16px}.cta{padding:10px 12px}.intro{left:20px;top:4%;width:56vw;font-size:13px}.headline{left:20px;bottom:4%;width:62vw;font-size:50px}.implant-wrap{left:72%;top:8%;width:62vw;height:66%}.implant{height:54svh}.footer-item{padding:0 20px}.grid .main-v{left:58%}.grid .main-h{top:88%}
       .hero-specs{display:none}
-      .showcase{padding:0 16px 32px}.showcase-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,52vw);gap:16px}.showcase-card:nth-child(n){grid-column:auto;grid-row:auto}.showcase-card span{left:20px;bottom:20px;font-size:24px}
+      .showcase{padding:0 16px 40px}.showcase-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,52vw);gap:16px}.showcase-card:nth-child(n){grid-column:auto;grid-row:auto}.showcase-card-meta{left:20px;right:20px;bottom:20px}.showcase-card-meta strong{font-size:24px}.showcase-card-meta em{font-size:10px}.showcase-card::before{inset:10px}.showcase-card-arrow{display:none}
       .closing-panel{margin-top:-24px;border-radius:24px 24px 0 0}.worldwide{grid-template-columns:1fr;gap:22px;min-height:700px;padding:56px 20px 28px;border-radius:24px 24px 0 0}.worldwide h2{font-size:clamp(48px,15vw,76px)}.worldwide-copy{justify-self:start}.worldwide-copy>p:not(.worldwide-kicker){margin-top:22px}.worldwide-stats{margin-top:28px}.worldwide-globe{width:min(124%,620px);min-height:0;order:-1}
       .halftone-footer{height:470px;margin-top:0;border-radius:0}.footer-top{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px;padding-inline:20px}.footer-brandline{grid-column:1 / -1}.footer-rule{left:20px;right:20px;top:177px}
     }
@@ -285,19 +306,19 @@
     <div class="showcase-grid">
       <a class="showcase-card" href="bundle-detail.html?bundle=photo">
         <img src="./denta-hero-assets/bundle-photo-protocol-pro-v1.png" alt="Photo Protocol Pro bundle">
-        <span>Photo Protocol Pro</span>
+        <div class="showcase-card-meta"><div><small>01 / Dental photography</small><strong>Photo Protocol Pro</strong></div><em>6 tools<br>for accurate records</em></div><i class="showcase-card-arrow" aria-hidden="true">↗</i>
       </a>
       <a class="showcase-card" href="bundle-detail.html?bundle=endo">
         <img src="./denta-hero-assets/bundle-endo-pro-v1.png" alt="Endo Pro bundle">
-        <span>Endo Pro</span>
+        <div class="showcase-card-meta"><div><small>02 / Endodontics</small><strong>Endo Pro</strong></div><em>2 systems<br>one workflow</em></div><i class="showcase-card-arrow" aria-hidden="true">↗</i>
       </a>
       <a class="showcase-card" href="bundle-detail.html?bundle=restoration">
         <img src="./denta-hero-assets/bundle-restoration-v1.png" alt="Restoration Turnkey bundle">
-        <span>Restoration Turnkey</span>
+        <div class="showcase-card-meta"><div><small>03 / Restoration</small><strong>Restoration Turnkey</strong></div><em>3 instruments<br>for daily care</em></div><i class="showcase-card-arrow" aria-hidden="true">↗</i>
       </a>
       <a class="showcase-card" href="bundle-detail.html?bundle=implant">
         <img src="./denta-hero-assets/bundle-implant-protocol-v1.png" alt="Implant Protocol bundle">
-        <span>Implant Protocol</span>
+        <div class="showcase-card-meta"><div><small>04 / Implantology</small><strong>Implant Protocol</strong></div><em>Precision kit<br>for implants</em></div><i class="showcase-card-arrow" aria-hidden="true">↗</i>
       </a>
     </div>
   </section>

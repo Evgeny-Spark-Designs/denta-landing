@@ -28,16 +28,23 @@
     @media(max-width:440px){.bundle-grid{grid-template-columns:1fr!important}.showcase-grid{grid-template-columns:1fr!important;grid-template-rows:repeat(4,58vw)!important}.catalog-surface .details{grid-template-columns:1fr!important}}
     .site-menu-trigger{display:none}.site-menu-trigger svg{stroke-width:1.7}
     @media(max-width:760px){
-      header[data-site-navigation]{grid-template-columns:minmax(0,1fr) auto!important}
+      body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+      header[data-site-navigation]{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;min-height:70px}
+      header[data-site-navigation] > .brand{grid-column:2;justify-self:center;padding-left:0!important}
       header[data-site-navigation] > nav{display:none!important}
-      .site-nav-actions{grid-column:2;gap:2px;min-width:0}.site-nav-button{width:38px;height:38px}
-      .site-menu-trigger{display:grid}
-      .site-search{grid-column:1;grid-row:1;width:100%;height:38px;margin:0;padding-left:13px}
+      .site-nav-actions{position:static;grid-column:3;gap:2px;min-width:0}.site-nav-button{width:38px;height:38px}
+      .site-menu-trigger{position:absolute;z-index:2;left:12px;top:50%;display:grid;transform:translateY(-50%)}
+      .site-nav-actions .site-cart{display:none}
+      .site-search{grid-column:1/3;grid-row:1;width:100%;height:38px;margin:0;padding-left:13px}
       header[data-site-navigation].search-open > .brand{display:none}
       header[data-site-navigation].search-open > .site-search{display:flex}
+      header[data-site-navigation].search-open > .site-nav-actions{grid-column:3}
+      header[data-site-navigation].search-open .site-menu-trigger{display:none}
       header[data-site-navigation].menu-open > nav{position:absolute;z-index:1001;top:calc(100% + 10px);left:12px;right:12px;display:flex!important;flex-direction:column;align-items:stretch!important;gap:0;height:auto!important;padding:8px;border:1px solid color-mix(in srgb,currentColor 22%,transparent);border-radius:14px;background:var(--panel,#26211e);color:var(--ink,#f2f2f2);box-shadow:0 18px 42px rgba(0,0,0,.28)}
       header[data-site-navigation].menu-open > nav a{padding:13px 12px;font-size:12px;text-align:left;opacity:1}
       header[data-site-navigation].menu-open > nav a + a{border-top:1px solid color-mix(in srgb,currentColor 13%,transparent)}
+      .site-mobile-nav{position:fixed;z-index:1100;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:end;height:calc(76px + env(safe-area-inset-bottom));padding:8px 10px calc(8px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.12);background:rgba(31,27,25,.94);box-shadow:0 -12px 36px rgba(0,0,0,.22);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:#eee8e2}
+      .site-mobile-nav a,.site-mobile-nav button{display:flex;min-width:0;height:56px;align-items:center;justify-content:center;border:0;background:transparent;color:inherit;font:500 9px/1.1 var(--text,Arial,sans-serif);letter-spacing:.055em;text-align:center;text-transform:uppercase;cursor:pointer}.site-mobile-nav a:not(.site-mobile-home),.site-mobile-nav button{padding-top:17px;position:relative}.site-mobile-nav a:not(.site-mobile-home)::before,.site-mobile-nav button::before{position:absolute;top:5px;left:50%;width:16px;height:16px;content:"";transform:translateX(-50%);border:1.4px solid currentColor;border-radius:1px}.site-mobile-nav .site-mobile-bundles::before{width:17px;height:12px;border-radius:50%;border-top-color:transparent}.site-mobile-nav .site-mobile-cart::before{width:17px;height:12px;border-width:0 0 1.4px 1.4px;transform:translateX(-50%) skew(-10deg)}.site-mobile-nav .site-mobile-about::before{width:14px;height:14px;border-radius:50%}.site-mobile-nav .site-mobile-home{align-self:start;width:54px;height:54px;justify-self:center;margin-top:-22px;border:1px solid var(--orange,#f36d24);border-radius:18px;background:#2d2825;box-shadow:0 0 0 5px rgba(31,27,25,.94);font-size:0}.site-mobile-home span{display:grid;width:22px;height:16px;grid-template-columns:1fr 1fr;gap:3px}.site-mobile-home i{display:block;background:var(--orange,#f36d24);border-radius:1px 4px 1px 4px}.site-mobile-home i:nth-child(2),.site-mobile-home i:nth-child(3){border-radius:4px 1px 4px 1px}.site-mobile-nav [aria-current="page"]{color:var(--orange,#f36d24)}.site-mobile-cart-count{position:absolute;top:0;left:calc(50% + 6px);min-width:13px;height:13px;padding:0 2px;display:grid;place-items:center;border-radius:50%;background:var(--orange,#f36d24);color:#24150c;font:700 8px/1 Arial,sans-serif}
     }
   `;
 
@@ -97,12 +104,26 @@
     drawer.innerHTML = '<header><h2>Shopping cart</h2><button class="site-cart-close" type="button" aria-label="Close shopping cart">×</button></header><p class="site-cart-summary">Your cart is ready for selected equipment.</p>';
     document.body.append(drawer);
 
+    const mobileNav = document.createElement('nav');
+    mobileNav.className = 'site-mobile-nav';
+    mobileNav.setAttribute('aria-label', 'Mobile navigation');
+    mobileNav.innerHTML = `<a class="site-mobile-catalog" href="catalog.html">Catalog</a><a class="site-mobile-bundles" href="bundles.html">Bundles</a><a class="site-mobile-home" href="index.html" aria-label="Home"><span aria-hidden="true"><i></i><i></i><i></i><i></i></span></a><button class="site-mobile-cart" type="button" aria-label="Open shopping cart">Cart<span class="site-mobile-cart-count">0</span></button><a class="site-mobile-about" href="about.html">About</a>`;
+    const currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    mobileNav.querySelectorAll('a').forEach(link => {
+      const target = (link.getAttribute('href') || '').toLowerCase();
+      if (target === currentPage || (currentPage === '' && target === 'index.html')) link.setAttribute('aria-current', 'page');
+    });
+    document.body.append(mobileNav);
+
     const cartBadge = actions.querySelector('.site-cart-count');
+    const mobileCartBadge = mobileNav.querySelector('.site-mobile-cart-count');
     const cartSummary = drawer.querySelector('.site-cart-summary');
     let cartCount = Number(localStorage.getItem('denta-cart-count') || 0);
     const renderCart = () => {
       cartBadge.textContent = cartCount;
       cartBadge.hidden = cartCount === 0;
+      mobileCartBadge.textContent = cartCount;
+      mobileCartBadge.hidden = cartCount === 0;
       cartSummary.textContent = cartCount ? `${cartCount} ${cartCount === 1 ? 'item' : 'items'} selected for your clinical workflow.` : 'Your cart is ready for selected equipment.';
     };
     renderCart();
@@ -148,6 +169,7 @@
       closeMenu();
     });
     actions.querySelector('.site-cart').addEventListener('click', () => drawer.classList.add('is-open'));
+    mobileNav.querySelector('.site-mobile-cart').addEventListener('click', () => drawer.classList.add('is-open'));
     drawer.querySelector('.site-cart-close').addEventListener('click', () => drawer.classList.remove('is-open'));
     document.addEventListener('click', event => {
       const add = event.target.closest('[data-cart],[data-recommendation-cart],#addToCart,.bundle-add');
