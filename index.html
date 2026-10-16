@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Denta — Modern dental care</title>
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="stylesheet" href="https://use.typekit.net/pmn6ngx.css">
   <style>
     :root{
       --ink:#fff7ed;
@@ -11,6 +13,7 @@
       --orange:#bb3207;
       --orange-deep:#8d210c;
       --ease:cubic-bezier(.2,.75,.25,1);
+      --text:"halyard-text-variable","Helvetica Neue",Helvetica,Arial,sans-serif;
     }
     *{box-sizing:border-box}
     html,body{margin:0;min-height:100%;color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
@@ -39,14 +42,15 @@
     .grid .main-v{left:64%;top:0;bottom:0;width:1px}
     .grid .main-h{display:none}
     .shell{position:relative;z-index:2;min-height:100svh;display:grid;grid-template-rows:13svh 1fr 14svh}
-    .topbar{display:grid;grid-template-columns:25% 50% 25%;align-items:center}
+    .topbar{display:grid;grid-template-columns:25% 50% 25%;align-items:center;height:88px;align-self:start}
     .brand{display:flex;align-items:center;gap:10px;padding-left:4vw;font-size:clamp(17px,1.25vw,24px);font-weight:700;letter-spacing:-.04em}
     .mark{width:22px;height:22px;display:grid;grid-template-columns:1fr 1fr;gap:3px;transform:rotate(0deg)}
     .mark span{display:block;background:currentColor}
     .mark span:nth-child(1){border-radius:1px 5px 1px 5px}.mark span:nth-child(2){border-radius:5px 1px 5px 1px}.mark span:nth-child(3){border-radius:5px 1px 5px 1px}.mark span:nth-child(4){border-radius:1px 5px 1px 5px}
-    .nav{height:100%;display:flex;align-items:center;justify-content:center;gap:42px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12px;font-weight:500;text-transform:uppercase}
+    .nav{height:100%;display:flex;align-items:center;justify-content:center;gap:42px;font-family:var(--text,"Helvetica Neue",Helvetica,Arial,sans-serif);font-size:12px;font-weight:500;text-transform:uppercase}
     .nav a{position:relative;opacity:.88;transition:opacity .25s}
     .nav a:hover{opacity:1}
+    .hero .site-nav-actions{margin-right:clamp(24px,1.65vw,32px)}
     .cta-wrap{display:flex;justify-content:center}
     .cta{padding:13px 19px;border:1px solid rgba(255,245,235,.7);background:transparent;font-size:clamp(11px,.72vw,14px);cursor:pointer;transition:.25s var(--ease)}
     .cta:hover{background:var(--ink);color:#82210c}
