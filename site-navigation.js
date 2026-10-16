@@ -97,7 +97,10 @@
 
     const input = search.querySelector('input');
     const closeSearch = () => { header.classList.remove('search-open'); actions.querySelector('.site-search-trigger').focus(); };
-    actions.querySelector('.site-search-trigger').addEventListener('click', () => { header.classList.add('search-open'); input.focus(); });
+    actions.querySelector('.site-search-trigger').addEventListener('click', () => {
+      if (header.classList.contains('search-open')) closeSearch();
+      else { header.classList.add('search-open'); input.focus(); }
+    });
     search.querySelector('button').addEventListener('click', closeSearch);
     search.addEventListener('submit', event => {
       event.preventDefault();
