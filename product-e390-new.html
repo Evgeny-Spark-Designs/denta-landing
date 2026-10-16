@@ -246,6 +246,18 @@
     }
     const discovery=document.getElementById('cariesDiscovery'),slider=document.getElementById('recommendationSlider');
     discovery.classList.add('is-visible');
+    const bundleTeasers=discovery.querySelector('.bundle-teasers');
+    const bundleTeaserData=[
+      {key:'photo',label:'01 / Photo documentation',name:'Photo Protocol Pro',description:'A complete smartphone dental-photography setup for crisp, repeatable clinical documentation.',image:'bundle-photo-protocol-pro-v1.png',products:['prolight','antifog','mirror']},
+      {key:'restoration',label:'02 / Restorative care',name:'Complete Restoration',description:'Three precise tools for a smooth, efficient restorative workflow from shade selection to curing.',image:'bundle-restoration-v1.png',products:['heater','shade','caries']},
+      {key:'essentials',label:'03 / Endodontics',name:'Endodontic Essentials',description:'Core digital endodontic equipment for controlled preparation and restorative finishing.',image:'bundle-endo-kit-v1.png',products:['e390','curing7']},
+      {key:'endo',label:'04 / Endodontics',name:'Endodontic Pro',description:'A professional endodontic pairing for predictable canal treatment and restorative curing.',image:'bundle-endo-pro-v1.png',products:['csmart','caries']},
+      {key:'implant',label:'05 / Implantology',name:'Implant Protocol',description:'Essential powered and prosthetic tools for a controlled implant-restoration workflow.',image:'bundle-implant-protocol-v1.png',products:['electricTorque','prosthetic']},
+      {key:'hygiene',label:'06 / Hygiene & laboratory',name:'Hygiene & Laboratory',description:'A compact setup for instrument cleaning, extraction and focused illumination.',image:'bundle-hygiene-lab-v1.png',products:['ultrasonic','dustcollector','headlight']}
+    ];
+    const relatedBundles=bundleTeaserData.filter(bundle=>bundle.products.includes(key));
+    const selectedBundles=[...relatedBundles,...bundleTeaserData.filter(bundle=>!relatedBundles.includes(bundle))].slice(0,2);
+    bundleTeasers.innerHTML=selectedBundles.map(bundle=>`<a class="bundle-teaser" href="bundle-detail.html?bundle=${bundle.key}"><span class="bundle-teaser-image"><img src="./denta-hero-assets/${bundle.image}" alt="${bundle.name} bundle"></span><span class="bundle-teaser-copy"><span class="section-label">${bundle.label}</span><h3>${bundle.name}</h3><p>${bundle.description}</p><span>Explore bundle →</span></span></a>`).join('');
     const catalogRecommendations=[
       ['torque','product-e390-new.html?product=torque','torq-control-gallery-kit-v1.png','Torq Control Implant Torque Wrench Kit','Implantology','€42.35'],
       ['driver','product-e390-new.html?product=driver','product-driver-glass-v1.png','Electric Implant Driver Set','Implantology','€110.62'],
