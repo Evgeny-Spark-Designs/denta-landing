@@ -23,6 +23,14 @@
     .bundle-add{width:100%;margin-top:16px;padding:11px 12px;border:0;border-radius:6px;background:var(--orange);color:#25150c;font:700 10px var(--text);letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform .2s ease,background .2s ease}
     .bundle-add:hover{background:#ff8240;transform:translateY(-1px)}
     .bundle-add.added{background:var(--cream);color:#241d19}
+    /* Keep the bundle index in step with the catalog and product-card typography. */
+    .topbar[data-site-navigation] .site-nav-actions{margin-right:clamp(24px,1.65vw,32px)}
+    .nav{gap:42px}
+    .number{font-size:11px}
+    .items{font-size:13px;line-height:1.35}
+    .old{color:#d0c5be;font-size:14px;text-decoration-color:rgba(208,197,190,.72);text-decoration-thickness:1px}
+    .save{font-size:12px}
+    .bundle-link{font-size:12px}
     @media(max-width:1440px){.bundle-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:960px){.bundle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:680px){.bundle-grid{grid-template-columns:1fr}}
