@@ -72,7 +72,7 @@
     .product-bottom{display:flex;align-items:baseline;gap:10px;margin-top:7px;font-size:clamp(16px,1vw,20px);line-height:1.2}.product-bottom b{font-weight:400}.status{color:#f36d24;font-size:.82em;font-weight:500}
 
     .catalog-end{height:clamp(86px,7.6vw,118px);display:flex;align-items:center;justify-content:center;gap:16px;border-bottom:1px solid #4e4845;background:#292523;color:#f2f2f2;font-family:var(--text);font-size:clamp(12px,.9vw,15px);font-weight:500;letter-spacing:.035em;text-transform:uppercase}
-    .catalog-end::before{content:"Denta"}.catalog-end::after{content:"Full catalog";color:#817975}
+    .catalog-end::before{content:"Dentovel"}.catalog-end::after{content:"Full catalog";color:#817975}
     .catalog-end span{width:7px;height:7px;border-top:1px solid #817975;border-right:1px solid #817975;transform:rotate(45deg)}
     footer{position:relative;min-height:clamp(500px,42vw,650px);overflow:hidden;isolation:isolate;background:#3a3330;padding:clamp(58px,5vw,86px) clamp(24px,4vw,76px) 0;color:var(--oryzo-cream)}
     #catalogHalftoneCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
@@ -170,7 +170,7 @@
         const box=footer.getBoundingClientRect();w=Math.max(1,Math.round(box.width));h=Math.max(1,Math.round(box.height));dpr=Math.min(devicePixelRatio||1,2);
         canvas.width=w*dpr;canvas.height=h*dpr;
         const mask=document.createElement('canvas');mask.width=w;mask.height=h;const m=mask.getContext('2d',{willReadFrequently:true});if(!m)return;
-        const word='Denta',weight=800,probe=100;m.font=`${weight} ${probe}px Arial, Helvetica, sans-serif`;
+        const word='Dentovel',weight=800,probe=100;m.font=`${weight} ${probe}px Arial, Helvetica, sans-serif`;
         const fit=(w*.94)/m.measureText(word).width*probe;m.font=`${weight} ${fit}px Arial, Helvetica, sans-serif`;m.textBaseline='alphabetic';
         const measure=m.measureText(word),cap=measure.actualBoundingBoxAscent||fit*.72;m.fillStyle='#fff';m.fillText(word,(w-measure.width)/2,h+cap*.22);
         const data=m.getImageData(0,0,w,h).data,gap=Math.max(5,Math.round(w/270));dots=[];

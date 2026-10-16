@@ -337,7 +337,7 @@
         const box=footer.getBoundingClientRect(); w=Math.max(1,Math.round(box.width)); h=Math.max(1,Math.round(box.height)); dpr=Math.min(devicePixelRatio||1,2);
         canvas.width=w*dpr; canvas.height=h*dpr;
         const mask=document.createElement('canvas'); mask.width=w; mask.height=h; const m=mask.getContext('2d',{willReadFrequently:true}); if(!m)return;
-        const word='Denta', weight=800, probe=100; m.font=`${weight} ${probe}px Arial, Helvetica, sans-serif`;
+        const word='Dentovel', weight=800, probe=100; m.font=`${weight} ${probe}px Arial, Helvetica, sans-serif`;
         const fit=(w*.94)/m.measureText(word).width*probe; m.font=`${weight} ${fit}px Arial, Helvetica, sans-serif`; m.textBaseline='alphabetic';
         const measure=m.measureText(word), cap=measure.actualBoundingBoxAscent||fit*.72; m.fillStyle='#fff'; m.fillText(word,(w-measure.width)/2,h+cap*.22);
         const data=m.getImageData(0,0,w,h).data, gap=Math.max(5,Math.round(w/270)); dots=[];
