@@ -30,6 +30,18 @@
   `;
 
   const inject = () => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: node => /^(SCRIPT|STYLE)$/i.test(node.parentElement?.tagName || '') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+    });
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(node => { node.nodeValue = node.nodeValue.replace(/\bDenta\b/g, 'Dentovel').replace(/\bDentiphoto\b/g, 'Dentovel'); });
+    document.title = document.title.replace(/\bDenta\b/g, 'Dentovel').replace(/\bDentiphoto\b/g, 'Dentovel');
+    document.querySelectorAll('a[href*="dentiphoto.com"]').forEach(link => {
+      const isEmail = (link.getAttribute('href') || '').startsWith('mailto:');
+      link.href = isEmail ? 'mailto:support@dentovel.com' : 'https://dentovel.com';
+      link.textContent = isEmail ? 'support@dentovel.com' : 'dentovel.com';
+    });
     const header = document.querySelector('header.topbar, header.top');
     if (!header || header.dataset.siteNavigation) return;
     header.dataset.siteNavigation = 'true';
