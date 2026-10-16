@@ -27,8 +27,15 @@
   </style>
   <style>
     /* Each source image has its own transparent margins, so its information-panel scale is set per product. */
-    .info-copy h2{max-width:9ch;margin-top:26px;font-size:clamp(42px,4vw,74px)}
-    .info-image img{padding:var(--info-pad-y,54px) var(--info-pad-x,68px);transform:scale(var(--info-scale,.9))}
+    /* Keep translated and multi-line content inside the fixed information panel. */
+    .info-copy{display:grid;grid-template-rows:minmax(0,1fr) auto;min-width:0;overflow:hidden}
+    .info-copy>div:first-child{min-width:0}
+    .info-copy h2{max-width:10ch;margin-top:22px;font-size:clamp(38px,3.7vw,68px);line-height:.9}
+    .info-copy p{margin-top:20px}
+    .metrics{gap:12px;margin-top:20px;padding-top:14px}
+    .metric strong{font-size:clamp(23px,1.7vw,30px);line-height:1}
+    .metric span{font-size:10px;line-height:1.2}
+    .info-image img{max-width:100%;max-height:100%;padding:var(--info-pad-y,54px) var(--info-pad-x,68px);transform:scale(var(--info-scale,.9))}
     body[data-product="e390"] .info-image{--info-scale:.94;--info-pad-y:48px;--info-pad-x:54px}
     body[data-product="ilight"] .info-image,body[data-product="fast"] .info-image{--info-scale:.92;--info-pad-y:52px;--info-pad-x:62px}
     body[data-product="driver"] .info-image{--info-scale:.88;--info-pad-y:58px;--info-pad-x:82px}
@@ -144,6 +151,7 @@
       ,heater:{name:'Composite Resin Heater (8 Slots).',crumb:'Restoration / Resin heater',eyebrow:'New · Restoration',price:'€38.51',cart:'Composite Resin Heater (8 Slots)',lede:'A horizontal composite-resin heater with eight circular wells around a central temperature display.',images:['product-composite-resin-heater-v2.png'],views:['full'],alt:'Composite resin heater with eight slots'}
       ,mirror:{name:'UltraClear HD Mirror 24 mm Set.',crumb:'Photography / UltraClear mirror',eyebrow:'New · Photography',price:'€52.34',cart:'UltraClear HD Mirror 24 mm Set',lede:'A four-piece black dental photography mirror set with round, straight and angled reflective heads.',images:['product-ultraclear-mirror-set-v2.png'],views:['full'],alt:'UltraClear HD dental mirror set'}
     };
+    Object.values(products).forEach(item=>{item.name=item.name.replace(/\.$/,'')});
     const requestedKey=new URLSearchParams(location.search).get('product'),key=products[requestedKey]?requestedKey:'e390',product=products[key],mainImage=document.getElementById('mainProductImage'),count=document.querySelector('.gallery-count');
     document.body.dataset.product=key;
     document.title=`${product.name} — Denta`;document.querySelector('.crumbs span').textContent=product.crumb;document.querySelector('.eyebrow').textContent=product.eyebrow;document.querySelector('#product-title').textContent=product.name;document.querySelector('.lede').textContent=product.lede;document.querySelector('.price').textContent=product.price;document.querySelector('#addToCart').textContent=`Add to cart — ${product.price}`;document.querySelector('.gallery-badge').textContent=product.crumb.split(' / ')[0];document.querySelector('.info-image img').src=`./denta-hero-assets/${product.images[0]}`;
