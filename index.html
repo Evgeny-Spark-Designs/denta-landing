@@ -102,6 +102,24 @@
       object-fit:cover;
       transition:transform .55s var(--ease);
     }
+    .category-card.product-cutout img{
+      object-fit:contain;
+      padding:clamp(12px,1.25vw,22px);
+    }
+    .category-card.prolight-cutout img{
+      transform:translate(11%,-5%) scale(1.34) rotate(-8deg);
+      transform-origin:72% 46%;
+    }
+    .category-card.mirrors-cutout img{
+      transform:translate(12%,-3%) scale(1.34) rotate(-6deg);
+      transform-origin:72% 50%;
+    }
+    .category-card.prolight-cutout:hover img{
+      transform:translate(11%,-5%) scale(1.39) rotate(-8deg);
+    }
+    .category-card.mirrors-cutout:hover img{
+      transform:translate(12%,-3%) scale(1.39) rotate(-6deg);
+    }
     .category-card::after{
       content:"";
       position:absolute;
@@ -241,12 +259,12 @@
         <img src="./denta-hero-assets/category-shade-dark-orange-v3.png" alt="Shade matching equipment">
         <span class="category-title">Shade Matching</span><span class="category-arrow">→</span>
       </a>
-      <a class="category-card dark" href="/collections/smartphone-photography">
-        <img src="./denta-hero-assets/category-smartphone-dark-orange-v3.png" alt="Smartphone photography equipment">
+      <a class="category-card dark product-cutout prolight-cutout" href="/collections/smartphone-photography">
+        <img src="./denta-hero-assets/category-prolight-lit-v1.png" alt="ProLight X LED Photo Lamp for dental photography">
         <span class="category-title">Smartphone<br>Photography</span><span class="category-arrow">→</span>
       </a>
-      <a class="category-card light" href="/collections/mirrors-retractors">
-        <img src="./denta-hero-assets/category-mirrors-dark-orange-v3.png" alt="Dental mirrors and retractors">
+      <a class="category-card light product-cutout mirrors-cutout" href="/collections/mirrors-retractors">
+        <img src="./denta-hero-assets/category-ultraclear-lit-v1.png" alt="UltraClear HD Mirror 24mm Set">
         <span class="category-title">Mirrors &amp;<br>Retractors</span><span class="category-arrow">→</span>
       </a>
       <a class="category-card dark" href="/collections/diagnostics-imaging">
