@@ -1,8 +1,8 @@
 (() => {
   const products = [
-    'Cordless Endo Motor + Apex Locator', 'C-SMART-I PILOT', 'OLED Endodontic Motor',
-    'Curing Light PREMIUM', 'Composite Resin Heater', 'E220 Digital Shade Guide',
-    'UltraClear HD Mirror Set', 'ProLight X LED Lamp'
+    'Cordless Endo Motor + Apex', 'COXO C-SMART-I PILOT', 'OLED Endo Motor',
+    'Curing Light PREMIUM (Detection)', 'Composite Resin Heater (8 Slots)', 'E220 Shade Matching Device',
+    'UltraClear HD Mirror 24mm Set', 'ProLight X LED Photo Lamp'
   ];
 
   const styles = `
