@@ -1,6 +1,6 @@
 (() => {
   const products = [
-    'E390 Endo Motor', 'C-SMART-I PILOT', 'OLED Endodontic Motor',
+    'Cordless Endo Motor + Apex Locator', 'C-SMART-I PILOT', 'OLED Endodontic Motor',
     'Curing Light PREMIUM', 'Composite Resin Heater', 'E220 Digital Shade Guide',
     'UltraClear HD Mirror Set', 'ProLight X LED Lamp'
   ];
