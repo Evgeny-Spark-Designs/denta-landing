@@ -25,8 +25,20 @@
       .bundle-teasers{grid-template-columns:1fr!important}.bundle-teaser{grid-template-columns:108px 1fr!important;min-height:176px!important}.bundle-teaser-copy{padding:16px!important}.bundle-teaser-copy h3{font-size:27px!important}.bundle-teaser-copy p{font-size:12px!important}
       .site-cart-drawer{right:12px;top:12px;width:calc(100vw - 24px);padding:22px}.site-search-results{width:calc(100% - 24px)}
     }
-    @media(max-width:440px){.products,.bundle-grid{grid-template-columns:1fr!important}.showcase-grid{grid-template-columns:1fr!important;grid-template-rows:repeat(4,58vw)!important}.catalog-surface .details{grid-template-columns:1fr!important}}
-    @media(max-width:760px){header[data-site-navigation]{grid-template-columns:1fr auto!important}header[data-site-navigation] > nav{display:none!important}.site-nav-actions{grid-column:2}.site-search{grid-column:1 / -1;grid-row:2;width:calc(100% - 24px);justify-self:center;margin:0 0 10px}header[data-site-navigation].search-open{height:auto!important;min-height:70px}header[data-site-navigation].search-open > .site-search{display:flex}.site-nav-button{width:38px;height:38px}}
+    @media(max-width:440px){.bundle-grid{grid-template-columns:1fr!important}.showcase-grid{grid-template-columns:1fr!important;grid-template-rows:repeat(4,58vw)!important}.catalog-surface .details{grid-template-columns:1fr!important}}
+    .site-menu-trigger{display:none}.site-menu-trigger svg{stroke-width:1.7}
+    @media(max-width:760px){
+      header[data-site-navigation]{grid-template-columns:minmax(0,1fr) auto!important}
+      header[data-site-navigation] > nav{display:none!important}
+      .site-nav-actions{grid-column:2;gap:2px;min-width:0}.site-nav-button{width:38px;height:38px}
+      .site-menu-trigger{display:grid}
+      .site-search{grid-column:1;grid-row:1;width:100%;height:38px;margin:0;padding-left:13px}
+      header[data-site-navigation].search-open > .brand{display:none}
+      header[data-site-navigation].search-open > .site-search{display:flex}
+      header[data-site-navigation].menu-open > nav{position:absolute;z-index:1001;top:calc(100% + 10px);left:12px;right:12px;display:flex!important;flex-direction:column;align-items:stretch!important;gap:0;height:auto!important;padding:8px;border:1px solid color-mix(in srgb,currentColor 22%,transparent);border-radius:14px;background:var(--panel,#26211e);color:var(--ink,#f2f2f2);box-shadow:0 18px 42px rgba(0,0,0,.28)}
+      header[data-site-navigation].menu-open > nav a{padding:13px 12px;font-size:12px;text-align:left;opacity:1}
+      header[data-site-navigation].menu-open > nav a + a{border-top:1px solid color-mix(in srgb,currentColor 13%,transparent)}
+    }
   `;
 
   const inject = () => {
@@ -76,7 +88,7 @@
 
     const actions = document.createElement('div');
     actions.className = 'site-nav-actions';
-    actions.innerHTML = `<button class="site-nav-button site-search-trigger" type="button" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.3 4.3"></path></svg></button><button class="site-nav-button site-cart" type="button" aria-label="Open shopping cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h2l1.7 10.1h10.1l2-7.2H7"></path><circle cx="9" cy="19.1" r="1"></circle><circle cx="17" cy="19.1" r="1"></circle></svg><span class="site-cart-count">0</span></button>`;
+    actions.innerHTML = `<button class="site-nav-button site-search-trigger" type="button" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.3 4.3"></path></svg></button><button class="site-nav-button site-cart" type="button" aria-label="Open shopping cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h2l1.7 10.1h10.1l2-7.2H7"></path><circle cx="9" cy="19.1" r="1"></circle><circle cx="17" cy="19.1" r="1"></circle></svg><span class="site-cart-count">0</span></button><button class="site-nav-button site-menu-trigger" type="button" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>`;
     header.append(actions);
 
     const drawer = document.createElement('aside');
@@ -96,10 +108,26 @@
     renderCart();
 
     const input = search.querySelector('input');
+    const menuTrigger = actions.querySelector('.site-menu-trigger');
+    const closeMenu = () => {
+      header.classList.remove('menu-open');
+      menuTrigger.setAttribute('aria-expanded', 'false');
+      menuTrigger.setAttribute('aria-label', 'Open navigation');
+    };
     const closeSearch = () => { header.classList.remove('search-open'); actions.querySelector('.site-search-trigger').focus(); };
     actions.querySelector('.site-search-trigger').addEventListener('click', () => {
       if (header.classList.contains('search-open')) closeSearch();
-      else { header.classList.add('search-open'); input.focus(); }
+      else { closeMenu(); header.classList.add('search-open'); input.focus(); }
+    });
+    menuTrigger.addEventListener('click', () => {
+      if (header.classList.contains('menu-open')) {
+        closeMenu();
+      } else {
+        header.classList.remove('search-open');
+        header.classList.add('menu-open');
+        menuTrigger.setAttribute('aria-expanded', 'true');
+        menuTrigger.setAttribute('aria-label', 'Close navigation');
+      }
     });
     search.querySelector('button').addEventListener('click', closeSearch);
     search.addEventListener('submit', event => {
@@ -109,7 +137,16 @@
       const match = products.find(name => name.toLowerCase().includes(query));
       window.location.href = `catalog.html?search=${encodeURIComponent(match || input.value.trim())}`;
     });
-    document.addEventListener('keydown', event => { if (event.key === 'Escape' && header.classList.contains('search-open')) closeSearch(); });
+    nav.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      if (header.classList.contains('search-open')) closeSearch();
+      if (header.classList.contains('menu-open')) { closeMenu(); menuTrigger.focus(); }
+    });
+    document.addEventListener('click', event => {
+      if (!header.classList.contains('menu-open') || header.contains(event.target)) return;
+      closeMenu();
+    });
     actions.querySelector('.site-cart').addEventListener('click', () => drawer.classList.add('is-open'));
     drawer.querySelector('.site-cart-close').addEventListener('click', () => drawer.classList.remove('is-open'));
     document.addEventListener('click', event => {
