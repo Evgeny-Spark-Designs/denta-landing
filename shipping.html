@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Shipping — Denta</title>
   <link rel="preconnect" href="https://use.typekit.net">
-  <link rel="stylesheet" href="https://use.typekit.net/pmn6ngx.css">
+  <link rel="preload" href="https://use.typekit.net/pmn6ngx.css" as="style">
+  <link id="typekit-fonts" rel="stylesheet" href="https://use.typekit.net/pmn6ngx.css">
+  <style>html.fonts-pending body{visibility:hidden}</style>
+  <script>document.documentElement.classList.add('fonts-pending');(()=>{const reveal=()=>document.documentElement.classList.remove('fonts-pending');if(!document.fonts){addEventListener('load',reveal,{once:true});return}const sheet=document.getElementById('typekit-fonts'),ready=sheet?.sheet?Promise.resolve():new Promise(resolve=>{sheet?.addEventListener('load',resolve,{once:true});sheet?.addEventListener('error',resolve,{once:true})});ready.then(()=>Promise.all([document.fonts.load('400 1em "halyard-display-variable"'),document.fonts.load('400 1em "halyard-text-variable"')])).then(reveal,reveal)})();</script>
   <style>
     :root{--cream:#fff7ed;--muted:rgba(255,244,232,.68);--line:rgba(255,239,222,.16);--display:"halyard-display-variable","Helvetica Neue",Arial,sans-serif;--text:"halyard-text-variable","Helvetica Neue",Arial,sans-serif}
     *{box-sizing:border-box}html{background:#0b0807}body{margin:0;background:radial-gradient(ellipse 72vw 90vh at 88% 64%,rgba(29,65,167,.30),transparent 60%),radial-gradient(ellipse 65vw 70vh at 6% 24%,rgba(194,59,12,.28),transparent 58%),#090807;color:var(--cream);font-family:var(--text)}a{color:inherit;text-decoration:none}

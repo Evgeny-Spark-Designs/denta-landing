@@ -6,7 +6,10 @@
   <meta name="description" content="Denta professional dental equipment catalog">
   <title>Catalog — Denta</title>
   <link rel="preconnect" href="https://use.typekit.net">
-  <link rel="stylesheet" href="https://use.typekit.net/pmn6ngx.css">
+  <link rel="preload" href="https://use.typekit.net/pmn6ngx.css" as="style">
+  <link id="typekit-fonts" rel="stylesheet" href="https://use.typekit.net/pmn6ngx.css">
+  <style>html.fonts-pending body{visibility:hidden}</style>
+  <script>document.documentElement.classList.add('fonts-pending');(()=>{const reveal=()=>document.documentElement.classList.remove('fonts-pending');if(!document.fonts){addEventListener('load',reveal,{once:true});return}const sheet=document.getElementById('typekit-fonts'),ready=sheet?.sheet?Promise.resolve():new Promise(resolve=>{sheet?.addEventListener('load',resolve,{once:true});sheet?.addEventListener('error',resolve,{once:true})});ready.then(()=>Promise.all([document.fonts.load('400 1em "halyard-display-variable"'),document.fonts.load('400 1em "halyard-text-variable"')])).then(reveal,reveal)})();</script>
   <style>
     :root{
       --oryzo-cream:#ffedd7;
