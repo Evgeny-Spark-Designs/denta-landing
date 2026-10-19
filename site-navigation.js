@@ -33,8 +33,9 @@
       .site-mobile-nav{position:fixed;top:0;right:0;left:0;z-index:1001;display:flex;height:60px;align-items:center;justify-content:space-between;padding:0 12px;background:rgba(40,33,32,.8);color:#f2f2f2;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
       .site-mobile-nav::after{position:absolute;right:0;bottom:0;left:0;height:1px;background:linear-gradient(to right,rgba(157,147,144,0) 0%,rgba(157,147,144,1) 50%,rgba(255,255,255,0) 100%);content:""}
       .site-mobile-nav a,.site-mobile-nav button{display:flex;align-items:center;justify-content:center;box-sizing:border-box;border:0;background:transparent;color:inherit;cursor:pointer}.site-mobile-nav svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
-      .site-mobile-nav .site-mobile-logo{position:absolute;left:50%;display:flex;width:auto;height:60px;padding:0;color:inherit;font:500 20px/1 var(--text,Arial,sans-serif);letter-spacing:.13em;text-decoration:none;text-transform:uppercase;transform:translateX(-50%)}.site-mobile-nav .site-mobile-search{position:absolute;right:12px;width:44px;height:60px;padding:0}.site-mobile-nav .site-mobile-search-form{position:absolute;inset:0;z-index:2;display:flex;align-items:center;gap:10px;padding:0 12px;background:rgba(40,33,32,.96);opacity:0;pointer-events:none;transition:opacity .18s ease}.site-mobile-nav .site-mobile-search-form.is-open{opacity:1;pointer-events:auto}.site-mobile-search-form input{min-width:0;flex:1;height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.35);border-radius:0;background:transparent;color:inherit;font:14px var(--text,Arial,sans-serif);outline:0}.site-mobile-search-form button{width:36px;height:36px;padding:0;font-size:22px}
-      .site-mobile-tabbar{position:fixed;right:0;bottom:0;left:0;z-index:1001;display:flex;max-width:480px;align-items:center;margin:0 auto;padding:18px 16px calc(19px + env(safe-area-inset-bottom));border-radius:20px 20px 0 0;background:rgba(24,21,20,.8);color:#fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transform:translateY(0);transition:transform .3s ease,background .3s ease}.site-mobile-tabbar::before{position:fixed;right:0;bottom:0;left:0;z-index:-1;width:100vw;height:85px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 100%);content:"";pointer-events:none}.site-mobile-tabbar.is-hidden{transform:translateY(calc(100% + env(safe-area-inset-bottom)))}
+      .site-mobile-nav .site-mobile-logo{position:absolute;left:50%;display:flex;width:auto;height:60px;padding:0;color:inherit;font:500 20px/1 var(--text,Arial,sans-serif);letter-spacing:.13em;text-decoration:none;text-transform:uppercase;transform:translateX(-50%)}.site-mobile-nav .site-mobile-search{position:absolute;right:12px;width:44px;height:60px;padding:0}
+      .site-mobile-search-overlay{position:fixed;inset:0;z-index:1200;display:flex;flex-direction:column;background:var(--page,#3a3330);color:var(--ink,#f4f0ed);opacity:0;pointer-events:none;transition:opacity .2s ease}.site-mobile-search-overlay.is-open{opacity:1;pointer-events:auto}.site-mobile-search-top{display:flex;align-items:center;height:60px;padding:0 12px;border-bottom:1px solid var(--line,rgba(255,255,255,.16));background:rgba(40,33,32,.92);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}.site-mobile-search-field{display:flex;min-width:0;flex:1;align-items:center;gap:10px}.site-mobile-search-field svg{width:20px;height:20px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.25}.site-mobile-search-field input{min-width:0;flex:1;height:42px;border:0;outline:0;background:transparent;color:inherit;font:400 17px var(--text,Arial,sans-serif)}.site-mobile-search-field input::placeholder{color:currentColor;opacity:.54}.site-mobile-search-close{height:44px;padding:0 0 0 14px;border:0;background:transparent;color:inherit;font:500 10px var(--text,Arial,sans-serif);letter-spacing:.08em;text-transform:uppercase}.site-mobile-search-content{overflow:auto;padding:29px 24px calc(42px + env(safe-area-inset-bottom))}.site-mobile-search-group+ .site-mobile-search-group{margin-top:34px}.site-mobile-search-group h2{margin:0 0 15px;color:var(--soft,#817975);font:500 10px var(--text,Arial,sans-serif);letter-spacing:.09em;text-transform:uppercase}.site-mobile-search-tags{display:flex;flex-wrap:wrap;gap:8px}.site-mobile-search-tags button{padding:9px 12px;border:1px solid var(--line,rgba(255,255,255,.2));border-radius:0;background:transparent;color:inherit;font:400 13px var(--text,Arial,sans-serif);text-align:left}.site-mobile-search-categories{display:grid;gap:0;border-top:1px solid var(--line,rgba(255,255,255,.16))}.site-mobile-search-categories button{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border:0;border-bottom:1px solid var(--line,rgba(255,255,255,.16));background:transparent;color:inherit;font:400 17px var(--text,Arial,sans-serif);text-align:left}.site-mobile-search-categories button::after{content:'→';color:var(--orange,#f36d24);font-size:18px}.site-mobile-search-products{display:grid;gap:0}.site-mobile-search-product{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:15px 0;border-bottom:1px solid var(--line,rgba(255,255,255,.16));color:inherit;text-decoration:none}.site-mobile-search-product b{font:400 16px/1.15 var(--display,Arial,sans-serif);letter-spacing:-.02em}.site-mobile-search-product span{grid-row:2;color:var(--soft,#817975);font:11px var(--text,Arial,sans-serif);letter-spacing:.04em;text-transform:uppercase}.site-mobile-search-product i{grid-column:2;grid-row:1/3;align-self:center;color:var(--orange,#f36d24);font-style:normal;font-size:18px}.site-mobile-search-empty{margin:0;color:var(--muted,#b9b1ad);font:15px/1.45 var(--text,Arial,sans-serif)}
+      .site-mobile-tabbar{position:fixed!important;right:0;bottom:0;left:0;z-index:1001;display:flex;width:100%;max-width:480px;align-items:center;margin:0 auto;padding:12px 16px calc(12px + env(safe-area-inset-bottom));border-radius:22px 22px 0 0;background:rgba(24,21,20,.88);color:#fff;box-shadow:0 -14px 28px rgba(0,0,0,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transform:translate3d(0,0,0);will-change:transform}
       .site-mobile-tabbar a,.site-mobile-tabbar button{position:relative;display:flex;min-width:0;flex:1;height:48px;align-items:center;justify-content:center;padding:0;border:0;background:transparent;color:#aaa;font:400 11px/14px Arial,Helvetica,sans-serif;letter-spacing:1px;text-align:center;text-decoration:none;text-transform:uppercase}.site-mobile-tabbar button{cursor:pointer}.site-mobile-tabbar a[aria-current="page"],.site-mobile-tabbar button.is-active{color:#fff}.site-mobile-tabbar a[aria-current="page"]::after,.site-mobile-tabbar button.is-active::after{position:absolute;bottom:-14px;left:50%;width:22px;height:3px;border-radius:3px;background:#f37021;content:"";transform:translateX(-50%)}.site-mobile-tabbar svg{display:none}.site-mobile-tabbar .site-mobile-tabbar-home{display:flex;flex:0 0 48px;width:48px;height:48px;margin:auto 8px;color:#aaa}.site-mobile-tabbar .site-mobile-tabbar-home svg{display:block;width:20px;height:16px;fill:currentColor;stroke:none}.site-mobile-tabbar .site-mobile-tabbar-home[aria-current="page"]{color:#fff}.site-mobile-tabbar .site-mobile-tabbar-home[aria-current="page"]::after{inset:0;width:auto;height:auto;border:1.5px solid #f37021;border-radius:16px;background:transparent;transform:none}.site-mobile-tabbar .site-mobile-tabbar-home span{display:none}
     }
   `;
@@ -122,7 +123,13 @@
     mobileNav.querySelector('ul:last-child li:last-child')?.remove();
     mobileNav.querySelector('ul:last-child li:first-child')?.remove();
     mobileNav.querySelector('ul:first-child a').innerHTML = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.2 2.7c.8-.8 1.8-.8 2.6-.2l1.5 1.2c.7.6.8 1.6.2 2.3L8.2 7.4a12.1 12.1 0 0 0 4.4 4.4L14 10.5c.7-.6 1.7-.5 2.3.2l1.2 1.5c.6.8.6 1.8-.2 2.6l-.9.9c-.8.8-2 1.1-3 .7A16.6 16.6 0 0 1 3.6 6.6c-.4-1-.1-2.2.7-3l.9-.9Z"></path></svg>';
-    mobileNav.innerHTML = `<a class="site-mobile-logo" href="index.html" aria-label="Dentovel home">Dentovel</a><button class="site-mobile-search" type="button" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.3 4.3"></path></svg></button><form class="site-mobile-search-form" role="search"><input type="search" aria-label="Search the catalog" placeholder="Search the catalog"><button type="button" aria-label="Close search">×</button></form>`;
+    mobileNav.innerHTML = `<a class="site-mobile-logo" href="index.html" aria-label="Dentovel home">Dentovel</a><button class="site-mobile-search" type="button" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.3 4.3"></path></svg></button>`;
+    const mobileSearchOverlay = document.createElement('section');
+    mobileSearchOverlay.className = 'site-mobile-search-overlay';
+    mobileSearchOverlay.setAttribute('role', 'dialog');
+    mobileSearchOverlay.setAttribute('aria-modal', 'true');
+    mobileSearchOverlay.setAttribute('aria-label', 'Search the catalog');
+    mobileSearchOverlay.innerHTML = `<form class="site-mobile-search-top" role="search"><label class="site-mobile-search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.3 4.3"></path></svg><input type="search" aria-label="Search the catalog" placeholder="Search"></label><button class="site-mobile-search-close" type="button">Close</button></form><div class="site-mobile-search-content"><section class="site-mobile-search-group"><h2>Frequently searched</h2><div class="site-mobile-search-tags"><button type="button" data-search-term="Endo motor">Endo motor</button><button type="button" data-search-term="Implant driver">Implant driver</button><button type="button" data-search-term="Curing light">Curing light</button><button type="button" data-search-term="Dental photography">Dental photography</button></div></section><section class="site-mobile-search-group"><h2>Categories</h2><div class="site-mobile-search-categories"><button type="button" data-search-category="Endodontics">Endodontics</button><button type="button" data-search-category="Implantology">Implantology</button><button type="button" data-search-category="Curing">Curing &amp; restoration</button><button type="button" data-search-category="Photography">Dental photography</button></div></section><section class="site-mobile-search-group"><h2>Products</h2><div class="site-mobile-search-products"></div></section></div>`;
     const mobileTabbar = document.createElement('nav');
     mobileTabbar.className = 'site-mobile-tabbar';
     mobileTabbar.setAttribute('aria-label', 'Mobile navigation');
@@ -136,14 +143,7 @@
     if (currentPage === 'basket.html') mobileTabbar.querySelector('.site-mobile-tabbar-cart')?.classList.add('is-active');
     document.body.append(mobileNav);
     document.body.append(mobileTabbar);
-
-    let lastScrollY = window.scrollY;
-    const syncMobileTabbar = () => {
-      const scrollingDown = window.scrollY > lastScrollY;
-      mobileTabbar.classList.toggle('is-hidden', window.scrollY > 85 && scrollingDown);
-      lastScrollY = window.scrollY;
-    };
-    window.addEventListener('scroll', syncMobileTabbar, { passive: true });
+    document.body.append(mobileSearchOverlay);
 
     const cartBadge = actions.querySelector('.site-cart-count');
     const cartSummary = drawer.querySelector('.site-cart-summary');
@@ -167,14 +167,21 @@
     });
 
     const input = search.querySelector('input');
-    const mobileSearchForm = mobileNav.querySelector('.site-mobile-search-form');
+    const mobileSearchForm = mobileSearchOverlay.querySelector('.site-mobile-search-top');
     const mobileSearchInput = mobileSearchForm.querySelector('input');
+    const mobileSearchProducts = mobileSearchOverlay.querySelector('.site-mobile-search-products');
     const submitSearch = query => {
       const value = query.trim();
       if (!value) return;
       const match = products.find(name => name.toLowerCase().includes(value.toLowerCase()));
       window.location.href = `catalog.html?search=${encodeURIComponent(match || value)}`;
     };
+    const renderMobileSearchProducts = query => {
+      const value = query.trim().toLowerCase();
+      const matches = (value ? products.filter(name => name.toLowerCase().includes(value)) : products).slice(0, 4);
+      mobileSearchProducts.innerHTML = matches.length ? matches.map(name => `<a class="site-mobile-search-product" href="catalog.html?search=${encodeURIComponent(name)}"><b>${name}</b><span>View product</span><i aria-hidden="true">→</i></a>`).join('') : '<p class="site-mobile-search-empty">No equipment found. Try another term.</p>';
+    };
+    renderMobileSearchProducts('');
     const menuTrigger = actions.querySelector('.site-menu-trigger');
     const closeMenu = () => {
       header.classList.remove('menu-open');
@@ -202,19 +209,33 @@
       submitSearch(input.value);
     });
     mobileNav.querySelector('.site-mobile-search').addEventListener('click', () => {
-      mobileSearchForm.classList.add('is-open');
+      mobileSearchOverlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
       mobileSearchInput.focus();
     });
-    mobileSearchForm.querySelector('button').addEventListener('click', () => mobileSearchForm.classList.remove('is-open'));
+    const closeMobileSearch = () => {
+      mobileSearchOverlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      mobileNav.querySelector('.site-mobile-search').focus();
+    };
+    mobileSearchForm.querySelector('.site-mobile-search-close').addEventListener('click', closeMobileSearch);
     mobileSearchForm.addEventListener('submit', event => {
       event.preventDefault();
       submitSearch(mobileSearchInput.value);
     });
+    mobileSearchInput.addEventListener('input', () => renderMobileSearchProducts(mobileSearchInput.value));
+    mobileSearchOverlay.querySelectorAll('[data-search-term],[data-search-category]').forEach(button => button.addEventListener('click', () => {
+      const term = button.dataset.searchTerm || button.dataset.searchCategory;
+      mobileSearchInput.value = term;
+      renderMobileSearchProducts(term);
+      mobileSearchInput.focus();
+    }));
     nav.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
     document.addEventListener('keydown', event => {
       if (event.key !== 'Escape') return;
       if (header.classList.contains('search-open')) closeSearch();
       if (header.classList.contains('menu-open')) { closeMenu(); menuTrigger.focus(); }
+      if (mobileSearchOverlay.classList.contains('is-open')) closeMobileSearch();
     });
     document.addEventListener('click', event => {
       if (!header.classList.contains('menu-open') || header.contains(event.target)) return;
