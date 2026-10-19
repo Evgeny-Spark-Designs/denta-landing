@@ -78,6 +78,25 @@
     style.textContent = styles;
     document.head.append(style);
 
+    const shippingCardStyle = document.createElement('style');
+    shippingCardStyle.textContent = '.site-product-shipping{display:inline-flex;margin-top:11px;color:var(--soft,#817975);font:500 10px var(--text,Arial,sans-serif);letter-spacing:.045em;text-decoration:underline;text-underline-offset:3px;text-transform:uppercase}.site-product-shipping:hover{color:var(--orange,#f36d24)}';
+    document.head.append(shippingCardStyle);
+    document.querySelectorAll('.product-copy,.recommendation-copy').forEach(copy => {
+      if (copy.querySelector('.site-product-shipping')) return;
+      const shipping = document.createElement('a');
+      shipping.className = 'site-product-shipping';
+      shipping.href = 'shipping.html';
+      shipping.textContent = 'Shipping & returns';
+      copy.append(shipping);
+    });
+    const footerNavigation = document.querySelector('footer nav,footer .footer-column');
+    if (footerNavigation && !document.querySelector('footer a[href="shipping.html"]')) {
+      const shipping = document.createElement('a');
+      shipping.href = 'shipping.html';
+      shipping.textContent = 'Shipping & returns';
+      footerNavigation.append(shipping);
+    }
+
     const search = document.createElement('form');
     search.className = 'site-search';
     search.setAttribute('role', 'search');
