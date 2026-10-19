@@ -28,24 +28,12 @@
     @media(max-width:440px){.bundle-grid{grid-template-columns:1fr!important}.showcase-grid{grid-template-columns:1fr!important;grid-template-rows:repeat(4,58vw)!important}.catalog-surface .details{grid-template-columns:1fr!important}}
     .site-mobile-nav{display:none}.site-menu-trigger{display:none}.site-menu-trigger svg{stroke-width:1.7}
     @media(max-width:760px){
-      body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
-      header[data-site-navigation]{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;min-height:70px}
-      header[data-site-navigation] > .brand{grid-column:2;justify-self:center;gap:0;padding-left:0!important}
-      header[data-site-navigation] > .brand .mark{display:none!important}
-      header[data-site-navigation] > nav{display:none!important}
-      .site-nav-actions{position:static;grid-column:3;gap:2px;min-width:0}.site-nav-button{width:38px;height:38px}
-      .site-menu-trigger{position:absolute;z-index:2;left:12px;top:50%;display:grid;transform:translateY(-50%)}
-      .site-nav-actions .site-cart{display:none}
-      .site-search{grid-column:1/-1;grid-row:1;width:100%;height:70px;margin:0;padding:0 18px;border:0;border-radius:0;background:rgba(28,23,20,.96);box-shadow:0 8px 20px rgba(0,0,0,.14)}
-      .site-search input{font-size:14px}.site-search button{width:36px;height:36px;font-size:24px}
-      header[data-site-navigation].search-open > .brand,header[data-site-navigation].search-open > .site-nav-actions{display:none}
-      header[data-site-navigation].search-open > .site-search{display:flex}
-      header[data-site-navigation].search-open .site-menu-trigger{display:none}
-      header[data-site-navigation].menu-open > nav{position:fixed;z-index:1001;top:70px;left:0;right:0;width:100vw!important;box-sizing:border-box;display:flex!important;flex-direction:column;align-items:stretch!important;gap:0;max-height:calc(100dvh - 70px);padding:0 20px 20px;border:0;border-top:1px solid rgba(255,255,255,.11);border-radius:0;background:rgba(24,20,18,.88);color:var(--ink,#f2f2f2);box-shadow:0 16px 40px rgba(0,0,0,.24);backdrop-filter:blur(30px) saturate(125%);-webkit-backdrop-filter:blur(30px) saturate(125%)}
-      header[data-site-navigation].menu-open > nav a{padding:19px 4px;font-size:13px;text-align:left;opacity:1}
-      header[data-site-navigation].menu-open > nav a + a{border-top:1px solid rgba(255,255,255,.14)}
-      .site-mobile-nav{position:fixed;z-index:1100;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;height:calc(96px + env(safe-area-inset-bottom));padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(24,20,18,.88);box-shadow:0 -16px 40px rgba(0,0,0,.24);backdrop-filter:blur(30px) saturate(125%);-webkit-backdrop-filter:blur(30px) saturate(125%);color:#eee8e2}
-      .site-mobile-nav a,.site-mobile-nav button{display:flex;min-width:0;height:64px;align-items:flex-end;justify-content:center;padding:0 2px 10px;border:0;background:transparent;color:inherit;font:500 10px/1.1 var(--text,Arial,sans-serif);letter-spacing:.07em;text-align:center;text-transform:uppercase;cursor:pointer}.site-mobile-nav .site-mobile-home{align-self:center;width:64px;height:64px;justify-self:center;margin:0;padding:0;border:1px solid var(--orange,#f36d24);border-radius:22px;background:rgba(34,29,26,.98);box-shadow:0 0 0 5px rgba(24,20,18,.84);font-size:0}.site-mobile-home span{position:relative;display:block;width:27px;height:17px}.site-mobile-home span::before,.site-mobile-home span::after{content:"";position:absolute;left:0;width:25px;height:6px;border:2px solid var(--orange,#f36d24);border-radius:7px}.site-mobile-home span::before{top:0;border-right-color:transparent}.site-mobile-home span::after{right:0;bottom:0;left:auto;border-left-color:transparent}.site-mobile-home i{display:none}.site-mobile-nav [aria-current="page"]{color:var(--orange,#f36d24)}.site-mobile-cart{position:relative}.site-mobile-cart-count{position:absolute;z-index:1;top:9px;right:8px;left:auto;min-width:14px;height:14px;padding:0 2px;display:grid;place-items:center;border-radius:50%;background:var(--orange,#f36d24);color:#24150c;font:700 8px/1 Arial,sans-serif}
+      body{padding-top:60px}
+      header[data-site-navigation]{display:none!important}
+      .site-mobile-nav{position:fixed;top:0;right:0;left:0;z-index:1001;display:flex;height:60px;align-items:center;justify-content:space-between;padding:0 12px;background:rgba(40,33,32,.8);color:#f2f2f2;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+      .site-mobile-nav::after{position:absolute;right:0;bottom:0;left:0;height:1px;background:linear-gradient(to right,rgba(157,147,144,0) 0%,rgba(157,147,144,1) 50%,rgba(255,255,255,0) 100%);content:""}
+      .site-mobile-nav ul{display:flex;margin:0;padding:0;list-style:none}.site-mobile-nav li{display:flex;align-items:center}.site-mobile-nav a,.site-mobile-nav button{display:flex;align-items:center;justify-content:center;box-sizing:content-box;width:20px;height:20px;padding:20px 10px;border:0;background:transparent;color:inherit;cursor:pointer}.site-mobile-nav svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+      .site-mobile-nav .site-mobile-logo{position:absolute;left:50%;display:flex;width:100px;height:18px;padding:0;color:inherit;transform:translateX(-50%)}.site-mobile-nav .site-mobile-logo svg{width:100px;height:18px;fill:currentColor;stroke:none}.site-mobile-nav [aria-current="page"]{color:var(--orange,#f37021)}
     }
   `;
 
@@ -108,7 +96,7 @@
     const mobileNav = document.createElement('nav');
     mobileNav.className = 'site-mobile-nav';
     mobileNav.setAttribute('aria-label', 'Mobile navigation');
-    mobileNav.innerHTML = `<a class="site-mobile-catalog" href="catalog.html">Catalog</a><a class="site-mobile-bundles" href="bundles.html">Bundles</a><a class="site-mobile-home" href="index.html" aria-label="Home"><span aria-hidden="true"><i></i><i></i><i></i><i></i></span></a><button class="site-mobile-cart" type="button" aria-label="Open shopping cart">Cart<span class="site-mobile-cart-count">0</span></button><a class="site-mobile-about" href="about.html">About</a>`;
+    mobileNav.innerHTML = `<ul><li><a href="index.html" aria-label="Online store"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.56 8.21c0 2.04.87 4.08 2.1 5.5L10 19.12l5.34-5.41c1.22-1.42 2.1-3.46 2.1-5.5C17.44 3.96 14.11.5 10 .5S2.56 3.96 2.56 8.21Z"></path><path d="M10.06 10.37a2.31 2.31 0 1 0 0-4.63 2.31 2.31 0 0 0 0 4.63Z"></path></svg></a></li><li><a href="catalog.html" aria-label="Full catalog"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18.5c4.7 0 8.5-3.8 8.5-8.5S14.7 1.5 10 1.5 1.5 5.3 1.5 10 5.3 18.5 10 18.5Z"></path><path d="M6 10h8M10 6v8"></path></svg></a></li></ul><a class="site-mobile-logo" href="index.html" aria-label="Home"><svg viewBox="0 0 100 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M78.175 17.244h2.07c.142 0 .235-.093.235-.236v-6.505c0-.143.093-.236.235-.236h6.11c.26 0 .42.068.514.143l7.707 6.79s.069.05.118.05h3.197c.236 0 .236-.21-.186-.589l-8.928-7.707 8.222-7.69c.329-.328.329-.514.093-.514h-3.197a.172.172 0 0 0-.118.05l-7.262 6.79c-.068.093-.26.143-.514.143h-5.756c-.142 0-.235-.093-.235-.236V.985c0-.142-.093-.235-.236-.235h-2.07c-.142 0-.235.093-.235.235v16.03c0 .142.093.229.236.229ZM26.76 7.12h2.07c.142 0 .235-.093.235-.236v-1.81c0-.891.849-1.784 1.692-1.784h12.64c.848 0 1.69.893 1.69 1.785v1.81c0 .142.094.235.236.235h2.07c.142 0 .235-.093.235-.236v-2.07c0-2.28-1.834-4.064-4.163-4.064H30.682c-2.323 0-4.157 1.784-4.157 4.065v2.07c0 .142.093.235.235.235ZM26.525 11.116v2.07c0 2.255 1.859 4.064 4.157 4.064h12.783c2.33 0 4.157-1.81 4.157-4.065v-2.07c0-.142-.093-.235-.235-.235h-2.07c-.142 0-.235.093-.235.236v1.81c0 .891-.843 1.784-1.692 1.784H30.75c-.849 0-1.691-.893-1.691-1.785v-1.81c0-.142-.093-.235-.236-.235h-2.07c-.142 0-.228.093-.228.236ZM72.673 6.202V4.816c0-2.28-1.81-4.065-4.158-4.065h-15.39c-.143 0-.236.093-.236.235v16.03c0 .142.093.235.235.235h2.07c.142 0 .235-.093.235-.235v-6.513c0-.142.093-.235.236-.235h5.502c.26 0 .42.068.514.143l7.472 6.79s.068.05.118.05h3.123c.235 0 .47-.186.025-.589l-7.33-6.394h3.432c2.324 0 4.152-1.784 4.152-4.064ZM55.665 7.727c-.143 0-.236-.093-.236-.236V3.526c0-.143.093-.236.236-.236h12.782c.849 0 1.691.893 1.691 1.785v.867c0 .892-.848 1.785-1.691 1.785H55.665ZM21.704 6.27V4.816c0-2.28-1.81-4.065-4.157-4.065H2.156c-.143 0-.242.093-.242.235v16.03c0 .142.093.235.236.235h15.397c2.33 0 4.157-1.741 4.157-4.021v-1.506c0-1.363-1.27-2.726-2.54-2.726 1.27 0 2.54-1.363 2.54-2.726Zm-2.54 6.649c0 .892-.843 1.784-1.692 1.784H4.69c-.143 0-.236-.092-.236-.235v-3.972c0-.142.093-.235.236-.235h12.782c.85 0 1.692.892 1.692 1.784v.874Zm0-6.977c0 .892-.843 1.785-1.692 1.785H4.69c-.143 0-.236-.093-.236-.236V3.526c0-.143.093-.236.236-.236h12.782c.85 0 1.692.893 1.692 1.785v.867Z"></path></svg></a><ul><li><a href="bundles.html" aria-label="Bundles"><svg viewBox="0 0 20 22" aria-hidden="true"><path d="M5 11C5-2.33 15-2.33 15 11"></path><path d="M.5 7.93c0-.24.19-.41.48-.41h18.05c.28 0 .47.17.47.41v12.19c0 .24-.19.4-.47.4H.98a.52.52 0 0 1-.48-.4V7.93Z"></path></svg></a></li><li><a href="about.html" aria-label="About us"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9 16A7 7 0 1 0 9 2a7 7 0 0 0 0 14Z"></path><path d="m19 19-5-5"></path></svg></a></li><li><a href="about.html#contact" aria-label="Contacts"><svg viewBox="0 0 20 22" aria-hidden="true"><path d="M10 21h7.16c2.4 0 1.83-1.58 1.65-2.33a9.82 9.82 0 0 0-1.93-3.94 9.15 9.15 0 0 0-3.4-2.61c-1.07-.47-1.35.56-3.48.56-2.07 0-2.44-1.02-3.53-.54a9.18 9.18 0 0 0-3.51 2.78 9.86 9.86 0 0 0-1.87 4.19C.97 19.7.67 21 2.74 21H10Zm0-11c1.13 0 2.22-.47 3.01-1.32A4.63 4.63 0 0 0 14.26 5.5a4.63 4.63 0 0 0-1.25-3.18A4.15 4.15 0 0 0 10 1c-1.13 0-2.22.47-3.01 1.32A4.63 4.63 0 0 0 5.74 5.5a4.63 4.63 0 0 0 1.25 3.18A4.15 4.15 0 0 0 10 10Z"></path></svg></a></li></ul>`;
     const currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     mobileNav.querySelectorAll('a').forEach(link => {
       const target = (link.getAttribute('href') || '').toLowerCase();
@@ -117,7 +105,6 @@
     document.body.append(mobileNav);
 
     const cartBadge = actions.querySelector('.site-cart-count');
-    const mobileCartBadge = mobileNav.querySelector('.site-mobile-cart-count');
     const cartSummary = drawer.querySelector('.site-cart-summary');
     let storedCart = [];
     try {
@@ -130,8 +117,6 @@
     const renderCart = () => {
       cartBadge.textContent = cartCount;
       cartBadge.hidden = cartCount === 0;
-      mobileCartBadge.textContent = cartCount;
-      mobileCartBadge.hidden = cartCount === 0;
       cartSummary.textContent = cartCount ? `${cartCount} ${cartCount === 1 ? 'item' : 'items'} selected for your clinical workflow.` : 'Your cart is ready for selected equipment.';
     };
     renderCart();
@@ -177,7 +162,6 @@
       closeMenu();
     });
     actions.querySelector('.site-cart').addEventListener('click', () => drawer.classList.add('is-open'));
-    mobileNav.querySelector('.site-mobile-cart').addEventListener('click', () => drawer.classList.add('is-open'));
     drawer.querySelector('.site-cart-close').addEventListener('click', () => drawer.classList.remove('is-open'));
     document.addEventListener('click', event => {
       const add = event.target.closest('[data-cart],[data-recommendation-cart],#addToCart,.bundle-add');
