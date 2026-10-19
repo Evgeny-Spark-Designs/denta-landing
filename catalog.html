@@ -101,13 +101,12 @@
     .catalog-end{height:clamp(86px,7.6vw,118px);display:flex;align-items:center;justify-content:center;gap:16px;border-bottom:1px solid #4e4845;background:#292523;color:#f2f2f2;font-family:var(--text);font-size:clamp(12px,.9vw,15px);font-weight:500;letter-spacing:.035em;text-transform:uppercase}
     .catalog-end::before{content:"Dentovel"}.catalog-end::after{content:"Full catalog";color:#817975}
     .catalog-end span{width:7px;height:7px;border-top:1px solid #817975;border-right:1px solid #817975;transform:rotate(45deg)}
-    footer{position:relative;min-height:clamp(500px,42vw,650px);overflow:hidden;isolation:isolate;background:#3a3330;padding:clamp(58px,5vw,86px) clamp(24px,4vw,76px) 0;color:var(--oryzo-cream)}
-    #catalogHalftoneCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-    .footer-inner{position:relative;z-index:2;max-width:1760px;margin:auto;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:40px}.footer-brand{font-size:28px;font-weight:600}.footer-col{font-family:var(--text);font-size:14px;line-height:1.8}.footer-col b{display:block;margin-bottom:10px;color:rgba(255,237,215,.45);font-family:var(--display);font-size:11px;font-weight:500;text-transform:uppercase}.footer-col a{display:block}.footer-bottom{position:absolute;z-index:2;left:clamp(24px,4vw,76px);right:clamp(24px,4vw,76px);top:clamp(178px,14vw,220px);margin:0;padding-top:18px;border-top:1px solid rgba(255,237,215,.14);display:flex;justify-content:space-between;color:rgba(255,237,215,.45);font-size:12px;pointer-events:none}
+    footer{position:relative;background:#3a3330;padding:clamp(46px,4vw,68px) clamp(24px,4vw,76px) 30px;color:var(--oryzo-cream);text-align:left}
+    .footer-inner{max-width:1760px;margin:auto;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:40px}.footer-brand{font-size:28px;font-weight:600}.footer-col{font-family:var(--text);font-size:14px;line-height:1.8}.footer-col b{display:block;margin-bottom:10px;color:rgba(255,237,215,.45);font-family:var(--display);font-size:11px;font-weight:500;text-transform:uppercase}.footer-col a{display:block}.footer-bottom{max-width:1760px;margin:36px auto 0;padding-top:18px;border-top:1px solid rgba(255,237,215,.14);color:rgba(255,237,215,.45);font-size:12px}
 
     @media(max-width:1280px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:960px){.promo-copy{left:52%;width:42vw}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-inner{grid-template-columns:1.2fr repeat(3,1fr)}}
-    @media(max-width:620px){:root{--catalog-hero-height:440px;--catalog-surface-reveal:28px}.catalog-hero{height:var(--catalog-hero-height)}.topbar{height:70px}.topbar nav{display:none}.topbar .menu{display:block;margin-left:auto}.promo-copy{top:auto;bottom:36px;left:24px;width:min(70vw,360px);transform:none}.promo-copy h1{font-size:48px}.promo-copy span{font-size:13px}.catalog-hero::before{background:linear-gradient(90deg,rgba(26,18,14,.08),rgba(26,18,14,.35) 45%,rgba(26,18,14,.88)),url('./denta-hero-assets/catalog-promo-csmart-torque-v2.png') 30% center/cover no-repeat}.catalog-surface{padding-inline:16px;border-radius:30px 30px 0 0}.catalog-bar{align-items:flex-start;flex-direction:column}.catalog-bar p{text-align:left}.products{grid-template-columns:1fr;row-gap:48px}.product-visual{aspect-ratio:1.08}.product-visual img{width:84%;height:84%}.product h2{min-height:0}.footer-inner{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}footer{min-height:640px}.footer-bottom{top:310px;flex-direction:column;gap:8px}}
+    @media(max-width:620px){:root{--catalog-hero-height:440px;--catalog-surface-reveal:28px}.catalog-hero{height:var(--catalog-hero-height)}.topbar{height:70px}.topbar nav{display:none}.topbar .menu{display:block;margin-left:auto}.promo-copy{top:auto;bottom:36px;left:24px;width:min(70vw,360px);transform:none}.promo-copy h1{font-size:48px}.promo-copy span{font-size:13px}.catalog-hero::before{background:linear-gradient(90deg,rgba(26,18,14,.08),rgba(26,18,14,.35) 45%,rgba(26,18,14,.88)),url('./denta-hero-assets/catalog-promo-csmart-torque-v2.png') 30% center/cover no-repeat}.catalog-surface{padding-inline:16px;border-radius:30px 30px 0 0}.catalog-bar{align-items:flex-start;flex-direction:column}.catalog-bar p{text-align:left}.products{grid-template-columns:1fr;row-gap:48px}.product-visual{aspect-ratio:1.08}.product-visual img{width:84%;height:84%}.product h2{min-height:0}.footer-inner{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
     @supports(height:100dvh){@media(max-width:620px){:root{--catalog-scroll-viewport:100dvh}}}
     @media(max-width:460px){.hero-products{width:92vw;left:50%}.scroll-cue{display:none}.footer-inner{grid-template-columns:1fr}.footer-brand{grid-column:auto}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.product-visual img,.product-add{transition:none}}
@@ -156,14 +155,13 @@
   </main>
   <div class="catalog-end" aria-hidden="true"><span></span></div>
   <footer id="contacts">
-    <canvas id="catalogHalftoneCanvas" aria-hidden="true"></canvas>
     <div class="footer-inner">
-      <a class="footer-brand" href="index.html">Denta</a>
+      <a class="footer-brand" href="index.html">Dentovel</a>
       <div class="footer-col"><b>Shop</b><a href="catalog.html">Full catalog</a><a href="bundles.html">Bundles</a><a href="index.html#categories">Categories</a><a href="index.html#bestsellers">Best sellers</a></div>
       <div class="footer-col"><b>Company</b><a href="about.html">About us</a><a href="about.html#contact">Contacts</a><a href="shipping.html">Shipping</a></div>
-      <div class="footer-col"><b>Contact</b><a href="mailto:hello@dentiphoto.com">hello@dentiphoto.com</a><a href="https://dentiphoto.com">dentiphoto.com</a></div>
+      <div class="footer-col"><b>Contact</b><a href="mailto:support@dentovel.com">support@dentovel.com</a><a href="https://dentovel.com">dentovel.com</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 · Denta</span><span>Dental equipment &amp; accessories</span></div>
+    <div class="footer-bottom">© 2026 · Dentovel</div>
   </footer>
   <script>
     const salePrices={endo:['$399','$549'],csmart:['$799','$999'],oled:['$469','$599'],electricTorque:['$379','$499'],driver:['$299','$399'],prosthetic:['$179','$249'],driverkit:['$169','$229'],torque:['$129','$249'],caries:['$369','$499'],curing7:['$299','$399'],fast:['$229','$329'],heater:['$139','$189'],shade:['$499','$549'],prolight:['$219','$299'],antifog:['$149','$199'],mirror:['$89','$129'],headlight:['$129','$179'],ultrasonic:['$119','$159'],dustcollector:['$299','$399'],xray:['$1299','$1599']};
@@ -179,34 +177,7 @@ document.querySelectorAll('.product').forEach(card=>{const href=card.querySelect
       button.addEventListener('click',add);
       button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' ')add(event)});
     });
-    (()=>{
-      const canvas=document.getElementById('catalogHalftoneCanvas'),footer=canvas?.closest('footer');
-      if(!canvas||!footer)return;
-      const ctx=canvas.getContext('2d'),pointer={x:-1e4,y:-1e4};let dots=[],w=0,h=0,dpr=1;
-      const draw=()=>{
-        ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
-        for(const [x,y,r] of dots){
-          const dx=x-pointer.x,dy=y-pointer.y,dist=Math.hypot(dx,dy),push=Math.max(0,1-dist/96),nx=dist?x+(dx/dist)*push*16:x,ny=dist?y+(dy/dist)*push*16:y;
-          ctx.fillStyle=push>.02?`rgb(${244+Math.round(push*11)},${220-Math.round(push*105)},${199-Math.round(push*155)})`:'#f4dcc7';
-          ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fill();
-        }
-      };
-      const layout=()=>{
-        const box=footer.getBoundingClientRect();w=Math.max(1,Math.round(box.width));h=Math.max(1,Math.round(box.height));dpr=Math.min(devicePixelRatio||1,2);
-        canvas.width=w*dpr;canvas.height=h*dpr;
-        const mask=document.createElement('canvas');mask.width=w;mask.height=h;const m=mask.getContext('2d',{willReadFrequently:true});if(!m)return;
-        const word='Dentovel',weight=800,probe=100;m.font=`${weight} ${probe}px Arial, Helvetica, sans-serif`;
-        const fit=(w*.94)/m.measureText(word).width*probe;m.font=`${weight} ${fit}px Arial, Helvetica, sans-serif`;m.textBaseline='alphabetic';
-        const measure=m.measureText(word),cap=measure.actualBoundingBoxAscent||fit*.72;m.fillStyle='#fff';m.fillText(word,(w-measure.width)/2,h+cap*.22);
-        const data=m.getImageData(0,0,w,h).data,gap=Math.max(5,Math.round(w/270));dots=[];
-        for(let y=gap/2;y<h;y+=gap)for(let x=gap/2;x<w;x+=gap){let alpha=0;for(let sy=-1;sy<=1;sy++)for(let sx=-1;sx<=1;sx++){const px=Math.max(0,Math.min(w-1,Math.round(x+sx*gap/3))),py=Math.max(0,Math.min(h-1,Math.round(y+sy*gap/3)));alpha+=data[(py*w+px)*4+3]}alpha/=2295;if(alpha>.05)dots.push([x,y,Math.sqrt(alpha)*gap*.52])}
-        draw();
-      };
-      footer.addEventListener('pointermove',event=>{const box=canvas.getBoundingClientRect();pointer.x=event.clientX-box.left;pointer.y=event.clientY-box.top;draw()});
-      footer.addEventListener('pointerleave',()=>{pointer.x=-1e4;pointer.y=-1e4;draw()});
-      new ResizeObserver(layout).observe(footer);layout();
-    })();
   </script>
 </body>
-<script src="site-navigation.js"></script>
+<script src="site-navigation.js?v=20261019"></script>
 </html>
