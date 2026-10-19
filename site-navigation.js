@@ -28,14 +28,16 @@
     @media(max-width:440px){.bundle-grid{grid-template-columns:1fr!important}.showcase-grid{grid-template-columns:1fr!important;grid-template-rows:repeat(4,58vw)!important}.catalog-surface .details{grid-template-columns:1fr!important}}
     .site-mobile-nav{display:none}.site-menu-trigger{display:none}.site-menu-trigger svg{stroke-width:1.7}
     @media(max-width:760px){
-      body{padding:60px 0 calc(85px + env(safe-area-inset-bottom))}
+      body{padding:60px 0 calc(104px + env(safe-area-inset-bottom));transition:padding-bottom .22s ease}
+      html.mobile-tabbar-compact body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
       header[data-site-navigation]{display:none!important}
       .site-mobile-nav{position:fixed;top:0;right:0;left:0;z-index:1001;display:flex;height:60px;align-items:center;justify-content:space-between;padding:0 12px;background:rgba(40,33,32,.8);color:#f2f2f2;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
       .site-mobile-nav::after{position:absolute;right:0;bottom:0;left:0;height:1px;background:linear-gradient(to right,rgba(157,147,144,0) 0%,rgba(157,147,144,1) 50%,rgba(255,255,255,0) 100%);content:""}
-      .site-mobile-nav ul{display:flex;margin:0;padding:0;list-style:none}.site-mobile-nav li{display:flex;align-items:center}.site-mobile-nav a,.site-mobile-nav button{display:flex;align-items:center;justify-content:center;box-sizing:content-box;width:20px;height:20px;padding:20px 10px;border:0;background:transparent;color:inherit;cursor:pointer}.site-mobile-nav svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
-      .site-mobile-nav .site-mobile-logo{position:absolute;left:50%;display:flex;width:auto;height:60px;padding:0;color:inherit;font:500 21px/1 var(--text,Arial,sans-serif);letter-spacing:.08em;text-transform:uppercase;transform:translateX(-50%)}.site-mobile-nav .site-mobile-logo svg{width:100px;height:18px;fill:currentColor;stroke:none}.site-mobile-nav [aria-current="page"]{color:var(--orange,#f37021)}
-      .site-mobile-tabbar{position:fixed;right:0;bottom:0;left:0;z-index:1001;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;height:calc(104px + env(safe-area-inset-bottom));padding:8px 18px calc(8px + env(safe-area-inset-bottom));background:rgba(0,0,0,.76);color:#fff;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-      .site-mobile-tabbar a{display:flex;min-width:0;height:74px;align-items:center;justify-content:center;color:inherit;font:400 12px/1 var(--text,Arial,sans-serif);letter-spacing:.05em;text-align:center;text-decoration:none;text-transform:uppercase}.site-mobile-tabbar svg{display:none}.site-mobile-tabbar .site-mobile-tabbar-home{width:66px;height:66px;justify-self:center;border:1px solid #f37021;border-radius:21px;background:rgba(0,0,0,.22)}.site-mobile-tabbar .site-mobile-tabbar-home svg{display:block;width:30px;height:22px;fill:none;stroke:#fff;stroke-width:2}.site-mobile-tabbar .site-mobile-tabbar-home span{display:none}.site-mobile-tabbar [aria-current="page"]{color:#fff}
+      .site-mobile-nav a,.site-mobile-nav button{display:flex;align-items:center;justify-content:center;box-sizing:border-box;border:0;background:transparent;color:inherit;cursor:pointer}.site-mobile-nav svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+      .site-mobile-nav .site-mobile-logo{position:absolute;left:50%;display:flex;width:auto;height:60px;padding:0;color:inherit;font:500 20px/1 var(--text,Arial,sans-serif);letter-spacing:.13em;text-decoration:none;text-transform:uppercase;transform:translateX(-50%)}.site-mobile-nav .site-mobile-search{position:absolute;right:12px;width:44px;height:60px;padding:0}.site-mobile-nav .site-mobile-search-form{position:absolute;inset:0;z-index:2;display:flex;align-items:center;gap:10px;padding:0 12px;background:rgba(40,33,32,.96);opacity:0;pointer-events:none;transition:opacity .18s ease}.site-mobile-nav .site-mobile-search-form.is-open{opacity:1;pointer-events:auto}.site-mobile-search-form input{min-width:0;flex:1;height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.35);border-radius:0;background:transparent;color:inherit;font:14px var(--text,Arial,sans-serif);outline:0}.site-mobile-search-form button{width:36px;height:36px;padding:0;font-size:22px}
+      .site-mobile-tabbar{position:fixed;right:0;bottom:0;left:0;z-index:1001;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;height:calc(104px + env(safe-area-inset-bottom));padding:8px 18px calc(8px + env(safe-area-inset-bottom));background:rgba(0,0,0,.76);color:#fff;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:height .22s ease,padding .22s ease}
+      .site-mobile-tabbar a,.site-mobile-tabbar button{display:flex;min-width:0;height:74px;align-items:center;justify-content:center;padding:0;border:0;background:transparent;color:inherit;font:400 12px/1 var(--text,Arial,sans-serif);letter-spacing:.05em;text-align:center;text-decoration:none;text-transform:uppercase}.site-mobile-tabbar button{cursor:pointer}.site-mobile-tabbar svg{display:none}.site-mobile-tabbar .site-mobile-tabbar-home{width:66px;height:66px;justify-self:center;border:1px solid #f37021;border-radius:21px;background:rgba(0,0,0,.22)}.site-mobile-tabbar .site-mobile-tabbar-home svg{display:block;width:30px;height:22px;fill:none;stroke:#fff;stroke-width:2}.site-mobile-tabbar .site-mobile-tabbar-home span{display:none}.site-mobile-tabbar [aria-current="page"]{color:#fff}
+      .site-mobile-tabbar.is-compact{height:calc(64px + env(safe-area-inset-bottom));padding:4px 18px calc(4px + env(safe-area-inset-bottom))}.site-mobile-tabbar.is-compact a,.site-mobile-tabbar.is-compact button{height:48px;font-size:11px}.site-mobile-tabbar.is-compact .site-mobile-tabbar-home{width:46px;height:46px;border-color:transparent;border-radius:0;background:transparent}.site-mobile-tabbar.is-compact .site-mobile-tabbar-home svg{width:28px;height:20px}
     }
   `;
 
@@ -103,11 +105,12 @@
     mobileNav.querySelector('ul:last-child li:last-child')?.remove();
     mobileNav.querySelector('ul:last-child li:first-child')?.remove();
     mobileNav.querySelector('ul:first-child a').innerHTML = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.2 2.7c.8-.8 1.8-.8 2.6-.2l1.5 1.2c.7.6.8 1.6.2 2.3L8.2 7.4a12.1 12.1 0 0 0 4.4 4.4L14 10.5c.7-.6 1.7-.5 2.3.2l1.2 1.5c.6.8.6 1.8-.2 2.6l-.9.9c-.8.8-2 1.1-3 .7A16.6 16.6 0 0 1 3.6 6.6c-.4-1-.1-2.2.7-3l.9-.9Z"></path></svg>';
+    mobileNav.innerHTML = `<a class="site-mobile-logo" href="index.html" aria-label="Dentovel home">Dentovel</a><button class="site-mobile-search" type="button" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.3 4.3"></path></svg></button><form class="site-mobile-search-form" role="search"><input type="search" aria-label="Search the catalog" placeholder="Search the catalog"><button type="button" aria-label="Close search">×</button></form>`;
     const mobileTabbar = document.createElement('nav');
     mobileTabbar.className = 'site-mobile-tabbar';
     mobileTabbar.setAttribute('aria-label', 'Mobile navigation');
     mobileTabbar.innerHTML = `<a href="index.html"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="9.75" cy="9.75" r="2.75"></circle><circle cx="18" cy="9.75" r="2.75"></circle><circle cx="26.25" cy="9.75" r="2.75"></circle><circle cx="9.75" cy="18" r="2.75"></circle><circle cx="18" cy="18" r="2.75"></circle><circle cx="26.25" cy="18" r="2.75"></circle><circle cx="9.75" cy="26.25" r="2.75"></circle><circle cx="18" cy="26.25" r="2.75"></circle><circle cx="26.25" cy="26.25" r="2.75"></circle></svg><span>Online store</span></a><a href="catalog.html"><svg viewBox="0 0 37 36" aria-hidden="true"><path d="M9.405 15.856c0 2.448 1.05 4.895 2.52 6.597l5.694 5.77a1 1 0 0 0 1.423 0l5.693-5.77c1.47-1.702 2.52-4.15 2.52-6.597 0-5.107-3.99-9.256-8.926-9.256-4.935 0-8.924 4.15-8.924 9.256Z"></path><circle cx="18.405" cy="15.664" r="2.74"></circle></svg><span>Full catalog</span></a><a class="site-mobile-tabbar-home" href="index.html" aria-label="Home"><svg viewBox="0 0 69 69" aria-hidden="true"><circle cx="34.5" cy="34.5" r="23.25"></circle><path d="M43.343 36.5h-3.518v3.391H28.906V36.5h-3.518v3.13c0 1.957 1.051 2.87 3.381 2.87h11.239c2.33 0 3.381-.87 3.381-2.87l-.046-3.13ZM40.078 27.5H28.786c-2.342 0-3.397.876-3.397 2.891V33.5h3.535v-3.416h10.925V33.5h3.535v-3.11c.092-1.97-.964-2.89-3.305-2.89Z" fill="currentColor" stroke="none"></path></svg><span>Home</span></a><a href="bundles.html"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M11 15.1C11 .43 25 .43 25 15.1"></path><path d="M7 12.6c0-.3.22-.5.55-.5h20.9c.33 0 .55.2.55.5v15c0 .3-.22.5-.55.5H7.55a.55.55 0 0 1-.55-.5v-15Z"></path></svg><span>Bundles</span></a><a href="about.html"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 28h8.754c2.93 0 2.235-1.817 2.015-2.68a12.3 12.3 0 0 0-2.36-4.534 11.4 11.4 0 0 0-4.159-2.998c-1.309-.54-1.645.644-4.25.644-2.524 0-2.988-1.173-4.32-.621a11.46 11.46 0 0 0-4.29 3.198A12.2 12.2 0 0 0 7.103 25.826C6.964 26.505 6.593 28 9.13 28H18Zm0-12.65a5.21 5.21 0 1 0 0-10.35 5.21 5.21 0 0 0 0 10.35Z"></path></svg><span>About us</span></a>`;
-    mobileTabbar.innerHTML = `<a href="index.html">Каталог</a><a href="catalog.html">Бутики</a><a class="site-mobile-tabbar-home" href="index.html" aria-label="Главная"><svg viewBox="0 0 30 22" aria-hidden="true"><path d="M23 5H7c-2.3 0-4 1.4-4 3.6v4.8C3 15.6 4.7 17 7 17h16c2.3 0 4-1.4 4-3.6V8.6C27 6.4 25.3 5 23 5Z"></path><path d="M7 2h16M7 20h16"></path></svg></a><a href="bundles.html">Корзина</a><a href="about.html">Кабинет</a>`;
+    mobileTabbar.innerHTML = `<a href="catalog.html">Catalog</a><a href="bundles.html">Bundles</a><a class="site-mobile-tabbar-home" href="index.html" aria-label="Home"><svg viewBox="0 0 30 22" aria-hidden="true"><path d="M23 5H7c-2.3 0-4 1.4-4 3.6v4.8C3 15.6 4.7 17 7 17h16c2.3 0 4-1.4 4-3.6V8.6C27 6.4 25.3 5 23 5Z"></path><path d="M7 2h16M7 20h16"></path></svg></a><button class="site-mobile-tabbar-cart" type="button" aria-label="Open cart">Cart</button><a href="contact.html">Contacts</a>`;
     const currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     [mobileNav, mobileTabbar].forEach(menu => menu.querySelectorAll('a').forEach(link => {
       const target = (link.getAttribute('href') || '').toLowerCase();
@@ -115,6 +118,19 @@
     }));
     document.body.append(mobileNav);
     document.body.append(mobileTabbar);
+
+    const setMobileTabbarCompact = compact => {
+      mobileTabbar.classList.toggle('is-compact', compact);
+      document.documentElement.classList.toggle('mobile-tabbar-compact', compact);
+    };
+    let lastScrollY = window.scrollY;
+    const syncMobileTabbar = () => {
+      const scrollingDown = window.scrollY > lastScrollY;
+      setMobileTabbarCompact(window.scrollY > 85 && scrollingDown);
+      lastScrollY = window.scrollY;
+    };
+    window.addEventListener('scroll', syncMobileTabbar, { passive: true });
+    window.visualViewport?.addEventListener('resize', () => setMobileTabbarCompact(window.scrollY > 85));
 
     const cartBadge = actions.querySelector('.site-cart-count');
     const cartSummary = drawer.querySelector('.site-cart-summary');
@@ -134,6 +150,14 @@
     renderCart();
 
     const input = search.querySelector('input');
+    const mobileSearchForm = mobileNav.querySelector('.site-mobile-search-form');
+    const mobileSearchInput = mobileSearchForm.querySelector('input');
+    const submitSearch = query => {
+      const value = query.trim();
+      if (!value) return;
+      const match = products.find(name => name.toLowerCase().includes(value.toLowerCase()));
+      window.location.href = `catalog.html?search=${encodeURIComponent(match || value)}`;
+    };
     const menuTrigger = actions.querySelector('.site-menu-trigger');
     const closeMenu = () => {
       header.classList.remove('menu-open');
@@ -158,10 +182,16 @@
     search.querySelector('button').addEventListener('click', closeSearch);
     search.addEventListener('submit', event => {
       event.preventDefault();
-      const query = input.value.trim().toLowerCase();
-      if (!query) return;
-      const match = products.find(name => name.toLowerCase().includes(query));
-      window.location.href = `catalog.html?search=${encodeURIComponent(match || input.value.trim())}`;
+      submitSearch(input.value);
+    });
+    mobileNav.querySelector('.site-mobile-search').addEventListener('click', () => {
+      mobileSearchForm.classList.add('is-open');
+      mobileSearchInput.focus();
+    });
+    mobileSearchForm.querySelector('button').addEventListener('click', () => mobileSearchForm.classList.remove('is-open'));
+    mobileSearchForm.addEventListener('submit', event => {
+      event.preventDefault();
+      submitSearch(mobileSearchInput.value);
     });
     nav.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
     document.addEventListener('keydown', event => {
@@ -174,6 +204,7 @@
       closeMenu();
     });
     actions.querySelector('.site-cart').addEventListener('click', () => drawer.classList.add('is-open'));
+    mobileTabbar.querySelector('.site-mobile-tabbar-cart').addEventListener('click', () => drawer.classList.add('is-open'));
     drawer.querySelector('.site-cart-close').addEventListener('click', () => drawer.classList.remove('is-open'));
     document.addEventListener('click', event => {
       const add = event.target.closest('[data-cart],[data-recommendation-cart],#addToCart,.bundle-add');
