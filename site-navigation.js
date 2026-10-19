@@ -148,6 +148,10 @@
       cartSummary.textContent = cartCount ? `${cartCount} ${cartCount === 1 ? 'item' : 'items'} selected for your clinical workflow.` : 'Your cart is ready for selected equipment.';
     };
     renderCart();
+    document.addEventListener('dentovel-cart-changed', event => {
+      cartCount = Math.max(0, Number(event.detail?.count) || 0);
+      renderCart();
+    });
 
     const input = search.querySelector('input');
     const mobileSearchForm = mobileNav.querySelector('.site-mobile-search-form');
@@ -203,8 +207,8 @@
       if (!header.classList.contains('menu-open') || header.contains(event.target)) return;
       closeMenu();
     });
-    actions.querySelector('.site-cart').addEventListener('click', () => drawer.classList.add('is-open'));
-    mobileTabbar.querySelector('.site-mobile-tabbar-cart').addEventListener('click', () => drawer.classList.add('is-open'));
+    actions.querySelector('.site-cart').addEventListener('click', () => { window.location.href = 'basket.html'; });
+    mobileTabbar.querySelector('.site-mobile-tabbar-cart').addEventListener('click', () => { window.location.href = 'basket.html'; });
     drawer.querySelector('.site-cart-close').addEventListener('click', () => drawer.classList.remove('is-open'));
     document.addEventListener('click', event => {
       const add = event.target.closest('[data-cart],[data-recommendation-cart],#addToCart,.bundle-add');
