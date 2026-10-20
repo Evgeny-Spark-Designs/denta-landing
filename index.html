@@ -205,12 +205,11 @@
     .worldwide-copy{position:relative;z-index:2;max-width:610px;justify-self:end}.worldwide-kicker{margin:0 0 18px;color:rgba(255,228,205,.7);font-size:clamp(12px,.82vw,15px);font-weight:600}.worldwide h2{margin:0;max-width:8ch;font-size:clamp(54px,6.7vw,126px);line-height:.86;font-weight:300;letter-spacing:-.07em}.worldwide h2 strong{font-weight:400;color:#fffaf4}.worldwide-copy>p:not(.worldwide-kicker){max-width:38ch;margin:32px 0 0;font-size:clamp(16px,1.15vw,22px);line-height:1.35;letter-spacing:-.025em;color:rgba(255,239,225,.77)}
     .worldwide-stats{display:flex;gap:clamp(24px,4vw,72px);margin-top:42px;padding-top:17px;border-top:1px solid rgba(255,235,218,.2);font-size:clamp(12px,.78vw,15px);color:rgba(255,241,230,.74)}.worldwide-stats b{display:block;margin-bottom:3px;font-size:clamp(24px,1.9vw,36px);font-weight:400;letter-spacing:-.045em;color:#fffaf4}
     .worldwide-globe{position:relative;z-index:1;align-self:center;justify-self:center;width:min(100%,700px);aspect-ratio:1;min-height:0;overflow:visible;touch-action:none}.worldwide-globe canvas{z-index:2;pointer-events:auto;width:100%;height:100%;position:relative;display:block;outline:none}.worldwide-globe-fallback{position:absolute!important;inset:0;z-index:3!important;width:100%!important;height:100%!important;pointer-events:none!important}.worldwide-globe-map{position:absolute;inset:0;z-index:4;width:100%;height:100%;pointer-events:none}.worldwide-globe-map .route{fill:none;stroke:#ff6a2b;stroke-width:1.7;stroke-linecap:round;opacity:.9;filter:drop-shadow(0 0 5px #ff6428)}.worldwide-globe-map .route-soft{fill:none;stroke:#ffd1b0;stroke-width:1;stroke-dasharray:2 5;opacity:.48}.worldwide-globe-map .grid-line{fill:none;stroke:#f7d3bd;stroke-width:.65;opacity:.22}.worldwide-globe-map .pin{fill:#ff6a2b;filter:drop-shadow(0 0 6px #ff6a2b)}.worldwide-globe-shadow-grp{z-index:1;justify-content:center;align-items:center;display:flex;position:absolute;inset:3.5%;transform:rotate(180deg);pointer-events:none;opacity:.28}.worldwide-globe-shadow{z-index:1;border-radius:50%;padding-left:0;padding-right:0;position:absolute;inset:0%;box-shadow:-8rem 10rem 9rem #4947524f}.worldwide-globe-shadow.orange{box-shadow:0rem .081rem .162rem 0 #ffbc75,0 .647rem 1.3rem 0 #ff834a,inset 0 -5.5rem 3.8rem -4.2rem #f50,inset 0 -5.6rem 8rem .57rem #321500;background-color:#000;transform:none}.worldwide-globe-shadow.orange-plus{mix-blend-mode:plus-lighter;background-color:#000;box-shadow:inset 0 -2.8rem 2.3rem -2.1rem #ffd1b0}.worldwide-globe-shadow.blue-plus{mix-blend-mode:plus-lighter;background-color:#000;transform:none;box-shadow:-.081rem -.081rem .24rem -2.5rem #75bcff,-.323rem -.323rem 1.3rem -3.1rem #4781ff,-.647rem -.97rem 3.2rem 0 #0046dd,inset 0 2.6rem 5rem -2.1rem #8dedff}.worldwide-globe-shadow.blue{transform:none;box-shadow:inset 0 7.1rem 7.2rem -2.4rem #012fff,inset 0 18.8rem 14.2rem -4.1rem #021777}.worldwide-globe-blur{filter:blur(2px);width:175%;position:absolute;top:-5%}.worldwide-globe-blur img{display:block;width:100%;height:auto}.worldwide-globe .globe-label{color:#ffe3d1;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;pointer-events:none;opacity:0;transition:opacity .18s,filter .18s;text-shadow:0 2px 13px #180703}
-    .halftone-footer{position:relative;z-index:2;height:clamp(450px,38vw,560px);margin-top:0;overflow:hidden;isolation:isolate;border-radius:0;background:#211d1a;color:#f6ebe0}
-    .halftone-footer canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+    .halftone-footer{position:relative;z-index:2;margin-top:0;padding-bottom:34px;overflow:hidden;border-radius:0;background:#211d1a;color:#f6ebe0}
     .footer-top{display:grid;grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr));align-items:start;gap:clamp(24px,4vw,76px);padding:clamp(28px,3.4vw,52px) clamp(28px,4vw,78px) 0;font-size:clamp(12px,.78vw,15px);line-height:1.6;letter-spacing:-.018em}
     .footer-brandline strong{display:block;font-size:clamp(18px,1.25vw,24px);font-weight:700;letter-spacing:-.04em}.footer-brandline span{display:block;margin-top:4px;opacity:.56}
     .footer-column h3{margin:0;color:rgba(246,235,224,.58);font:inherit;font-weight:400}.footer-column a{color:inherit;text-decoration:none;opacity:.84;background:linear-gradient(currentColor,currentColor) 0 100% / 0 1px no-repeat;transition:opacity .25s var(--ease),background-size .35s var(--ease)}.footer-column a:hover{opacity:1;background-size:100% 1px}
-    .footer-rule{position:absolute;left:clamp(28px,4vw,78px);right:clamp(28px,4vw,78px);top:clamp(112px,12vw,176px);display:flex;justify-content:flex-end;padding-top:13px;border-top:1px solid rgba(246,235,224,.16)}
+    .footer-rule{margin:28px clamp(28px,4vw,78px) 0;display:flex;justify-content:flex-end;padding-top:13px;border-top:1px solid rgba(246,235,224,.16)}
     .footer-rule button{border:0;padding:0;background:none;color:rgba(246,235,224,.88);font:inherit;font-size:clamp(12px,.78vw,15px);letter-spacing:-.018em;cursor:pointer}
     @media(max-width:900px){
       .shell{grid-template-rows:12svh 1fr 15svh}.topbar{grid-template-columns:35% 65%}.brand{padding-left:6vw}.nav{display:none}.cta-wrap{justify-content:flex-end;padding-right:5vw}.stage{min-height:73svh}.intro{left:6vw;top:5%;width:37vw}.headline{left:6vw;bottom:7%;width:48vw;font-size:clamp(52px,10vw,90px)}.implant-wrap{left:68%;width:50vw;top:0;height:100%}.implant{height:67svh}.footer{grid-template-columns:1fr 1fr}.footer-item:nth-child(3),.footer-item:nth-child(4){display:none}
@@ -228,7 +227,7 @@
       .hero-specs{display:none}
       .showcase{padding:0 16px 40px}.showcase-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,52vw);gap:16px}.showcase-card:nth-child(n){grid-column:auto;grid-row:auto}.showcase-card-meta{left:20px;right:20px;bottom:20px}.showcase-card-meta strong{font-size:24px}.showcase-card-meta em{font-size:10px}.showcase-card::before{inset:10px}.showcase-card-arrow{display:none}
       .closing-panel{margin-top:-24px;border-radius:24px 24px 0 0}.worldwide{grid-template-columns:1fr;gap:22px;min-height:700px;padding:56px 20px 28px;border-radius:24px 24px 0 0}.worldwide h2{font-size:clamp(48px,15vw,76px)}.worldwide-copy{justify-self:start}.worldwide-copy>p:not(.worldwide-kicker){margin-top:22px}.worldwide-stats{margin-top:28px}.worldwide-globe{width:min(124%,620px);min-height:0;order:-1}
-      .halftone-footer{height:470px;margin-top:0;border-radius:0}.footer-top{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px;padding-inline:20px}.footer-brandline{grid-column:1 / -1}.footer-rule{left:20px;right:20px;top:177px}
+      .halftone-footer{margin-top:0;border-radius:0}.footer-top{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px;padding-inline:20px}.footer-brandline{grid-column:1 / -1}.footer-rule{margin:26px 20px 0}
     }
   </style>
   <style>
@@ -353,13 +352,12 @@
       </div>
     </div>
   </section>
-  <footer class="halftone-footer" id="contacts" aria-label="Dentiphoto footer">
-    <canvas id="halftoneCanvas" aria-hidden="true"></canvas>
+  <footer class="halftone-footer" id="contacts" aria-label="Dentovel footer">
     <div class="footer-top">
-      <div class="footer-brandline"><strong>Denta</strong><span>© 2026 · Dental equipment &amp; accessories</span></div>
+      <div class="footer-brandline"><strong>Dentovel</strong><span>© 2026 · Dentovel</span></div>
       <nav class="footer-column" aria-label="Shop"><h3>Shop</h3><a href="catalog.html">Full catalog</a><br><a href="bundles.html">Bundles</a><br><a href="#categories">Categories</a><br><a href="#store">Best sellers</a></nav>
       <nav class="footer-column" aria-label="Company"><h3>Company</h3><a href="about.html">About us</a><br><a href="about.html#contact">Contacts</a><br><a href="shipping.html">Shipping</a></nav>
-      <nav class="footer-column" aria-label="Contact"><h3>Contact</h3><a href="mailto:hello@dentiphoto.com">hello@dentiphoto.com</a><br><a href="https://dentiphoto.com">dentiphoto.com</a></nav>
+      <nav class="footer-column" aria-label="Contact"><h3>Contact</h3><a href="mailto:support@dentovel.com">support@dentovel.com</a><br><a href="https://dentovel.com">dentovel.com</a></nav>
     </div>
     <div class="footer-rule"><button id="backToTop" type="button">Back to top ↑</button></div>
   </footer>
@@ -381,27 +379,7 @@
         toast.classList.add('show'); clearTimeout(window.dentaToastTimer); window.dentaToastTimer=setTimeout(()=>toast.classList.remove('show'),2600);
       }));
     })();
-    (()=>{
-      const canvas=document.getElementById('halftoneCanvas'), footer=canvas?.closest('.halftone-footer');
-      if(!canvas||!footer)return;
-      const ctx=canvas.getContext('2d'), pointer={x:-1e4,y:-1e4}; let dots=[],w=0,h=0,dpr=1;
-      const layout=()=>{
-        const box=footer.getBoundingClientRect(); w=Math.max(1,Math.round(box.width)); h=Math.max(1,Math.round(box.height)); dpr=Math.min(devicePixelRatio||1,2);
-        canvas.width=w*dpr; canvas.height=h*dpr;
-        const mask=document.createElement('canvas'); mask.width=w; mask.height=h; const m=mask.getContext('2d',{willReadFrequently:true}); if(!m)return;
-        const word='Dentovel', weight=800, probe=100; m.font=`${weight} ${probe}px Arial, Helvetica, sans-serif`;
-        const fit=(w*.94)/m.measureText(word).width*probe; m.font=`${weight} ${fit}px Arial, Helvetica, sans-serif`; m.textBaseline='alphabetic';
-        const measure=m.measureText(word), cap=measure.actualBoundingBoxAscent||fit*.72; m.fillStyle='#fff'; m.fillText(word,(w-measure.width)/2,h+cap*.22);
-        const data=m.getImageData(0,0,w,h).data, gap=Math.max(5,Math.round(w/270)); dots=[];
-        for(let y=gap/2;y<h;y+=gap)for(let x=gap/2;x<w;x+=gap){let alpha=0;for(let sy=-1;sy<=1;sy++)for(let sx=-1;sx<=1; sx++){const px=Math.max(0,Math.min(w-1,Math.round(x+sx*gap/3))),py=Math.max(0,Math.min(h-1,Math.round(y+sy*gap/3)));alpha+=data[(py*w+px)*4+3]} alpha/=2295;if(alpha>.05)dots.push([x,y,Math.sqrt(alpha)*gap*.52])}
-        draw();
-      };
-      const draw=()=>{ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);for(const [x,y,r] of dots){const dx=x-pointer.x,dy=y-pointer.y,dist=Math.hypot(dx,dy),push=Math.max(0,1-dist/96),nx=dist?x+(dx/dist)*push*16:x,ny=dist?y+(dy/dist)*push*16:y;ctx.fillStyle=push>.02?`rgb(${244+Math.round(push*11)},${220-Math.round(push*105)},${199-Math.round(push*155)})`:'#f4dcc7';ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fill()}};
-      footer.addEventListener('pointermove',e=>{const b=canvas.getBoundingClientRect();pointer.x=e.clientX-b.left;pointer.y=e.clientY-b.top;draw()});
-      footer.addEventListener('pointerleave',()=>{pointer.x=-1e4;pointer.y=-1e4;draw()});
-      new ResizeObserver(layout).observe(footer); layout();
-      document.getElementById('backToTop')?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
-    })();
+    document.getElementById('backToTop')?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
   </script>
   <script src="./denta-hero-assets/land-110m-data.js"></script>
   <script src="./denta-hero-assets/vendor-three-legacy.js"></script>
@@ -438,5 +416,5 @@
     }
   </script>
 </body>
-<script src="site-navigation.js?v=20261020"></script>
+<script src="site-navigation.js?v=20261020b"></script>
 </html>

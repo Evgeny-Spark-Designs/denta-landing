@@ -26,7 +26,7 @@
       .site-cart-drawer{right:12px;top:12px;width:calc(100vw - 24px);padding:22px}.site-search-results{width:calc(100% - 24px)}
     }
     @media(max-width:440px){.bundle-grid{grid-template-columns:1fr!important}.showcase-grid{grid-template-columns:1fr!important;grid-template-rows:repeat(4,58vw)!important}.catalog-surface .details{grid-template-columns:1fr!important}}
-    .site-mobile-nav,.site-mobile-tabbar{display:none}.site-menu-trigger{display:none}.site-menu-trigger svg{stroke-width:1.7}
+    .site-mobile-nav,.site-mobile-tabbar,.site-mobile-search-overlay{display:none}.site-menu-trigger{display:none}.site-menu-trigger svg{stroke-width:1.7}
     @media(max-width:760px){
       body{padding:60px 0 calc(85px + env(safe-area-inset-bottom));transition:padding-bottom .3s ease}
       header[data-site-navigation]{display:none!important}
