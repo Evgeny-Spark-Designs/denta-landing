@@ -6,6 +6,13 @@
   ];
 
   const styles = `
+    /* GitHub comparison variant: the supplied Dentovel mark and the lighter card surface. */
+    header[data-site-navigation] > .brand{min-height:64px;padding-left:clamp(18px,4vw,76px)!important}
+    header[data-site-navigation] > .brand .site-brand-logo{display:block;width:auto;height:62px;max-width:min(15vw,142px);object-fit:contain;object-position:left center;filter:drop-shadow(0 5px 8px rgba(0,0,0,.2))}
+    .product-visual,.recommendation-visual,.bundle-teaser-image,.bundle-grid .visual{background:linear-gradient(145deg,#fff8ec 0%,#f4e5d4 100%)!important}
+    .product-visual::after,.recommendation-visual::after,.bundle-grid .visual::after{background:radial-gradient(ellipse,rgba(105,70,42,.18),transparent 70%)!important}
+    .product-visual .product-add,.recommendation-visual .recommendation-add{color:#3a2a22!important}
+    @media(max-width:760px){header[data-site-navigation] > .brand .site-brand-logo{height:50px;max-width:110px}.site-mobile-nav .site-mobile-logo{height:60px!important}.site-mobile-nav .site-mobile-logo .site-brand-logo{display:block;width:auto;height:48px;max-width:94px;object-fit:contain}}
     header[data-site-navigation]{position:relative!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:center!important}
     header[data-site-navigation] > .brand{grid-column:1;justify-self:start}
     header[data-site-navigation] > nav{grid-column:2;justify-self:center;display:flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap}
@@ -56,6 +63,10 @@
     const header = document.querySelector('header.topbar, header.top');
     if (!header || header.dataset.siteNavigation) return;
     header.dataset.siteNavigation = 'true';
+    const brand = header.querySelector(':scope > .brand');
+    if (brand) {
+      brand.innerHTML = '<img class="site-brand-logo" src="denta-hero-assets/dentovel-logo-transparent.png" alt="Dentovel — dental equipment">';
+    }
     if (header.closest('.catalog-hero, .about-hero')) header.dataset.headerLayout = 'catalog';
     const nav = header.querySelector(':scope > nav');
     if (!nav) return;
@@ -123,7 +134,7 @@
     mobileNav.querySelector('ul:last-child li:last-child')?.remove();
     mobileNav.querySelector('ul:last-child li:first-child')?.remove();
     mobileNav.querySelector('ul:first-child a').innerHTML = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.2 2.7c.8-.8 1.8-.8 2.6-.2l1.5 1.2c.7.6.8 1.6.2 2.3L8.2 7.4a12.1 12.1 0 0 0 4.4 4.4L14 10.5c.7-.6 1.7-.5 2.3.2l1.2 1.5c.6.8.6 1.8-.2 2.6l-.9.9c-.8.8-2 1.1-3 .7A16.6 16.6 0 0 1 3.6 6.6c-.4-1-.1-2.2.7-3l.9-.9Z"></path></svg>';
-    mobileNav.innerHTML = `<a class="site-mobile-logo" href="index.html" aria-label="Dentovel home">Dentovel</a><button class="site-mobile-search" type="button" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.3 4.3"></path></svg></button>`;
+    mobileNav.innerHTML = `<a class="site-mobile-logo" href="index.html" aria-label="Dentovel home"><img class="site-brand-logo" src="denta-hero-assets/dentovel-logo-transparent.png" alt="Dentovel — dental equipment"></a><button class="site-mobile-search" type="button" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.3 4.3"></path></svg></button>`;
     const mobileSearchOverlay = document.createElement('section');
     mobileSearchOverlay.className = 'site-mobile-search-overlay';
     mobileSearchOverlay.setAttribute('role', 'dialog');
