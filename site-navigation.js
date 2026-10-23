@@ -109,37 +109,103 @@
       footerNavigation.append(shipping);
     }
 
-    // A shared, interactive closing wordmark keeps the footer recognisable on
-    // every static page instead of relying on page-specific footer markup.
-    const footerWordmarkStyle = document.createElement('style');
-    footerWordmarkStyle.textContent = `
-      .site-footer-wordmark{position:relative;display:block;margin:clamp(36px,5vw,82px) clamp(20px,4vw,78px) 0;padding:clamp(30px,4vw,64px) 0 0;border-top:1px solid color-mix(in srgb,currentColor 18%,transparent);overflow:hidden;color:inherit;text-decoration:none;isolation:isolate;--footer-x:50%;--footer-y:50%}
-      .site-footer-wordmark::before{position:absolute;inset:0;background:radial-gradient(ellipse 38% 130% at var(--footer-x) var(--footer-y),rgba(243,109,36,.3),transparent 72%);content:"";opacity:0;transition:opacity .25s ease;pointer-events:none}
-      .site-footer-wordmark:hover::before,.site-footer-wordmark:focus-visible::before{opacity:1}
-      .site-footer-wordmark-label{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;margin:0 0 clamp(8px,1vw,16px);color:var(--soft,#a79b94);font:500 10px var(--text,Arial,sans-serif);letter-spacing:.1em;text-transform:uppercase}
-      .site-footer-wordmark-label b{color:inherit;font:inherit}
-      .site-footer-wordmark-name{position:relative;z-index:1;display:block;margin:0 -.055em -.12em;color:var(--ink,#f6ebe0);font:500 clamp(74px,17vw,330px)/.72 var(--display,Arial,sans-serif);letter-spacing:-.105em;white-space:nowrap;transform:translate3d(calc((var(--footer-x) - 50%) * -.018),calc((var(--footer-y) - 50%) * -.012),0);transition:transform .16s ease-out,color .2s ease}
-      .site-footer-wordmark:hover .site-footer-wordmark-name,.site-footer-wordmark:focus-visible .site-footer-wordmark-name{color:#fff4e8}
-      .site-footer-wordmark-glyph{display:inline-block;transition:transform .2s ease-out}
-      .site-footer-wordmark:hover .site-footer-wordmark-glyph:nth-child(odd){transform:translateY(-.025em)}
-      .site-footer-wordmark:hover .site-footer-wordmark-glyph:nth-child(even){transform:translateY(.018em)}
-      .site-footer-wordmark:focus-visible{outline:2px solid var(--orange,#f36d24);outline-offset:8px}
-      @media(max-width:760px){.site-footer-wordmark{margin:34px 20px 0;padding-top:28px}.site-footer-wordmark-label{margin-bottom:10px;font-size:9px}.site-footer-wordmark-name{font-size:clamp(60px,17.8vw,122px);letter-spacing:-.1em}}
+    // Restore the original point-based, cursor-reactive Dentovel footer mark.
+    // It was previously defined separately on only two pages and disappeared
+    // when the footers were consolidated.
+    const footerHalftoneStyle = document.createElement('style');
+    footerHalftoneStyle.textContent = `
+      footer.site-halftone-footer{position:relative!important;min-height:clamp(500px,42vw,650px)!important;overflow:hidden!important;isolation:isolate;background:#3a3330!important;padding:clamp(58px,5vw,86px) clamp(24px,4vw,76px) 0!important;color:#f6ebe0!important}
+      footer.site-halftone-footer>.site-footer-halftone{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
+      footer.site-halftone-footer>:not(.site-footer-halftone){position:relative;z-index:1}
+      @media(max-width:760px){footer.site-halftone-footer{min-height:470px!important;padding:42px 20px 0!important}}
     `;
-    document.head.append(footerWordmarkStyle);
-    document.querySelectorAll('footer').forEach(footer => {
-      if (footer.querySelector('.site-footer-wordmark')) return;
-      const wordmark = document.createElement('a');
-      wordmark.className = 'site-footer-wordmark';
-      wordmark.href = 'index.html';
-      wordmark.setAttribute('aria-label', 'Dentovel home');
-      wordmark.innerHTML = '<span class="site-footer-wordmark-label"><b>Dentovel</b><span>Move to interact</span></span><span class="site-footer-wordmark-name" aria-hidden="true"><span class="site-footer-wordmark-glyph">D</span><span class="site-footer-wordmark-glyph">e</span><span class="site-footer-wordmark-glyph">n</span><span class="site-footer-wordmark-glyph">t</span><span class="site-footer-wordmark-glyph">o</span><span class="site-footer-wordmark-glyph">v</span><span class="site-footer-wordmark-glyph">e</span><span class="site-footer-wordmark-glyph">l</span></span>';
-      wordmark.addEventListener('pointermove', event => {
-        const bounds = wordmark.getBoundingClientRect();
-        wordmark.style.setProperty('--footer-x', `${((event.clientX - bounds.left) / bounds.width) * 100}%`);
-        wordmark.style.setProperty('--footer-y', `${((event.clientY - bounds.top) / bounds.height) * 100}%`);
+    document.head.append(footerHalftoneStyle);
+    document.querySelectorAll('footer').forEach((footer, index) => {
+      if (footer.querySelector('.site-footer-halftone')) return;
+      footer.classList.add('site-halftone-footer');
+      const canvas = document.createElement('canvas');
+      canvas.className = 'site-footer-halftone';
+      canvas.setAttribute('aria-hidden', 'true');
+      canvas.id = `halftoneCanvas-${index}`;
+      footer.prepend(canvas);
+
+      const ctx = canvas.getContext('2d');
+      const pointer = { x: -1e4, y: -1e4 };
+      let dots = [];
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      const draw = () => {
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, width, height);
+        for (const [x, y, radius] of dots) {
+          const dx = x - pointer.x;
+          const dy = y - pointer.y;
+          const distance = Math.hypot(dx, dy);
+          const push = Math.max(0, 1 - distance / 96);
+          const nextX = distance ? x + (dx / distance) * push * 16 : x;
+          const nextY = distance ? y + (dy / distance) * push * 16 : y;
+          ctx.fillStyle = push > .02 ? `rgb(${244 + Math.round(push * 11)},${220 - Math.round(push * 105)},${199 - Math.round(push * 155)})` : '#f4dcc7';
+          ctx.beginPath();
+          ctx.arc(nextX, nextY, radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      };
+      const layout = () => {
+        const box = footer.getBoundingClientRect();
+        width = Math.max(1, Math.round(box.width));
+        height = Math.max(1, Math.round(box.height));
+        dpr = Math.min(devicePixelRatio || 1, 2);
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        const mask = document.createElement('canvas');
+        mask.width = width;
+        mask.height = height;
+        const maskContext = mask.getContext('2d', { willReadFrequently: true });
+        if (!maskContext) return;
+        const word = 'Dentovel';
+        const weight = 800;
+        const probe = 100;
+        maskContext.font = `${weight} ${probe}px Arial, Helvetica, sans-serif`;
+        const fit = (width * .94) / maskContext.measureText(word).width * probe;
+        maskContext.font = `${weight} ${fit}px Arial, Helvetica, sans-serif`;
+        maskContext.textBaseline = 'alphabetic';
+        const measure = maskContext.measureText(word);
+        const cap = measure.actualBoundingBoxAscent || fit * .72;
+        maskContext.fillStyle = '#fff';
+        maskContext.fillText(word, (width - measure.width) / 2, height + cap * .22);
+        const data = maskContext.getImageData(0, 0, width, height).data;
+        const gap = Math.max(5, Math.round(width / 270));
+        dots = [];
+        for (let y = gap / 2; y < height; y += gap) {
+          for (let x = gap / 2; x < width; x += gap) {
+            let alpha = 0;
+            for (let sampleY = -1; sampleY <= 1; sampleY += 1) {
+              for (let sampleX = -1; sampleX <= 1; sampleX += 1) {
+                const px = Math.max(0, Math.min(width - 1, Math.round(x + sampleX * gap / 3)));
+                const py = Math.max(0, Math.min(height - 1, Math.round(y + sampleY * gap / 3)));
+                alpha += data[(py * width + px) * 4 + 3];
+              }
+            }
+            alpha /= 2295;
+            if (alpha > .05) dots.push([x, y, Math.sqrt(alpha) * gap * .52]);
+          }
+        }
+        draw();
+      };
+      footer.addEventListener('pointermove', event => {
+        const box = canvas.getBoundingClientRect();
+        pointer.x = event.clientX - box.left;
+        pointer.y = event.clientY - box.top;
+        draw();
       });
-      footer.append(wordmark);
+      footer.addEventListener('pointerleave', () => {
+        pointer.x = -1e4;
+        pointer.y = -1e4;
+        draw();
+      });
+      new ResizeObserver(layout).observe(footer);
+      layout();
     });
 
     const search = document.createElement('form');
