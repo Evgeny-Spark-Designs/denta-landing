@@ -121,6 +121,9 @@
     `;
     document.head.append(footerHalftoneStyle);
     document.querySelectorAll('footer').forEach((footer, index) => {
+      // The homepage hero has a semantic footer solely for its four small
+      // caption cells. It is not the page footer and must keep its own layout.
+      if (footer.classList.contains('footer') || footer.querySelector('.footer-item')) return;
       if (footer.querySelector('.site-footer-halftone')) return;
       footer.classList.add('site-halftone-footer');
       const canvas = document.createElement('canvas');
