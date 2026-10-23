@@ -110,8 +110,8 @@
       aspect-ratio:1;
       overflow:hidden;
       border-radius:20px;
-      background:#211d1a;
-      color:#fff;
+      background:#f8eddf;
+      color:#211d1a;
       isolation:isolate;
     }
     .category-card img{
@@ -145,7 +145,7 @@
       position:absolute;
       inset:38% 0 0;
       z-index:1;
-      background:linear-gradient(transparent,rgba(0,0,0,.16));
+      background:linear-gradient(transparent,rgba(81,54,37,.12));
       opacity:.38;
       pointer-events:none;
     }
@@ -162,7 +162,7 @@
       font-weight:700;
       letter-spacing:-.035em;
     }
-    .category-card.dark{color:white}
+    .category-card.dark{color:#211d1a}
     .category-arrow{
       position:absolute;
       right:20px;
@@ -183,11 +183,11 @@
     .category-card:hover .category-arrow{opacity:1;transform:none}
     .showcase{padding:0 clamp(28px,3.15vw,64px) clamp(54px,6vw,104px);color:var(--ink)}
     .showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,clamp(155px,16vw,288px));gap:clamp(18px,1.55vw,30px);max-width:1800px;margin:0 auto}
-    .showcase-card{position:relative;display:block;overflow:hidden;border:1px solid rgba(255,242,230,.11);border-radius:20px;min-height:0;color:#fff;background:#141414;isolation:isolate;transition:border-color .35s var(--ease),transform .35s var(--ease)}
-    .showcase-card::before{content:"";position:absolute;z-index:1;inset:14px;border:1px solid rgba(255,242,230,.12);border-radius:11px;pointer-events:none;transition:inset .35s var(--ease),border-color .35s var(--ease)}
+    .showcase-card{position:relative;display:block;overflow:hidden;border:1px solid rgba(81,54,37,.16);border-radius:20px;min-height:0;color:#211d1a;background:#f8eddf;isolation:isolate;transition:border-color .35s var(--ease),transform .35s var(--ease)}
+    .showcase-card::before{content:"";position:absolute;z-index:1;inset:14px;border:1px solid rgba(81,54,37,.14);border-radius:11px;pointer-events:none;transition:inset .35s var(--ease),border-color .35s var(--ease)}
     .showcase-card img{position:absolute;inset:0;width:82%;height:82%;margin:auto;object-fit:contain;display:block;filter:drop-shadow(0 18px 18px rgba(0,0,0,.24));transition:transform .55s var(--ease),filter .55s var(--ease)}
-    .showcase-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 34%,rgba(0,0,0,.72) 100%);pointer-events:none}
-    .showcase-card-meta{position:absolute;z-index:2;left:clamp(22px,2vw,62px);right:clamp(22px,2vw,62px);bottom:clamp(20px,2vw,42px);display:flex;align-items:end;justify-content:space-between;gap:20px}.showcase-card-meta small{display:block;margin-bottom:9px;color:#e5854e;font:600 10px var(--text);letter-spacing:.1em;text-transform:uppercase}.showcase-card-meta strong{display:block;max-width:13ch;font-size:clamp(21px,2.1vw,38px);font-weight:500;line-height:1.02;letter-spacing:-.05em}.showcase-card-meta em{display:block;max-width:16ch;color:rgba(255,245,235,.72);font:500 11px/1.25 var(--text);font-style:normal;text-align:right}.showcase-card-arrow{display:grid;place-items:center;position:absolute;z-index:3;right:28px;top:28px;width:34px;height:34px;border:1px solid rgba(255,242,230,.38);border-radius:50%;color:#fff;font:400 18px/1 var(--display);opacity:0;transform:translate(-5px,5px);transition:opacity .3s var(--ease),transform .3s var(--ease),background .3s var(--ease),color .3s var(--ease)}
+    .showcase-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 34%,rgba(98,66,44,.16) 100%);pointer-events:none}
+    .showcase-card-meta{position:absolute;z-index:2;left:clamp(22px,2vw,62px);right:clamp(22px,2vw,62px);bottom:clamp(20px,2vw,42px);display:flex;align-items:end;justify-content:space-between;gap:20px}.showcase-card-meta small{display:block;margin-bottom:9px;color:#c95a1a;font:600 10px var(--text);letter-spacing:.1em;text-transform:uppercase}.showcase-card-meta strong{display:block;max-width:13ch;font-size:clamp(21px,2.1vw,38px);font-weight:500;line-height:1.02;letter-spacing:-.05em}.showcase-card-meta em{display:block;max-width:16ch;color:#5f4a3d;font:500 11px/1.25 var(--text);font-style:normal;text-align:right}.showcase-card-arrow{display:grid;place-items:center;position:absolute;z-index:3;right:28px;top:28px;width:34px;height:34px;border:1px solid rgba(81,54,37,.38);border-radius:50%;color:#211d1a;font:400 18px/1 var(--display);opacity:0;transform:translate(-5px,5px);transition:opacity .3s var(--ease),transform .3s var(--ease),background .3s var(--ease),color .3s var(--ease)}
     .showcase-card:nth-child(1) img{transform:translate(-10%,-6%) scale(1.05)}.showcase-card:nth-child(2) img{transform:translate(8%,-3%) scale(1.08)}.showcase-card:nth-child(3) img{transform:translate(-7%,4%) scale(1.1)}.showcase-card:nth-child(4) img{transform:translate(11%,4%) scale(1.08)}
     .showcase-card:hover{border-color:rgba(243,109,36,.72);transform:translateY(-3px)}.showcase-card:hover::before{inset:10px;border-color:rgba(243,109,36,.5)}.showcase-card:hover img{filter:drop-shadow(0 24px 26px rgba(0,0,0,.34))}.showcase-card:nth-child(1):hover img{transform:translate(-10%,-6%) scale(1.1)}.showcase-card:nth-child(2):hover img{transform:translate(8%,-3%) scale(1.13)}.showcase-card:nth-child(3):hover img{transform:translate(-7%,4%) scale(1.15)}.showcase-card:nth-child(4):hover img{transform:translate(11%,4%) scale(1.13)}.showcase-card:hover .showcase-card-arrow{opacity:1;transform:none;background:#f36d24;color:#22150f}
     .showcase-card:nth-child(1){grid-column:1;grid-row:1}.showcase-card:nth-child(2){grid-column:2;grid-row:1 / span 2}.showcase-card:nth-child(3){grid-column:1;grid-row:2 / span 2}.showcase-card:nth-child(4){grid-column:2;grid-row:3}
@@ -277,7 +277,7 @@
   <section id="categories" class="categories" aria-label="Product categories">
     <div class="categories-row">
       <a class="category-card light" href="product.html?product=shade" aria-label="View E220 Shade Matching Device">
-        <img src="./denta-hero-assets/category-shade-dark-orange-v3.png" alt="Shade matching equipment">
+        <img src="./denta-hero-assets/category-shade-transparent-v4.png" alt="Shade matching equipment">
         <span class="category-title">Shade Matching</span><span class="category-arrow">→</span>
       </a>
       <a class="category-card dark product-cutout prolight-cutout" href="product.html?product=prolight" aria-label="View ProLight X LED Photo Lamp">
@@ -289,15 +289,15 @@
         <span class="category-title">Mirrors &amp;<br>Retractors</span><span class="category-arrow">→</span>
       </a>
       <a class="category-card dark" href="product.html?product=antifog" aria-label="View Anti-Fog Mirror Kit">
-        <img src="./denta-hero-assets/category-imaging-dark-orange-v3.png" alt="Dental imaging and diagnostics">
+        <img src="./denta-hero-assets/category-imaging-transparent-v4.png" alt="Dental imaging and diagnostics">
         <span class="category-title">Imaging &amp;<br>Diagnostics</span><span class="category-arrow">→</span>
       </a>
       <a class="category-card light" href="product.html?product=curing7" aria-label="View Curing Light (7 modes)">
-        <img src="./denta-hero-assets/category-curing-dark-orange-v3.png" alt="Curing and restorative equipment">
+        <img src="./denta-hero-assets/category-curing-transparent-v4.png" alt="Curing and restorative equipment">
         <span class="category-title">Curing &amp;<br>Restorative</span><span class="category-arrow">→</span>
       </a>
       <a class="category-card dark" href="product.html?product=electricTorque" aria-label="View Electric Implant Torque Wrench">
-        <img src="./denta-hero-assets/category-implantology-dark-orange-v3.png" alt="Prosthetics and implantology equipment">
+        <img src="./denta-hero-assets/category-implantology-transparent-v4.png" alt="Prosthetics and implantology equipment">
         <span class="category-title">Prosthetics &amp;<br>Implantology</span><span class="category-arrow">→</span>
       </a>
     </div>
