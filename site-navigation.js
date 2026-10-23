@@ -8,11 +8,11 @@
   const styles = `
     /* GitHub comparison variant: the supplied Dentovel mark and the lighter card surface. */
     header[data-site-navigation] > .brand{min-height:64px;padding-left:clamp(18px,4vw,76px)!important}
-    header[data-site-navigation] > .brand .site-brand-logo{display:block;width:auto;height:62px;max-width:min(15vw,142px);object-fit:contain;object-position:left center;filter:drop-shadow(0 5px 8px rgba(0,0,0,.2))}
+    header[data-site-navigation] > .brand .site-brand-logo{display:block;width:auto;height:93px;max-width:min(22vw,213px);object-fit:contain;object-position:left center;filter:drop-shadow(0 5px 8px rgba(0,0,0,.2))}
     .product-visual,.recommendation-visual,.bundle-teaser-image,.bundle-grid .visual{background:linear-gradient(145deg,#fff8ec 0%,#f4e5d4 100%)!important}
     .product-visual::after,.recommendation-visual::after,.bundle-grid .visual::after{background:radial-gradient(ellipse,rgba(105,70,42,.18),transparent 70%)!important}
     .product-visual .product-add,.recommendation-visual .recommendation-add{color:#3a2a22!important}
-    @media(max-width:760px){header[data-site-navigation] > .brand .site-brand-logo{height:50px;max-width:110px}.site-mobile-nav .site-mobile-logo{height:60px!important}.site-mobile-nav .site-mobile-logo .site-brand-logo{display:block;width:auto;height:48px;max-width:94px;object-fit:contain}}
+    @media(max-width:760px){header[data-site-navigation] > .brand .site-brand-logo{height:72px;max-width:165px}.site-mobile-nav .site-mobile-logo{height:60px!important}.site-mobile-nav .site-mobile-logo .site-brand-logo{display:block;width:auto;height:72px;max-width:141px;object-fit:contain}}
     header[data-site-navigation]{position:relative!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:center!important}
     header[data-site-navigation] > .brand{grid-column:1;justify-self:start}
     header[data-site-navigation] > nav{grid-column:2;justify-self:center;display:flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap}
