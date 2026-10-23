@@ -284,6 +284,25 @@
       note.textContent = `${visible} ${visible === 1 ? 'result' : 'results'} for “${catalogQuery}”`;
       (document.querySelector('.catalog-bar') || document.querySelector('main')).after(note);
     }
+
+    // The visual language uses clean, unpunctuated copy.  Apply the rule to
+    // static markup as well as copy assembled above by individual page scripts.
+    // URLs, email addresses and numeric decimals are deliberately left intact.
+    const removeVisiblePeriods = () => {
+      const excludedTags = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'OPTION']);
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          const parent = node.parentElement;
+          if (!parent || excludedTags.has(parent.tagName) || node.nodeValue.includes('@')) return NodeFilter.FILTER_REJECT;
+          return node.nodeValue.includes('.') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        }
+      });
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => { node.nodeValue = node.nodeValue.replace(/\.(?!\d)/g, ''); });
+      document.title = document.title.replace(/\.(?!\d)/g, '');
+    };
+    removeVisiblePeriods();
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', inject);
