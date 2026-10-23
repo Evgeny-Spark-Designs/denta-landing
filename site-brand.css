@@ -1,3 +1,9 @@
 /* Loaded with the HTML so the legacy text mark never flashes before JavaScript starts. */
 .brand .site-brand-logo{display:block;width:auto;height:93px;max-width:min(22vw,213px);object-fit:contain;object-position:left center;filter:drop-shadow(0 5px 8px rgba(0,0,0,.2))}
 @media(max-width:760px){.brand .site-brand-logo{height:72px;max-width:165px}.site-mobile-nav .site-mobile-logo .site-brand-logo{display:block;width:auto;height:72px;max-width:141px;object-fit:contain}}
+
+/* One typeface across the storefront: the Halyard Display face used by Bundles. */
+body,body :is(button,input,select,textarea),body *{font-family:"halyard-display-variable","Helvetica Neue",Helvetica,Arial,sans-serif!important}
+
+/* Navigation keeps its original Halyard Text treatment for compact menu labels. */
+nav,nav *{font-family:"halyard-text-variable","Helvetica Neue",Helvetica,Arial,sans-serif!important}
