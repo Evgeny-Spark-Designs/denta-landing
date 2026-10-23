@@ -43,14 +43,14 @@
     @media(max-width:680px){.bundle-grid{grid-template-columns:1fr}}
     /* Bundle promotion follows the catalog hero's scale and type rhythm. */
     .bundle-hero{position:relative;height:clamp(310px,28vw,460px);overflow:hidden;background:#211a17;isolation:isolate}
-    .bundle-hero::before{position:absolute;z-index:-2;inset:0;content:"";background:url('./denta-hero-assets/bundles-hero-clinical-collection-v1.png') center/cover no-repeat}
+    .bundle-hero::before{position:absolute;z-index:-2;inset:0;content:"";background:url('./denta-hero-assets/bundles-hero-clinical-collection-v2.png') center/cover no-repeat}
     .bundle-hero::after{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(90deg,rgba(26,18,14,.12) 0%,rgba(26,18,14,.06) 44%,rgba(26,18,14,.01) 100%)}
     .bundle-hero .topbar{position:relative;z-index:2;height:88px;border:0;color:#f2f2f2}
     .bundle-hero .brand{display:flex;align-items:center;gap:10px;padding-left:4vw;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:clamp(17px,1.25vw,24px);font-weight:700;letter-spacing:-.04em}
     .bundle-hero .mark{width:22px;height:22px;display:grid;grid-template-columns:1fr 1fr;gap:3px}.bundle-hero .mark i{display:block;background:currentColor}.bundle-hero .mark i:nth-child(1),.bundle-hero .mark i:nth-child(4){border-radius:1px 5px 1px 5px}.bundle-hero .mark i:nth-child(2),.bundle-hero .mark i:nth-child(3){border-radius:5px 1px 5px 1px}
     .bundle-hero .nav{gap:42px;font-family:var(--text);font-size:12px;font-weight:500;text-transform:uppercase}
     .bundle-hero .crumbs{display:none}
-    .bundle-hero .intro{position:absolute;z-index:1;top:50%;left:clamp(24px,4vw,78px);display:block;width:min(36vw,560px);min-height:0;padding:0;transform:translateY(-48%);color:#f2f2f2}
+    .bundle-hero .intro{position:absolute;z-index:1;top:calc(50% + 38px);left:clamp(24px,4vw,78px);display:block;width:min(36vw,560px);min-height:0;padding:0;transform:translateY(-48%);color:#f2f2f2}
     .bundle-hero .intro>div{max-width:none}.bundle-hero .eyebrow{margin:0;color:#d97848;font:600 11px var(--text);letter-spacing:.1em;text-transform:uppercase}
     .bundle-hero .intro h1{max-width:8ch;margin:13px 0 0;font-size:clamp(42px,4.8vw,78px);font-weight:400;line-height:.88;letter-spacing:-.06em}.bundle-hero .intro h1 em{color:inherit}
     .bundle-hero .intro-copy{max-width:31ch;margin:18px 0 0;color:#c4b9b3;font:14px/1.45 var(--text)}.bundle-main{padding-top:clamp(44px,4vw,72px)}
@@ -63,7 +63,7 @@
     .bundle-main .price{font-size:clamp(19px,1.18vw,23px);line-height:1.2;letter-spacing:0}.bundle-main .old{font-size:15px}
     .bundle-main .save,.bundle-main .bundle-link,.bundle-main .bundle-add{font-size:12px;font-weight:500;letter-spacing:.035em}
     .bundle-main .closing h2{font-size:clamp(28px,2.4vw,42px);line-height:1;letter-spacing:-.035em}
-    @media(max-width:760px){.bundle-hero{height:440px}.bundle-hero .topbar{height:70px}.bundle-hero .intro{top:auto;bottom:36px;left:24px;width:min(70vw,360px);transform:none}.bundle-hero .intro h1{font-size:48px}.bundle-hero .intro-copy{font-size:13px}.bundle-hero::before{background-position:center}.bundle-hero::after{background:linear-gradient(90deg,rgba(26,18,14,.1),rgba(26,18,14,.32) 45%,rgba(26,18,14,.82))}}
+    @media(max-width:760px){.bundle-hero{height:440px}.bundle-hero .topbar{height:70px}.bundle-hero .intro{top:auto;bottom:14px;left:24px;width:min(70vw,360px);transform:none}.bundle-hero .intro h1{font-size:48px}.bundle-hero .intro-copy{font-size:13px}.bundle-hero::before{background-position:center}.bundle-hero::after{background:linear-gradient(90deg,rgba(26,18,14,.1),rgba(26,18,14,.32) 45%,rgba(26,18,14,.82))}}
     /* Reuse the catalogue footer, including its Dentovel halftone signature. */
     .bundle-main+footer{position:relative;background:#3a3330;padding:clamp(46px,4vw,68px) clamp(24px,4vw,76px) 30px;color:var(--cream);text-align:left}.bundle-main+footer .footer-inner{max-width:1760px;margin:auto;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:40px}.bundle-main+footer .footer-brand{font-size:28px;font-weight:600}.bundle-main+footer .footer-col{font-family:var(--text);font-size:14px;line-height:1.8}.bundle-main+footer .footer-col b{display:block;margin-bottom:10px;color:rgba(255,237,215,.45);font-family:var(--display);font-size:11px;font-weight:500;text-transform:uppercase}.bundle-main+footer .footer-col a{display:block}.bundle-main+footer .footer-bottom{max-width:1760px;margin:36px auto 0;padding-top:18px;border-top:1px solid rgba(255,237,215,.14);color:rgba(255,237,215,.45);font:12px var(--text)}
     @media(max-width:680px){.bundle-main+footer .footer-inner{grid-template-columns:1fr 1fr}.bundle-main+footer .footer-brand{grid-column:1/-1}}
