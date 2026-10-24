@@ -57,8 +57,8 @@
     document.title = document.title.replace(/\bDenta\b/g, 'Dentovel').replace(/\bDentiphoto\b/g, 'Dentovel');
     document.querySelectorAll('a[href*="dentiphoto.com"]').forEach(link => {
       const isEmail = (link.getAttribute('href') || '').startsWith('mailto:');
-      link.href = isEmail ? 'mailto:support@dentovel.com' : 'https://dentovel.com';
-      link.textContent = isEmail ? 'support@dentovel.com' : 'dentovel.com';
+      link.href = isEmail ? 'mailto:admin@dentovel.com' : 'https://dentovel.com';
+      link.textContent = isEmail ? 'admin@dentovel.com' : 'dentovel.com';
     });
     const header = document.querySelector('header.topbar, header.top');
     if (!header || header.dataset.siteNavigation) return;
